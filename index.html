@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>馬祖自由行 2026/09/25–27 | 南竿＋北竿</title>
+<title>馬祖家族旅遊 2026/10/16–19 | 南竿＋北竿</title>
 <style>
   :root {
     --ocean: #1a6b8a;
@@ -15,6 +15,8 @@
     --green: #3a7d44;
     --red: #c0392b;
     --yellow: #e67e22;
+    --purple: #6c3483;
+    --purple-light: #8e44ad;
     --text: #2c3e50;
     --text-light: #7f8c8d;
     --white: #ffffff;
@@ -52,31 +54,56 @@
   .day-header.d1 { background:linear-gradient(135deg,var(--ocean) 0%,var(--ocean-light) 100%); }
   .day-header.d2 { background:linear-gradient(135deg,var(--fort) 0%,var(--fort-light) 100%); }
   .day-header.d3 { background:linear-gradient(135deg,var(--green) 0%,#52a85d 100%); }
+  .day-header.d4 { background:linear-gradient(135deg,var(--purple) 0%,var(--purple-light) 100%); }
   .day-badge { background:rgba(255,255,255,0.2); border-radius:8px; padding:8px 14px; text-align:center; min-width:72px; }
   .day-badge .dn { font-size:24px; font-weight:800; line-height:1; }
   .day-badge .dl { font-size:11px; opacity:0.8; }
   .day-info h2 { font-size:19px; font-weight:700; }
   .day-info p { font-size:13px; opacity:0.85; margin-top:3px; }
 
-  /* flight info box */
   .flight-box { display:flex; gap:12px; margin-bottom:22px; flex-wrap:wrap; }
   .flight-card { flex:1; min-width:200px; background:white; border-radius:var(--radius); padding:16px 20px; box-shadow:var(--shadow); border-left:4px solid var(--ocean); }
   .flight-card.ret { border-left-color:var(--green); }
+  .flight-card.b-go { border-left-color:var(--yellow); }
+  .flight-card.b-ret { border-left-color:var(--purple); }
   .flight-card .fc-label { font-size:11px; color:var(--text-light); font-weight:700; letter-spacing:1px; margin-bottom:6px; }
   .flight-card .fc-route { font-size:20px; font-weight:800; color:var(--ocean); }
   .flight-card.ret .fc-route { color:var(--green); }
+  .flight-card.b-go .fc-route { color:var(--yellow); }
+  .flight-card.b-ret .fc-route { color:var(--purple); }
   .flight-card .fc-time { font-size:15px; font-weight:600; margin-top:4px; }
   .flight-card .fc-flight { font-size:12px; color:var(--text-light); margin-top:2px; }
+
+  .group-tag { display:inline-block; padding:2px 10px; border-radius:12px; font-size:11px; font-weight:700; margin-bottom:4px; }
+  .group-a { background:#d6eaf8; color:#1a5276; }
+  .group-b { background:#fdebd0; color:#a04000; }
+  .group-all { background:#d5f5e3; color:#1e8449; }
+
+  .group-section { background:white; border-radius:var(--radius); padding:18px 22px; margin-bottom:16px; box-shadow:var(--shadow); }
+  .group-section.a-style { border-left:4px solid var(--ocean); }
+  .group-section.b-style { border-left:4px solid var(--yellow); }
 
   .timeline { position:relative; padding-left:28px; margin-bottom:30px; }
   .timeline::before { content:''; position:absolute; left:9px; top:8px; bottom:8px; width:2px; background:linear-gradient(to bottom,var(--ocean-light),var(--sand-dark)); border-radius:2px; }
   .timeline-item { position:relative; margin-bottom:18px; }
   .timeline-item::before { content:''; position:absolute; left:-23px; top:6px; width:12px; height:12px; border-radius:50%; background:var(--ocean); border:2px solid white; box-shadow:0 0 0 2px var(--ocean); }
+  .timeline-item.key::before { background:var(--red); box-shadow:0 0 0 2px var(--red); }
+  .timeline-item.go::before { background:var(--green); box-shadow:0 0 0 2px var(--green); }
   .time-label { font-size:12px; color:var(--ocean); font-weight:700; letter-spacing:0.5px; }
   .tcard { background:white; border-radius:10px; padding:13px 17px; margin-top:4px; box-shadow:0 2px 8px rgba(0,0,0,0.07); }
   .tcard .act { font-weight:700; font-size:15px; }
   .tcard .note { font-size:13px; color:var(--text-light); margin-top:2px; }
   .tcard .warn { font-size:12px; color:var(--red); margin-top:4px; font-weight:600; }
+  .tcard.hl-green { border-left:3px solid var(--green); }
+  .tcard.hl-red { border-left:3px solid var(--red); }
+  .tcard.hl-purple { border-left:3px solid var(--purple); }
+
+  .split-banner { border-radius:var(--radius); padding:16px 22px; margin:18px 0; box-shadow:var(--shadow); display:flex; align-items:center; gap:14px; }
+  .split-banner.a-banner { background:linear-gradient(135deg,#1a6b8a 0%,#2a8db5 100%); color:white; }
+  .split-banner.b-banner { background:linear-gradient(135deg,var(--fort) 0%,var(--fort-light) 100%); color:white; }
+  .split-banner .sb-icon { font-size:28px; }
+  .split-banner h3 { font-size:16px; font-weight:800; margin-bottom:2px; }
+  .split-banner p { font-size:13px; opacity:0.9; }
 
   .spots-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; margin-bottom:28px; }
   .spot-card { background:white; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); border-top:4px solid var(--ocean); transition:transform 0.15s; }
@@ -98,6 +125,7 @@
   .alert.yellow { background:#fef9e7; border-left:4px solid var(--yellow); }
   .alert.blue { background:#e8f4fd; border-left:4px solid var(--ocean); }
   .alert.green { background:#e9f7ef; border-left:4px solid var(--green); }
+  .alert.purple { background:#f5eef8; border-left:4px solid var(--purple); }
   .alert-icon { font-size:18px; flex-shrink:0; }
   .alert strong { display:block; margin-bottom:2px; }
 
@@ -129,7 +157,6 @@
 
   .weather-card { background:white; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); margin-bottom:18px; }
   .weather-card h3 { font-size:16px; font-weight:700; margin-bottom:14px; }
-
   .divider { height:1px; background:var(--sand-dark); margin:24px 0; }
 
   footer { text-align:center; padding:20px; font-size:12px; color:var(--text-light); border-top:1px solid var(--sand-dark); background:white; }
@@ -141,95 +168,195 @@
     .overview-grid{grid-template-columns:1fr 1fr;}
     .flight-box{flex-direction:column;}
   }
+  /* 必買/必吃 卡片 */
+  .item-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:14px; margin-bottom:24px; }
+  .item-card { background:white; border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); }
+  .item-card.buy { border-left:4px solid var(--green); }
+  .item-card.eat { border-left:4px solid var(--red); }
+  .item-header { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .item-num { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; font-size:11px; font-weight:800; flex-shrink:0; color:white; background:var(--ocean); }
+  .item-card.buy .item-num { background:var(--green); }
+  .item-card.eat .item-num { background:var(--red); }
+  .item-name { font-size:15px; font-weight:800; }
+  .item-desc { font-size:13px; color:var(--text-light); margin:6px 0 8px; line-height:1.6; }
+  .item-meta { display:flex; flex-wrap:wrap; gap:6px; align-items:center; }
+  .item-where { font-size:12px; color:var(--fort); font-weight:600; }
+  .item-price-tag { display:inline-block; background:var(--sand); color:var(--fort); padding:2px 10px; border-radius:12px; font-size:12px; font-weight:700; }
+  .item-shop-tag { display:inline-block; background:#e8f4fd; color:var(--ocean); padding:2px 10px; border-radius:12px; font-size:12px; font-weight:600; }
+  /* 地圖 */
+  .gmap-frame { width:100%; height:380px; border:0; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:14px; }
+  .map-legend { background:white; border-radius:var(--radius); padding:12px 18px; box-shadow:var(--shadow); margin-bottom:16px; display:flex; gap:20px; flex-wrap:wrap; font-size:13px; font-weight:600; }
+  .legend-dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:5px; vertical-align:middle; }
+  /* 景點快捷按鈕 */
+  .loc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(155px,1fr)); gap:9px; margin-bottom:28px; }
+  .loc-card { background:white; border-radius:10px; padding:12px 14px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:4px; text-decoration:none; color:var(--text); transition:transform 0.15s; border-left:3px solid var(--ocean); cursor:pointer; }
+  .loc-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(0,0,0,0.13); }
+  .loc-card.food { border-left-color:var(--red); }
+  .loc-card.shop { border-left-color:var(--green); }
+  .loc-card.trans { border-left-color:var(--yellow); }
+  .loc-card.hotel { border-left-color:var(--purple); }
+  .loc-name { font-size:13px; font-weight:800; }
+  .loc-note { font-size:11px; color:var(--text-light); line-height:1.4; }
+  .loc-open { font-size:11px; font-weight:700; color:var(--ocean); margin-top:3px; }
+  .loc-card.food .loc-open { color:var(--red); }
+  .loc-card.shop .loc-open { color:var(--green); }
+  .loc-card.hotel .loc-open { color:var(--purple); }
+  /* 住宿卡片 */
+  .hotel-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-bottom:28px; }
+  .hotel-card { background:white; border-radius:var(--radius); padding:20px; box-shadow:var(--shadow); border-top:4px solid var(--ocean); display:flex; flex-direction:column; gap:8px; }
+  .hotel-card.beigan { border-top-color:var(--purple); }
+  .hotel-card.top-pick { border-top-color:var(--yellow); border:2px solid var(--yellow); }
+  .hotel-header { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .hotel-num { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; font-size:11px; font-weight:800; flex-shrink:0; color:white; background:var(--ocean); }
+  .hotel-card.beigan .hotel-num { background:var(--purple); }
+  .hotel-card.top-pick .hotel-num { background:var(--yellow); }
+  .hotel-name { font-size:15px; font-weight:800; }
+  .hotel-badge { font-size:11px; padding:2px 8px; border-radius:10px; font-weight:700; }
+  .badge-top { background:#fff3cd; color:#856404; }
+  .badge-elder { background:#d5f5e3; color:#1e8449; }
+  .badge-sea { background:#d6eaf8; color:#1a5276; }
+  .badge-stone { background:#f0ebe3; color:var(--fort); }
+  .hotel-location { font-size:12px; color:var(--text-light); }
+  .hotel-price { font-size:13px; font-weight:700; color:var(--ocean); }
+  .hotel-card.beigan .hotel-price { color:var(--purple); }
+  .hotel-features { font-size:13px; color:var(--text); line-height:1.6; }
+  .hotel-book { font-size:12px; color:var(--text-light); margin-top:2px; }
+  .hotel-book a { color:var(--ocean); }
+  .strategy-box { background:linear-gradient(135deg,#fef9e7,#fdebd0); border-radius:var(--radius); padding:18px 22px; margin-bottom:22px; box-shadow:var(--shadow); border-left:4px solid var(--yellow); }
+  .strategy-box h3 { font-size:15px; font-weight:800; margin-bottom:10px; color:var(--yellow); }
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
 
 <div class="hero">
-  <div class="badge">🏝️ 家族旅遊 · 2026年9月</div>
-  <h1>馬祖自由行</h1>
-  <p class="subtitle">南竿 ＋ 北竿 · 4人 · 台中出發</p>
-  <p class="dates">📅 2026 / 09/25（五）– 09/27（日）</p>
+  <div class="badge">🏝️ 家族旅遊 · 2026年10月</div>
+  <h1>馬祖家族旅遊</h1>
+  <p class="subtitle">南竿 ＋ 北竿 · 5人 · 台中＋高雄出發</p>
+  <p class="dates">📅 2026 / 10/16（五）– 10/19（一）</p>
   <div class="hero-stats">
-    <div class="hero-stat"><span class="num">3</span><span class="lbl">天</span></div>
-    <div class="hero-stat"><span class="num">2</span><span class="lbl">晚</span></div>
+    <div class="hero-stat"><span class="num">4</span><span class="lbl">天</span></div>
+    <div class="hero-stat"><span class="num">5</span><span class="lbl">人</span></div>
     <div class="hero-stat"><span class="num">2</span><span class="lbl">座島</span></div>
-    <div class="hero-stat"><span class="num">8</span><span class="lbl">個景點</span></div>
+    <div class="hero-stat"><span class="num">8+</span><span class="lbl">景點</span></div>
   </div>
 </div>
 
 <div class="container">
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('overview',this)">總覽</button>
-    <button class="tab-btn" onclick="switchTab('day1',this)">Day 1 南竿</button>
-    <button class="tab-btn" onclick="switchTab('day2',this)">Day 2 南→北竿</button>
-    <button class="tab-btn" onclick="switchTab('day3',this)">Day 3 返台</button>
+    <button class="tab-btn" onclick="switchTab('day1',this)">Day 1 南竿抵達</button>
+    <button class="tab-btn" onclick="switchTab('day2',this)">Day 2 南竿全日</button>
+    <button class="tab-btn" onclick="switchTab('day3',this)">Day 3 長輩返台・北竿出發</button>
+    <button class="tab-btn" onclick="switchTab('day4',this)">Day 4 北竿→返高雄</button>
     <button class="tab-btn" onclick="switchTab('backup',this)">🌧 氣候備案</button>
     <button class="tab-btn" onclick="switchTab('budget',this)">💰 預算</button>
     <button class="tab-btn" onclick="switchTab('checklist',this)">清單</button>
+    <button class="tab-btn" onclick="switchTab('mapview',this)">🗺️ 景點地圖</button>
+    <button class="tab-btn" onclick="switchTab('buybuy',this)">🛍️ 必買</button>
+    <button class="tab-btn" onclick="switchTab('eateat',this)">🍽️ 必吃</button>
+    <button class="tab-btn" onclick="switchTab('hotel',this)">🏨 住宿推薦</button>
   </div>
 
   <!-- 總覽 -->
   <div id="overview" class="tab-content active">
-    <div class="section-title">✈️ 班機資訊</div>
-    <div class="flight-box">
-      <div class="flight-card">
-        <div class="fc-label">去程 · 9/25（五）</div>
-        <div class="fc-route">台中 → 南竿</div>
-        <div class="fc-time">🛫 11:20 出發 → 12:25 抵達</div>
-        <div class="fc-flight">立榮航空 B7-8731 · 約2,351元/人</div>
+
+    <div class="section-title">✈️ 成員分組 &amp; 班機</div>
+    <div style="display:flex;gap:12px;margin-bottom:8px;flex-wrap:wrap;">
+      <div class="group-section a-style" style="flex:1;min-width:240px;">
+        <div><span class="group-tag group-a">A 組 · 爸媽 ＋ 妹（3人）· 台中↔南竿</span></div>
+        <div style="font-size:14px;margin-top:10px;line-height:2;">
+          <div>🛫 <strong>10/16（五）</strong> 台中立榮 11:05 → 南竿 12:10</div>
+          <div>🛬 <strong>10/18（日）</strong> 南竿立榮 12:50 → 台中 13:55</div>
+          <div style="margin-top:6px;padding:6px 10px;background:#eaf4fb;border-radius:8px;font-size:12px;color:var(--ocean);">全程南竿 · 3天2夜</div>
+        </div>
       </div>
-      <div class="flight-card ret">
-        <div class="fc-label">回程 · 9/27（日）</div>
-        <div class="fc-route">南竿 → 台中</div>
-        <div class="fc-time">🛬 16:25 出發 → 17:30 抵達</div>
-        <div class="fc-flight">立榮航空 B7-8736 · 約2,351元/人</div>
+      <div class="group-section b-style" style="flex:1;min-width:240px;">
+        <div><span class="group-tag group-b">B 組 · 我 ＋ 太太（2人）· 高雄↔南竿</span></div>
+        <div style="font-size:14px;margin-top:10px;line-height:2;">
+          <div>🛫 <strong>10/16（五）</strong> 高雄華信 11:15 → 南竿 12:55</div>
+          <div>🛬 <strong>10/19（一）</strong> 南竿華信 13:40 → 高雄 15:20</div>
+          <div style="margin-top:6px;padding:6px 10px;background:#fef5e7;border-radius:8px;font-size:12px;color:var(--yellow);">南竿2晚＋北竿1晚 · 4天3夜</div>
+        </div>
       </div>
     </div>
 
-    <div class="section-title">🗺️ 旅程總覽</div>
-    <div class="overview-grid">
-      <div class="ov-card"><div class="ov-icon">🛏️</div><div class="ov-label">住宿</div><div class="ov-value">夜1 南竿介壽村<br>夜2 北竿芹壁村</div></div>
-      <div class="ov-card"><div class="ov-icon">⛴️</div><div class="ov-label">島際渡輪</div><div class="ov-value">南竿↔北竿<br><small style="font-weight:400;font-size:12px">160元/人・20分</small></div></div>
-      <div class="ov-card"><div class="ov-icon">🛵</div><div class="ov-label">島內交通</div><div class="ov-value">機車為主<br>爬坡景點叫計程車</div></div>
-      <div class="ov-card"><div class="ov-icon">🎖️</div><div class="ov-label">特別意義</div><div class="ov-value">爸爸曾在南竿服役</div></div>
-    </div>
-
+    <div class="section-title">🗓️ 旅程結構</div>
     <table class="styled-table">
-      <thead><tr><th>天數</th><th>日期</th><th>主題</th><th>重點景點</th></tr></thead>
+      <thead><tr><th>天數</th><th>日期</th><th>A組（爸媽妹）</th><th>B組（我+太太）</th></tr></thead>
       <tbody>
-        <tr><td><strong>Day 1</strong></td><td>9/25（五）</td><td>南竿戰地</td><td>北海坑道・大漢據點・鐵堡日落・介壽村</td></tr>
-        <tr><td><strong>Day 2</strong></td><td>9/26（六）</td><td>南→北竿</td><td>媽祖巨神像・馬祖酒廠・芹壁村</td></tr>
-        <tr><td><strong>Day 3</strong></td><td>9/27（日）</td><td>北竿→返台</td><td>橋仔漁村・大坵島（可選）・飛機返台中</td></tr>
+        <tr>
+          <td><strong>Day 1</strong></td><td>10/16（五）</td>
+          <td>南竿 12:10抵達</td>
+          <td>南竿 12:55抵達</td>
+        </tr>
+        <tr>
+          <td><strong>Day 2</strong></td><td>10/17（六）</td>
+          <td colspan="2" style="text-align:center;background:#e9f7ef;"><strong>全員5人 · 南竿全日遊</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Day 3</strong></td><td>10/18（日）</td>
+          <td>上午南竿 → <strong>12:50 飛回台中</strong></td>
+          <td>送A組 → <strong>下午渡輪北竿</strong>・芹壁村</td>
+        </tr>
+        <tr>
+          <td><strong>Day 4</strong></td><td>10/19（一）</td>
+          <td>—（已返台）</td>
+          <td>北竿早晨 → 渡輪南竿 → <strong>13:40 飛回高雄</strong></td>
+        </tr>
       </tbody>
     </table>
 
-    <div class="alert yellow"><span class="alert-icon">⚠️</span><div><strong>北海坑道潮汐</strong>出發前需查 9/25 當日潮汐，實際入場時間可能調整。電話：0836-25630</div></div>
-    <div class="alert blue"><span class="alert-icon">🛡️</span><div><strong>投保旅遊不便險</strong>9月底仍有颱風尾機率，班機取消備案：候補下班次或台馬之星返基隆。</div></div>
+    <div class="section-title">🗺️ 旅程亮點</div>
+    <div class="overview-grid">
+      <div class="ov-card"><div class="ov-icon">⚓</div><div class="ov-label">Day 1</div><div class="ov-value">北海坑道<br>大漢據點・鐵堡</div></div>
+      <div class="ov-card"><div class="ov-icon">🙏</div><div class="ov-label">Day 2</div><div class="ov-value">媽祖巨神像<br>馬祖酒廠・津沙聚落</div></div>
+      <div class="ov-card"><div class="ov-icon">🏘️</div><div class="ov-label">Day 3（B組）</div><div class="ov-value">芹壁村抵達<br>北竿漫步</div></div>
+      <div class="ov-card"><div class="ov-icon">🐟</div><div class="ov-label">Day 4（B組）</div><div class="ov-value">橋仔漁村<br>大坵島梅花鹿</div></div>
+    </div>
+
+    <div class="alert green"><span class="alert-icon">✅</span><div><strong>絕佳時段！</strong>10/16–19 是近三年颱風空窗期，10月降雨量全年最低（38mm），氣溫 22–25°C，為馬祖最舒適的旅遊時節。</div></div>
+    <div class="alert yellow"><span class="alert-icon">⚠️</span><div><strong>北海坑道潮汐</strong>出發前須查 10/16 當日潮汐，入場時間視潮汐調整。電話：0836-25630</div></div>
+    <div class="alert blue"><span class="alert-icon">🛡️</span><div><strong>建議全員投保旅遊不便險</strong>10月東北季風偶有班機延誤，含班機取消、行程中斷為佳。</div></div>
   </div>
 
   <!-- Day 1 -->
   <div id="day1" class="tab-content">
     <div class="day-header d1">
       <div class="day-badge"><div class="dn">1</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>南竿戰地巡禮</h2><p>9月25日（週五）· 12:25 抵達 · 下午跑三個戰地景點</p></div>
+      <div class="day-info">
+        <h2>南竿戰地巡禮</h2>
+        <p>10月16日（週五）· A組12:10、B組12:55抵南竿 · 下午全員會合</p>
+      </div>
     </div>
-    <div class="alert red"><span class="alert-icon">🌊</span><div><strong>出發前必做：查北海坑道當日潮汐</strong>受潮汐影響，實際入場時間不固定。可能需微調下午景點順序。電話 0836-25630</div></div>
+
+    <div class="alert blue"><span class="alert-icon">✈️</span><div>
+      <strong>兩組抵達時間差 45 分鐘</strong>
+      A組（爸媽妹）12:10 先到，B組（我+太太）12:55 才落地。
+      建議 A組先提行李、找個地方坐，<strong>約 13:10 機場外集合</strong>。
+    </div></div>
+    <div class="alert red"><span class="alert-icon">🌊</span><div><strong>出發前必查：10/16 北海坑道當日潮汐</strong>電話 0836-25630，依潮汐決定下午景點順序。</div></div>
+
     <div class="section-title">⏱ 時間表</div>
     <div class="timeline">
-      <div class="timeline-item"><div class="time-label">11:20</div><div class="tcard"><div class="act">✈️ 台中起飛 B7-8731</div></div></div>
-      <div class="timeline-item"><div class="time-label">12:25</div><div class="tcard"><div class="act">🛬 抵達南竿機場</div><div class="note">辦入住・放行李</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:00</div><div class="tcard"><div class="act">🍜 午餐</div><div class="note">介壽村・馬祖米糕、魚丸湯</div></div></div>
-      <div class="timeline-item"><div class="time-label">14:00–15:30</div><div class="tcard"><div class="act">⚓ 北海坑道</div><div class="note">手鑿地下水道・爸爸最有共鳴</div><div class="warn">⚠️ 配合當日潮汐</div></div></div>
-      <div class="timeline-item"><div class="time-label">15:45–17:00</div><div class="tcard"><div class="act">🏔️ 大漢據點</div><div class="note">山頂砲陣地・俯瞰南竿全景</div><div class="warn">⚠️ 長輩只逛第一層觀海平台</div></div></div>
-      <div class="timeline-item"><div class="time-label">17:00–18:30</div><div class="tcard"><div class="act">🌅 鐵堡</div><div class="note">日落黃金時段（9月底約18:30日落）・穿防滑鞋</div></div></div>
-      <div class="timeline-item"><div class="time-label">19:00–21:00</div><div class="tcard"><div class="act">🌃 介壽村老街晚餐＋夜遊</div><div class="note">夜景更美・廟宇老建築・宵夜小攤</div></div></div>
+      <div class="timeline-item"><div class="time-label">11:05</div><div class="tcard"><div class="act">✈️ A組出發 · 台中立榮</div><div class="note">爸爸・媽媽・妹妹 | 飛行約 65 分鐘</div></div></div>
+      <div class="timeline-item"><div class="time-label">11:15</div><div class="tcard"><div class="act">✈️ B組出發 · 高雄華信</div><div class="note">我＋太太 | 飛行約 100 分鐘</div></div></div>
+      <div class="timeline-item"><div class="time-label">12:10</div><div class="tcard"><div class="act">🛬 A組抵達南竿機場</div><div class="note">提行李・在入口等候 B組</div></div></div>
+      <div class="timeline-item"><div class="time-label">12:55</div><div class="tcard hl-green"><div class="act">🛬 B組抵達南竿機場 · 全員集合！</div></div></div>
+      <div class="timeline-item"><div class="time-label">13:00</div><div class="tcard"><div class="act">🧳 前往民宿 Check in</div><div class="note">南竿介壽村，計程車或租機車</div></div></div>
+      <div class="timeline-item"><div class="time-label">13:30</div><div class="tcard"><div class="act">🍜 午餐</div><div class="note">介壽村·馬祖米糕、高粱蝦麵線</div></div></div>
+      <div class="timeline-item"><div class="time-label">14:00–15:30</div><div class="tcard"><div class="act">⚓ 北海坑道</div><div class="note">手鑿地下水道・爸爸最有共鳴的景點</div><div class="warn">⚠️ 配合當日潮汐，時間可能調整</div></div></div>
+      <div class="timeline-item"><div class="time-label">15:45–17:00</div><div class="tcard"><div class="act">🏔️ 大漢據點</div><div class="note">砲陣地俯瞰南竿全景 · 長輩僅逛第一層（無障礙坡道）</div></div></div>
+      <div class="timeline-item"><div class="time-label">17:00–18:30</div><div class="tcard"><div class="act">🌅 鐵堡</div><div class="note">10月日落約 17:40，黃金時段到達最佳 · 穿防滑鞋</div></div></div>
+      <div class="timeline-item"><div class="time-label">19:00</div><div class="tcard"><div class="act">🌃 介壽村晚餐＋夜遊</div><div class="note">廟宇老建築・宵夜小攤・夜景迷人</div></div></div>
     </div>
+
     <div class="section-title">🗺️ 景點詳情</div>
     <div class="spots-grid">
-      <div class="spot-card mil"><div class="spot-name">⚓ 北海坑道</div><div class="stars">★★★★★</div><div class="spot-desc">當年士兵用手鑿出的地下水道，可容納戰艦進入。爸爸當年服役最具歷史共鳴的景點。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">查潮汐</span></div></div>
-      <div class="spot-card mil"><div class="spot-name">🏔️ 大漢據點</div><div class="stars">★★★★</div><div class="spot-desc">2024年全面開放，三層坑道免費。長輩建議只逛第一層觀海平台，有無障礙坡道。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">無障礙坡道</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🌅 鐵堡</div><div class="stars">★★★★★</div><div class="spot-desc">海濱軍事碉堡，地形壯觀。日落前1.5小時到達效果最佳。岩礁地形請穿防滑鞋。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">穿防滑鞋</span></div></div>
+      <div class="spot-card mil"><div class="spot-name">⚓ 北海坑道</div><div class="stars">★★★★★</div><div class="spot-desc">當年士兵手鑿的地下水道，可容納戰艦進入。爸爸當年服役，最具歷史共鳴。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">查潮汐</span></div></div>
+      <div class="spot-card mil"><div class="spot-name">🏔️ 大漢據點</div><div class="stars">★★★★</div><div class="spot-desc">2024年全面開放，三層坑道免費。長輩只逛第一層觀海平台即可，設有無障礙坡道。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">無障礙坡道</span></div></div>
+      <div class="spot-card nat"><div class="spot-name">🌅 鐵堡</div><div class="stars">★★★★★</div><div class="spot-desc">海濱軍事碉堡，地形壯觀壯麗。日落前 1.5 小時到達效果最佳，岩礁地形請穿防滑鞋。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">穿防滑鞋</span></div></div>
     </div>
   </div>
 
@@ -237,24 +364,29 @@
   <div id="day2" class="tab-content">
     <div class="day-header d2">
       <div class="day-badge"><div class="dn">2</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>媽祖巨神像＋酒廠 → 北竿芹壁村</h2><p>9月26日（週六）· 上午南竿・下午渡輪到北竿</p></div>
+      <div class="day-info">
+        <h2>南竿全日遊 — 全員5人</h2>
+        <p>10月17日（週六）· 媽祖巨神像・酒廠・津沙聚落 · 最完整的一天</p>
+      </div>
     </div>
-    <div class="alert yellow"><span class="alert-icon">⏰</span><div><strong>酒廠午休注意</strong>馬祖酒廠 11:30 關閉，09:30 前往，11:00 前離開。</div></div>
+    <div class="alert yellow"><span class="alert-icon">⏰</span><div><strong>酒廠午休注意</strong>馬祖酒廠 11:30 午休關閉，09:30 前到，11:00 前離開。</div></div>
+
     <div class="section-title">⏱ 時間表</div>
     <div class="timeline">
-      <div class="timeline-item"><div class="time-label">08:30–09:15</div><div class="tcard"><div class="act">🙏 媽祖巨神像（馬港）</div><div class="note">免費・祈福坑道・長輩最適合</div></div></div>
-      <div class="timeline-item"><div class="time-label">09:30–11:00</div><div class="tcard"><div class="act">🍶 馬祖酒廠</div><div class="note">參觀釀酒・品嚐・買伴手禮（高粱酒、魚卵、花生）</div><div class="warn">⚠️ 11:30 前離開</div></div></div>
-      <div class="timeline-item"><div class="time-label">11:00–12:30</div><div class="tcard"><div class="act">🍱 午餐＋整理行李 check out</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:30</div><div class="tcard"><div class="act">⛴️ 渡輪 南竿→北竿</div><div class="note">福澳碼頭出發・約20分鐘・160元/人</div></div></div>
-      <div class="timeline-item"><div class="time-label">14:00</div><div class="tcard"><div class="act">🧳 芹壁村 Check in</div><div class="note">計程車從塘岐碼頭・提前告知民宿協助搬行李</div></div></div>
-      <div class="timeline-item"><div class="time-label">14:30–17:30</div><div class="tcard"><div class="act">🏘️ 芹壁村漫遊</div><div class="note">觀景台 → 老街石厝 → 海濱・傍晚人潮散去最美</div></div></div>
-      <div class="timeline-item"><div class="time-label">18:00</div><div class="tcard"><div class="act">🌙 芹壁村晚餐</div><div class="note">石厝夜晚燈光氛圍獨特</div></div></div>
+      <div class="timeline-item"><div class="time-label">08:30–09:15</div><div class="tcard"><div class="act">🙏 媽祖巨神像（馬港天后宮）</div><div class="note">免費・祈福坑道・平地好走，長輩最適合的上午開場</div></div></div>
+      <div class="timeline-item"><div class="time-label">09:30–11:00</div><div class="tcard"><div class="act">🍶 馬祖酒廠</div><div class="note">免費參觀釀酒・品嚐・必買：高粱酒、魚卵、花生</div><div class="warn">⚠️ 11:30 前離開</div></div></div>
+      <div class="timeline-item"><div class="time-label">11:30</div><div class="tcard"><div class="act">🛵 騎機車前往午餐</div><div class="note">介壽村或附近食堂</div></div></div>
+      <div class="timeline-item"><div class="time-label">13:00–15:00</div><div class="tcard"><div class="act">🏘️ 津沙聚落</div><div class="note">南竿保存最完整的閩東老漁村・石板路平緩適合長輩・沙灘漫步</div></div></div>
+      <div class="timeline-item"><div class="time-label">15:00–16:30</div><div class="tcard"><div class="act">🏛️ 南竿老街＋馬祖民俗文物館</div><div class="note">室內展覽・了解馬祖歷史文化・爸爸可對照服役記憶</div></div></div>
+      <div class="timeline-item"><div class="time-label">16:30–17:30</div><div class="tcard"><div class="act">🌊 仁愛村海濱散步・自由活動</div></div></div>
+      <div class="timeline-item"><div class="time-label">18:30</div><div class="tcard"><div class="act">🍽️ 5人共進晚餐</div><div class="note">A組最後一晚 · 挑一間馬祖海鮮好好吃一頓</div></div></div>
     </div>
+
     <div class="section-title">🗺️ 景點詳情</div>
     <div class="spots-grid">
-      <div class="spot-card cul"><div class="spot-name">🙏 媽祖巨神像</div><div class="stars">★★★★</div><div class="spot-desc">馬港天后宮旁巨型媽祖像，有祈福坑道。免費、無需爬坡，長輩最適合的上午開場。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div></div>
+      <div class="spot-card cul"><div class="spot-name">🙏 媽祖巨神像</div><div class="stars">★★★★</div><div class="spot-desc">馬港天后宮旁巨型媽祖像，有祈福坑道。免費、無需爬坡，長輩輕鬆。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div></div>
       <div class="spot-card cul"><div class="spot-name">🍶 馬祖酒廠</div><div class="stars">★★★★</div><div class="spot-desc">馬祖高粱酒發源地，免費參觀釀酒流程，現場品嚐。必買：高粱酒、魚卵、花生。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">午休11:30-13:40</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🏘️ 芹壁村</div><div class="stars">★★★★★</div><div class="spot-desc">台灣最美閩東石厝聚落「馬祖地中海」。住一晚體驗夜晚寧靜石厝氛圍，進村步道有坡，提前告知民宿搬行李。</div><div class="spot-tags"><span class="tag info">住一晚必選</span><span class="tag warn">行李告知民宿</span></div></div>
+      <div class="spot-card nat"><div class="spot-name">🏘️ 津沙聚落</div><div class="stars">★★★★</div><div class="spot-desc">南竿保存最完整的閩東漁村，石板小路平緩，面朝沙灘，老厝風味十足。長輩輕鬆漫步。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div></div>
     </div>
   </div>
 
@@ -262,39 +394,96 @@
   <div id="day3" class="tab-content">
     <div class="day-header d3">
       <div class="day-badge"><div class="dn">3</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>橋仔漁村 → 飛機返台中</h2><p>9月27日（週日）· 橋仔漁村 · 16:25 班機 · 17:30 抵台中</p></div>
+      <div class="day-info">
+        <h2>長輩返台中 · B組出發北竿</h2>
+        <p>10月18日（週日）· 上午全員南竿 · A組12:50飛回 · B組下午渡輪北竿</p>
+      </div>
     </div>
-    <div class="alert blue"><span class="alert-icon">✈️</span><div><strong>班機取消備案</strong>強風影響時可候補下班次，或改搭台馬之星回基隆（約8小時）。Day3 行程不要排太滿。</div></div>
+
+    <div class="alert green"><span class="alert-icon">✈️</span><div>
+      <strong>A組（爸媽妹）今日回家</strong>
+      南竿機場 12:50 出發，13:55 抵台中。需 <strong>12:10 前到南竿機場</strong>，建議 11:45 出門。
+    </div></div>
+
+    <div class="section-title">⏱ 時間表（全員 · 上午）</div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="time-label">08:00–09:30</div><div class="tcard"><div class="act">☀️ 早餐＋南竿晨光散步（全員）</div><div class="note">介壽村早市・最後一個5人早晨</div></div></div>
+      <div class="timeline-item"><div class="time-label">09:30–11:30</div><div class="tcard"><div class="act">🛍️ 南竿自由活動・補買伴手禮（全員）</div><div class="note">高粱酒・花生糖・魚卵・老酒麵線 · 媽媽逛老街</div></div></div>
+      <div class="timeline-item key"><div class="time-label">11:45</div><div class="tcard hl-red"><div class="act">🧳 A組 Check out・出發南竿機場</div><div class="note">B組送到路口道別</div></div></div>
+    </div>
+
+    <div class="split-banner a-banner">
+      <div class="sb-icon">✈️</div>
+      <div>
+        <h3>12:50 — A組分別，平安回家</h3>
+        <p>爸爸・媽媽・妹妹 | 南竿立榮 → 12:50出發 → 13:55台中落地</p>
+      </div>
+    </div>
+
+    <div class="section-title">⏱ 時間表（B組 · 下午）</div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="time-label">13:00</div><div class="tcard"><div class="act">🍱 B組午餐（輕鬆吃）</div><div class="note">碼頭附近小食堂・準備行李渡輪</div></div></div>
+      <div class="timeline-item go"><div class="time-label">13:30</div><div class="tcard hl-green"><div class="act">⛴️ 渡輪 南竿→北竿 出發</div><div class="note">福澳碼頭 · 約 20 分鐘 · 160元/人</div></div></div>
+      <div class="timeline-item"><div class="time-label">14:00</div><div class="tcard"><div class="act">🧳 北竿・抵達塘岐碼頭 → 計程車往芹壁村</div></div></div>
+      <div class="timeline-item"><div class="time-label">14:30</div><div class="tcard"><div class="act">🏘️ 芹壁村 Check in</div><div class="note">提前告知民宿協助搬行李上坡道</div></div></div>
+      <div class="timeline-item"><div class="time-label">14:30–17:30</div><div class="tcard"><div class="act">🏘️ 芹壁村漫遊</div><div class="note">觀景台 → 老街石厝 → 海濱・傍晚人潮散去最美</div></div></div>
+      <div class="timeline-item"><div class="time-label">18:30</div><div class="tcard"><div class="act">🌙 芹壁村晚餐</div><div class="note">石厝夜晚燈光獨特・兩人世界</div></div></div>
+    </div>
+
+    <div class="section-title">🗺️ 景點詳情（B組・北竿）</div>
+    <div class="spots-grid">
+      <div class="spot-card nat"><div class="spot-name">🏘️ 芹壁村</div><div class="stars">★★★★★</div><div class="spot-desc">台灣最美閩東石厝聚落「馬祖地中海」。夜晚石厝燈光氛圍極佳，進村步道有坡，需提前告知民宿搬行李。</div><div class="spot-tags"><span class="tag info">住一晚必選</span><span class="tag warn">行李告知民宿</span></div></div>
+    </div>
+  </div>
+
+  <!-- Day 4 -->
+  <div id="day4" class="tab-content">
+    <div class="day-header d4">
+      <div class="day-badge"><div class="dn">4</div><div class="dl">DAY</div></div>
+      <div class="day-info">
+        <h2>北竿探索 → 返高雄</h2>
+        <p>10月19日（週一）· B組 2人 · 橋仔漁村・大坵島 → 渡輪南竿 → 13:40飛高雄</p>
+      </div>
+    </div>
+
+    <div class="alert purple"><span class="alert-icon">⏰</span><div>
+      <strong>時間管控關鍵</strong>南竿 13:40 班機，需 <strong>11:30 前搭渡輪</strong>離開北竿（渡輪20分＋碼頭到機場15分）。
+      建議 11:15 在塘岐碼頭上船。
+    </div></div>
+
     <div class="section-title">⏱ 時間表</div>
     <div class="timeline">
-      <div class="timeline-item"><div class="time-label">08:00–09:00</div><div class="tcard"><div class="act">☀️ 早餐＋芹壁村晨光散步</div><div class="note">晨光下石厝最美，人少清靜</div></div></div>
-      <div class="timeline-item"><div class="time-label">09:00–10:30</div><div class="tcard"><div class="act">🐟 橋仔漁村</div><div class="note">一村八廟・188尊神像・最原味漁鄉・感受當年馬祖氛圍</div></div></div>
-      <div class="timeline-item"><div class="time-label">10:30–11:30</div><div class="tcard"><div class="act">🦌 大坵島梅花鹿（可選）</div><div class="note">橋仔碼頭搭船約5分鐘・野生梅花鹿・需確認當日船班</div></div></div>
-      <div class="timeline-item"><div class="time-label">12:00</div><div class="tcard"><div class="act">⛴️ 渡輪 北竿→南竿</div><div class="note">預留充足時間，不要太趕</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:00</div><div class="tcard"><div class="act">🛍️ 南竿午餐＋補買伴手禮</div></div></div>
-      <div class="timeline-item"><div class="time-label">15:00</div><div class="tcard"><div class="act">🏛️ 南竿機場 check in</div></div></div>
-      <div class="timeline-item"><div class="time-label">16:25</div><div class="tcard"><div class="act">✈️ 立榮 B7-8736 返台中</div><div class="note">抵達台中清泉崗 17:30</div></div></div>
+      <div class="timeline-item"><div class="time-label">07:30–09:00</div><div class="tcard"><div class="act">☀️ 芹壁村晨光早餐</div><div class="note">晨光下石厝最靜謐美麗・最後一個早晨</div></div></div>
+      <div class="timeline-item"><div class="time-label">09:00–10:30</div><div class="tcard"><div class="act">🐟 橋仔漁村</div><div class="note">一村八廟・188尊神像・最原味的北竿漁村・路平輕鬆</div></div></div>
+      <div class="timeline-item"><div class="time-label">09:30–10:30</div><div class="tcard"><div class="act">🦌 大坵島梅花鹿（可選）</div><div class="note">橋仔碼頭搭船約5分鐘・野生梅花鹿近距離接觸・需確認當日船班</div></div></div>
+      <div class="timeline-item"><div class="time-label">10:30</div><div class="tcard"><div class="act">🧳 芹壁村 Check out・前往塘岐碼頭</div></div></div>
+      <div class="timeline-item key"><div class="time-label">11:15</div><div class="tcard hl-red"><div class="act">⛴️ 渡輪 北竿→南竿 出發</div><div class="note">塘岐碼頭 · 160元/人 · 約 20 分鐘 · <strong>不能誤點</strong></div></div></div>
+      <div class="timeline-item"><div class="time-label">11:40</div><div class="tcard"><div class="act">🛬 抵達南竿福澳碼頭</div><div class="note">計程車直奔機場（約 10–15 分鐘）</div></div></div>
+      <div class="timeline-item"><div class="time-label">12:10</div><div class="tcard"><div class="act">🏛️ 南竿機場 Check in・候機</div><div class="note">若時間充裕可在碼頭附近吃最後一頓馬祖米糕</div></div></div>
+      <div class="timeline-item go"><div class="time-label">13:40</div><div class="tcard hl-green"><div class="act">✈️ 華信航空 南竿→高雄</div><div class="note">抵達高雄小港機場 15:20</div></div></div>
     </div>
+
     <div class="section-title">🗺️ 景點詳情</div>
     <div class="spots-grid">
-      <div class="spot-card cul"><div class="spot-name">🐟 橋仔漁村</div><div class="stars">★★★★</div><div class="spot-desc">「一村八廟、188尊神像」，北竿最原味的漁村。現居民不足百人，清幽安靜。無重型爬坡，長輩輕鬆。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🦌 大坵島梅花鹿</div><div class="stars">★★★★</div><div class="spot-desc">從橋仔碼頭搭船約5分鐘。野生梅花鹿在島上自由走動，近距離接觸。視時間決定。</div><div class="spot-tags"><span class="tag info">可選加入</span><span class="tag warn">確認船班</span></div></div>
+      <div class="spot-card cul"><div class="spot-name">🐟 橋仔漁村</div><div class="stars">★★★★</div><div class="spot-desc">「一村八廟、188尊神像」，北竿最原味的漁村。現居民不足百人，清幽安靜，路面平坦好走。</div><div class="spot-tags"><span class="tag free">免費</span></div></div>
+      <div class="spot-card nat"><div class="spot-name">🦌 大坵島梅花鹿</div><div class="stars">★★★★</div><div class="spot-desc">從橋仔碼頭搭船約5分鐘，野生梅花鹿在島上自由走動，可近距離接觸。若玩大坵需 09:00 前出發。</div><div class="spot-tags"><span class="tag info">可選加入</span><span class="tag warn">確認船班</span></div></div>
     </div>
   </div>
 
   <!-- 氣候備案 -->
   <div id="backup" class="tab-content">
     <div class="section-title">🌧️ 氣候備案行程</div>
-    <div class="alert yellow"><span class="alert-icon">🌪️</span><div><strong>9月底風險</strong>偶有颱風尾或強風，最大風險是南北竿渡輪取消。<strong>務必投保旅遊不便險。</strong></div></div>
+    <div class="alert green"><span class="alert-icon">✅</span><div><strong>10月中旬為最佳時段</strong>近三年颱風紀錄：2023、2024、2025 年 10月中旬前後均無重大颱風直接影響馬祖，是全年最穩定的旅遊窗口。</div></div>
+    <div class="alert yellow"><span class="alert-icon">🌬️</span><div><strong>東北季風</strong>10月起東北季風增強，偶有渡輪延誤或取消。<strong>務必投保旅遊不便險。</strong></div></div>
+
     <div class="weather-card">
-      <h3>🔴 備案A：渡輪取消，全程留南竿</h3>
+      <h3>🔴 備案A：南北竿渡輪取消（B組受影響）</h3>
       <table class="styled-table" style="margin-bottom:0">
-        <thead><tr><th>時間</th><th>活動</th><th>說明</th></tr></thead>
+        <thead><tr><th>影響</th><th>調整方案</th></tr></thead>
         <tbody>
-          <tr><td>Day2 上午</td><td>媽祖巨神像＋馬祖酒廠</td><td>原計畫保留</td></tr>
-          <tr><td>Day2 下午</td><td>藍眼淚生態館</td><td>室內展館，9月戶外機率低，室內版最佳替代</td></tr>
-          <tr><td>Day2 傍晚</td><td>津沙聚落</td><td>老漁村，石板路平緩，適合長輩</td></tr>
-          <tr><td>Day3 上午</td><td>馬祖民俗文物館</td><td>全室內，雨天最適合</td></tr>
+          <tr><td>Day3 B組無法去北竿</td><td>繼續留南竿，升級民宿，深度南竿第三天</td></tr>
+          <tr><td>Day4 B組回程</td><td>直接從南竿機場飛高雄（不需繞北竿）</td></tr>
+          <tr><td>北竿景點補償</td><td>改走津沙聚落夜景、東莒島（若有班次）</td></tr>
         </tbody>
       </table>
     </div>
@@ -303,9 +492,9 @@
       <table class="styled-table" style="margin-bottom:0">
         <thead><tr><th>原計畫</th><th>調整</th></tr></thead>
         <tbody>
-          <tr><td>芹壁村長時間戶外拍照</td><td>縮短至1小時，進室內咖啡廳避雨</td></tr>
-          <tr><td>大坵島梅花鹿</td><td>取消（小船遇浪不安全）</td></tr>
-          <tr><td>鐵堡（若下雨）</td><td>短暫停留，重心移到坑道景點</td></tr>
+          <tr><td>鐵堡（下雨/強風）</td><td>縮短停留，重心移北海坑道（全地下）</td></tr>
+          <tr><td>芹壁村長時間戶外</td><td>縮短至1小時，進室內咖啡廳避雨</td></tr>
+          <tr><td>大坵島（浪大）</td><td>取消，改橋仔漁村延伸遊覽</td></tr>
         </tbody>
       </table>
     </div>
@@ -314,8 +503,8 @@
       <ol class="indoor-list">
         <li><strong>北海坑道</strong>—地下，完全不受雨影響</li>
         <li><strong>大漢據點坑道內部</strong>—軍事設施，室內參觀</li>
-        <li><strong>藍眼淚生態館</strong>—室內展館</li>
-        <li><strong>馬祖民俗文物館</strong>—適合下雨天深度了解歷史</li>
+        <li><strong>藍眼淚生態館</strong>—室內展館，9–10月有機率</li>
+        <li><strong>馬祖民俗文物館</strong>—雨天深度了解歷史</li>
         <li><strong>馬祖酒廠</strong>—室內參觀品酒</li>
       </ol>
     </div>
@@ -323,54 +512,81 @@
 
   <!-- 預算 -->
   <div id="budget" class="tab-content">
-    <div class="section-title">💰 預算估算（4人）</div>
+    <div class="section-title">💰 A組預算（爸媽＋妹，3人，南竿2晚）</div>
     <table class="styled-table">
       <thead><tr><th>項目</th><th>單價</th><th>說明</th><th>小計</th></tr></thead>
       <tbody>
-        <tr><td><strong>去程機票</strong></td><td>~2,351元/人</td><td>B7-8731，9/25，台中→南竿</td><td>9,404元</td></tr>
-        <tr><td><strong>回程機票</strong></td><td>~2,351元/人</td><td>B7-8736，9/27，南竿→台中</td><td>9,404元</td></tr>
-        <tr><td><strong>南北竿渡輪</strong></td><td>160元/人×來回</td><td>4人共2趟</td><td>1,280元</td></tr>
-        <tr><td><strong>機車租賃</strong></td><td>300元/台/天</td><td>2台×2天</td><td>1,200元</td></tr>
-        <tr><td><strong>住宿 南竿</strong></td><td>2,500–3,000元/晚</td><td>介壽村，4人房×1晚</td><td>2,500–3,000元</td></tr>
-        <tr><td><strong>住宿 北竿</strong></td><td>3,000–4,000元/晚</td><td>芹壁村，4人房×1晚</td><td>3,000–4,000元</td></tr>
-        <tr><td><strong>飲食</strong></td><td>—</td><td>3天×4人</td><td>5,000–7,000元</td></tr>
-        <tr><td><strong>伴手禮＋雜費</strong></td><td>—</td><td>高粱酒、花生、魚卵等</td><td>2,000元</td></tr>
+        <tr><td><strong>去程機票</strong></td><td>~2,300元/人</td><td>立榮 台中→南竿 10/16 11:05</td><td>~6,900元</td></tr>
+        <tr><td><strong>回程機票</strong></td><td>~2,300元/人</td><td>立榮 南竿→台中 10/18 12:50</td><td>~6,900元</td></tr>
+        <tr><td><strong>住宿 南竿（2晚）</strong></td><td>—</td><td>見共費</td><td>—</td></tr>
+        <tr><td><strong>飲食（3天）</strong></td><td>~500元/人/天</td><td>3人×3天</td><td>~4,500元</td></tr>
+        <tr><td colspan="3" style="font-weight:700;">A組小計（不含共費）</td><td><strong>~18,300元</strong></td></tr>
       </tbody>
     </table>
+
+    <div class="section-title">💰 B組預算（我＋太太，2人，南竿2晚＋北竿1晚）</div>
+    <table class="styled-table">
+      <thead><tr><th>項目</th><th>單價</th><th>說明</th><th>小計</th></tr></thead>
+      <tbody>
+        <tr><td><strong>去程機票</strong></td><td>~2,500元/人</td><td>華信 高雄→南竿 10/16 11:15</td><td>~5,000元</td></tr>
+        <tr><td><strong>回程機票</strong></td><td>~2,500元/人</td><td>華信 南竿→高雄 10/19 13:40</td><td>~5,000元</td></tr>
+        <tr><td><strong>南北竿渡輪</strong></td><td>160元/人×來回</td><td>2人×2趟</td><td>640元</td></tr>
+        <tr><td><strong>北竿住宿（10/18・1晚）</strong></td><td>2,000–2,800元/晚</td><td>芹壁村 2人房</td><td>~2,000–2,800元</td></tr>
+        <tr><td><strong>住宿 南竿（2晚）</strong></td><td>—</td><td>見共費</td><td>—</td></tr>
+        <tr><td><strong>飲食（4天）</strong></td><td>~600元/人/天</td><td>2人×4天</td><td>~4,800元</td></tr>
+        <tr><td colspan="3" style="font-weight:700;">B組小計（不含共費）</td><td><strong>~17,440–18,240元</strong></td></tr>
+      </tbody>
+    </table>
+
+    <div class="section-title">💰 共同費用（5人平攤）</div>
+    <table class="styled-table">
+      <thead><tr><th>項目</th><th>說明</th><th>費用</th></tr></thead>
+      <tbody>
+        <tr><td><strong>南竿住宿 10/16（1晚）</strong></td><td>5人・介壽村 2間房</td><td>4,000–6,000元</td></tr>
+        <tr><td><strong>南竿住宿 10/17（1晚）</strong></td><td>5人・介壽村 2間房</td><td>4,000–6,000元</td></tr>
+        <tr><td><strong>機車租賃</strong></td><td>2台×2天</td><td>1,200元</td></tr>
+        <tr><td><strong>伴手禮</strong></td><td>高粱酒、花生、魚卵等（共買分裝）</td><td>~3,000元</td></tr>
+        <tr><td colspan="2" style="font-weight:700;">共費小計</td><td><strong>~12,200–16,200元</strong></td></tr>
+      </tbody>
+    </table>
+
     <div class="budget-total">
-      <div>4人總費用</div>
-      <div class="amount">約 33,788 – 37,288 元</div>
-      <div style="opacity:0.9">平均每人 <strong>約 8,447 – 9,322 元</strong></div>
+      <div>5人總費用估算</div>
+      <div class="amount">約 47,000 – 53,000 元</div>
+      <div style="opacity:0.9;font-size:13px;margin-top:4px;">A組每人 ~8,000–9,000元・B組每人 ~11,000–12,500元</div>
     </div>
   </div>
 
   <!-- 清單 -->
   <div id="checklist" class="tab-content">
-    <div class="section-title">📋 訂票清單（優先）</div>
+    <div class="section-title">📋 訂票清單（最優先）</div>
     <ul class="checklist">
-      <li>訂去程：B7-8731，9/25，11:20 台中→南竿（立榮官網 uniair.com.tw）</li>
-      <li>訂回程：B7-8736，9/27，16:25 南竿→台中</li>
-      <li>投保旅遊不便險（含班機延誤/取消）</li>
-      <li>訂南竿民宿（介壽村，4人房，9/25一晚）</li>
-      <li>訂北竿芹壁村民宿（4人房，9/26一晚，告知協助搬行李）</li>
+      <li><span class="group-tag group-a">A組</span> 去程：立榮 台中→南竿，10/16 11:05（3人）uniair.com.tw</li>
+      <li><span class="group-tag group-a">A組</span> 回程：立榮 <strong>南竿</strong>→台中，10/18 12:50（3人）</li>
+      <li><span class="group-tag group-b">B組</span> 去程：華信 高雄→南竿，10/16 11:15（2人）mandarin-airlines.com</li>
+      <li><span class="group-tag group-b">B組</span> 回程：華信 南竿→高雄，10/19 13:40（2人）</li>
+      <li><span class="group-tag group-all">全員</span> 投保旅遊不便險（含班機取消/延誤）</li>
+      <li><span class="group-tag group-all">全員</span> 訂南竿民宿（介壽村，5人/2間房，10/16–17 共2晚）</li>
+      <li><span class="group-tag group-b">B組</span> 訂北竿芹壁村民宿（2人房，10/18 一晚）</li>
     </ul>
     <div class="divider"></div>
     <div class="section-title">📋 出發前一週</div>
     <ul class="checklist">
-      <li>查 9/25 北海坑道當日潮汐（電話 0836-25630）</li>
-      <li>確認南北竿渡輪最新時刻表（業者2024/12已更換）</li>
-      <li>確認大坵島當日船班（若要去梅花鹿）</li>
+      <li>查 10/16 北海坑道當日潮汐（電話 0836-25630）</li>
+      <li>確認南北竿渡輪最新時刻表（11:15 前有班次即可）</li>
+      <li>確認大坵島 10/19 早班船班（若要去梅花鹿）</li>
+      <li>確認馬祖酒廠 10/17 有無特殊休館</li>
     </ul>
     <div class="divider"></div>
     <div class="section-title">🎒 必帶物品</div>
     <ul class="checklist">
-      <li>身分證（搭機必備）</li>
+      <li>身分證（搭機必備，全員）</li>
       <li>現金（馬祖部分地方不收信用卡）</li>
       <li>防滑鞋（鐵堡岩礁地形）</li>
-      <li>防風外套（9月底海風漸強）</li>
-      <li>防曬 SPF50+・帽子・太陽眼鏡</li>
-      <li>暈機藥（備用）</li>
-      <li>輕便行李（芹壁村進村有坡道）</li>
+      <li>厚外套（10月東北季風，早晚約 18–22°C）</li>
+      <li>防曬 SPF50+・帽子・太陽眼鏡（白天仍有陽光）</li>
+      <li>暈機藥・暈船藥（備用）</li>
+      <li>輕便行李（芹壁村進村有坡道，B組注意）</li>
     </ul>
     <div class="divider"></div>
     <div class="section-title">🍽️ 必吃清單</div>
@@ -382,14 +598,590 @@
       <li>高粱酒（酒廠購買）</li>
     </ul>
   </div>
+
+  <!-- 景點地圖 -->
+  <div id="mapview" class="tab-content">
+
+    <div class="section-title">🗺️ 南竿景點地圖</div>
+    <div class="map-legend">
+      <span><span class="legend-dot" style="background:#1a6b8a"></span>景點</span>
+      <span><span class="legend-dot" style="background:#c0392b"></span>美食</span>
+      <span><span class="legend-dot" style="background:#3a7d44"></span>購物</span>
+      <span><span class="legend-dot" style="background:#e67e22"></span>交通/住宿</span>
+    </div>
+    <iframe class="gmap-frame"
+      src="https://maps.google.com/maps?q=南竿鄉,連江縣&t=m&z=13&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+
+    <div style="font-size:13px;font-weight:700;color:var(--text-light);margin-bottom:10px;">👆 點下方任一景點 → 直接開 Google Maps 導航</div>
+    <div class="loc-grid">
+      <a class="loc-card" href="https://maps.google.com/?q=北海坑道+馬祖南竿" target="_blank">
+        <div class="loc-name">⚓ 北海坑道</div>
+        <div class="loc-note">手鑿地下水道・查潮汐</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card" href="https://maps.google.com/?q=大漢據點+馬祖" target="_blank">
+        <div class="loc-name">🏔️ 大漢據點</div>
+        <div class="loc-note">山頂砲陣地・免費</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card" href="https://maps.google.com/?q=鐵堡+馬祖南竿" target="_blank">
+        <div class="loc-name">🌅 鐵堡</div>
+        <div class="loc-note">日落首選・穿防滑鞋</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card" href="https://maps.google.com/?q=媽祖巨神像+馬祖" target="_blank">
+        <div class="loc-name">🙏 媽祖巨神像</div>
+        <div class="loc-note">馬港天后宮・免費</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card" href="https://maps.google.com/?q=津沙聚落+馬祖" target="_blank">
+        <div class="loc-name">🏘️ 津沙聚落</div>
+        <div class="loc-note">閩東漁村・路平長輩友善</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card food" href="https://maps.google.com/?q=介壽獅子市場+南竿" target="_blank">
+        <div class="loc-name">🥣 介壽獅子市場</div>
+        <div class="loc-note">鼎邊糊・虫弟餅・06:00起</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card food" href="https://maps.google.com/?q=蝦寮食堂+馬祖" target="_blank">
+        <div class="loc-name">🦐 蝦寮食堂</div>
+        <div class="loc-note">人氣No.1・必訂位</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card food" href="https://maps.google.com/?q=好食人家+馬祖南竿" target="_blank">
+        <div class="loc-name">🍱 好食人家</div>
+        <div class="loc-note">無菜單料理・需預訂</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card shop" href="https://maps.google.com/?q=馬祖酒廠" target="_blank">
+        <div class="loc-name">🍶 馬祖酒廠</div>
+        <div class="loc-note">復興村208號・免費參觀</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card shop" href="https://maps.google.com/?q=兵兵友禮+南竿" target="_blank">
+        <div class="loc-name">🛍️ 兵兵友禮</div>
+        <div class="loc-note">介壽村87-1號・伴手禮一站</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card trans" href="https://maps.google.com/?q=南竿機場" target="_blank">
+        <div class="loc-name">✈️ 南竿機場</div>
+        <div class="loc-note">A組10/18・B組10/19回程</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card trans" href="https://maps.google.com/?q=福澳港+南竿" target="_blank">
+        <div class="loc-name">⛴️ 福澳碼頭</div>
+        <div class="loc-note">往北竿渡輪・160元20分</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+    </div>
+
+    <div class="section-title">🗺️ 北竿景點地圖</div>
+    <iframe class="gmap-frame"
+      src="https://maps.google.com/maps?q=北竿鄉,連江縣&t=m&z=13&output=embed"
+      allowfullscreen loading="lazy"></iframe>
+
+    <div style="font-size:13px;font-weight:700;color:var(--text-light);margin-bottom:10px;">👆 點下方任一景點 → 直接開 Google Maps 導航</div>
+    <div class="loc-grid">
+      <a class="loc-card" href="https://maps.google.com/?q=芹壁聚落+北竿" target="_blank">
+        <div class="loc-name">🏘️ 芹壁村</div>
+        <div class="loc-note">台灣最美石厝・住一晚</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card" href="https://maps.google.com/?q=橋仔漁村+北竿" target="_blank">
+        <div class="loc-name">🐟 橋仔漁村</div>
+        <div class="loc-note">一村八廟・188尊神像</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card" href="https://maps.google.com/?q=大坵島+馬祖" target="_blank">
+        <div class="loc-name">🦌 大坵島</div>
+        <div class="loc-note">橋仔碼頭搭船5分鐘</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card food" href="https://maps.google.com/?q=阿婆魚麵+北竿" target="_blank">
+        <div class="loc-name">🍜 阿婆魚麵</div>
+        <div class="loc-note">中山路168號・40年老店</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card food" href="https://maps.google.com/?q=鏡沃小吃部+芹壁" target="_blank">
+        <div class="loc-name">🍝 鏡沃小吃部</div>
+        <div class="loc-note">芹壁村75號・老酒麵線</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card food" href="https://maps.google.com/?q=嚐客+北竿" target="_blank">
+        <div class="loc-name">🍝 嚐客</div>
+        <div class="loc-note">老酒麵線・炒狗麵</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card shop" href="https://maps.google.com/?q=協和食品行+北竿" target="_blank">
+        <div class="loc-name">🛍️ 協和食品行</div>
+        <div class="loc-note">中正路229號・北竿伴手禮</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card hotel" href="https://maps.google.com/?q=芹壁水漾民宿" target="_blank">
+        <div class="loc-name">🏨 芹壁水漾民宿</div>
+        <div class="loc-note">芹壁村62號・B組住宿首選</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+      <a class="loc-card trans" href="https://maps.google.com/?q=塘岐碼頭+北竿" target="_blank">
+        <div class="loc-name">⛴️ 塘岐碼頭</div>
+        <div class="loc-note">往南竿・B組10/19 11:15</div>
+        <div class="loc-open">📍 Google Maps →</div>
+      </a>
+    </div>
+
+    <div class="alert blue"><span class="alert-icon">📱</span><div>手機上點擊按鈕會直接開啟 <strong>Google Maps App</strong> 導航，桌機則開啟網頁版。</div></div>
+  </div>
+
+  <!-- 十大必買 -->
+  <div id="buybuy" class="tab-content">
+    <div class="section-title">🛍️ 馬祖十大必買伴手禮</div>
+    <div class="alert green"><span class="alert-icon">📅</span><div><strong>資料：114–115年（2025–2026）</strong>｜南竿一站購足：<strong>兵兵友禮</strong>（介壽村87-1號，08:30–22:00）｜北竿：<strong>協和食品行</strong>（中正路229號，08:00–21:30）</div></div>
+    <div class="item-grid">
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">1</span><span class="item-name">🍶 東湧陳年高粱酒</span></div>
+        <div class="item-desc">東引酒廠出品，總統府指定迎賓酒，馬祖最具代表性伴手禮，有多種年份可選。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 南竿・馬祖酒廠（復興村208號）</span>
+          <span class="item-price-tag">數百~數千元/瓶</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">2</span><span class="item-name">🍜 老酒麵線</span></div>
+        <div class="item-desc">馬祖老酒（糯米釀）為底，含高湯包＋麻油包＋老酒包三合一組合，送禮首選。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 南竿・兵兵友禮</span>
+          <span class="item-price-tag">NT$200–350/盒</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">3</span><span class="item-name">🐟 魚麵（乾燥包）</span></div>
+        <div class="item-desc">馬加魚或鰻魚攪碎製麵、曬乾包裝，可煮湯麵、乾麵或炸成脆片，北竿特產。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 北竿・協和食品行</span>
+          <span class="item-price-tag">NT$150–250/包</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">4</span><span class="item-name">🐚 淡菜系列零食</span></div>
+        <div class="item-desc">馬祖特有貝類，有淡菜乾、淡菜XO方塊酥、淡菜厚洋芋片等創意零食，話題十足。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 南竿・兵兵友禮｜北竿・協和食品行</span>
+          <span class="item-price-tag">方塊酥NT$150・洋芋片NT$120</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">5</span><span class="item-name">🍡 芙蓉酥／馬祖酥</span></div>
+        <div class="item-desc">閩東風甜點，類似地瓜酥，酥脆不黏牙，有花生、黑糖、紅麴多種口味。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 北竿・協和食品行｜南竿各名產店</span>
+          <span class="item-price-tag">NT$100–200/盒</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">6</span><span class="item-name">🌸 金銀花糖</span></div>
+        <div class="item-desc">馬祖野生金銀花製成，SGS檢驗無農藥，清涼潤喉，島嶼限定，輕便好帶。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 南竿・兵兵友禮｜南竿機場</span>
+          <span class="item-price-tag">NT$80–150/包</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">7</span><span class="item-name">🧋 老酒奶茶沖泡包</span></div>
+        <div class="item-desc">老酒＋奶茶，酒香不澀，隨身沖泡包裝，冷熱皆宜，馬祖創意新品，適合送禮。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 南竿・兵兵友禮｜機場伴手禮店</span>
+          <span class="item-price-tag">NT$150–250/盒</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">8</span><span class="item-name">🍷 藍眼淚葡萄酒</span></div>
+        <div class="item-desc">與西班牙酒莊合作，維岱荷葡萄花青素呈藍色，馬祖限定話題酒款，打卡必買。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 南竿・兵兵友禮</span>
+          <span class="item-price-tag">NT$300–500/瓶</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">9</span><span class="item-name">🥫 紅糟醬</span></div>
+        <div class="item-desc">老酒發酵沉底的渣料，可炒紅糟肉、紅糟炒飯，帶回家重現馬祖家常味。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 南竿・林義和工坊｜各名產店</span>
+          <span class="item-price-tag">NT$100–180/罐</span>
+        </div>
+      </div>
+
+      <div class="item-card buy">
+        <div class="item-header"><span class="item-num">10</span><span class="item-name">🥯 繼光餅（袋裝）</span></div>
+        <div class="item-desc">超群繼光餅的袋裝版，方便帶回，也有餅乾化版本，戚繼光傳統麵餅的現代詮釋。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">📍 南竿・超群繼光餅（介壽村）｜天美軒</span>
+          <span class="item-price-tag">NT$100–200/袋</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 十大必吃 -->
+  <div id="eateat" class="tab-content">
+    <div class="section-title">🍽️ 馬祖十大必吃美食</div>
+    <div class="alert red"><span class="alert-icon">⏰</span><div><strong>重要！</strong>介壽獅子市場早市 <strong>06:00–11:00</strong>（假日前）；蝦寮食堂超熱門，<strong>強烈建議提前訂位</strong>。</div></div>
+    <div class="alert blue"><span class="alert-icon">📅</span><div>資料：114–115年（2025–2026）</div></div>
+
+    <div class="section-title" style="font-size:16px;color:var(--fort);">🏝️ 南竿</div>
+    <div class="item-grid">
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">1</span><span class="item-name">🥣 鼎邊糊</span></div>
+        <div class="item-desc">薄如河粉的麵糊皮搭海鮮高湯，馬祖早餐代表。不到08:30就賣完，<strong>必須早起！</strong></div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 阿妹的店｜介壽獅子市場2樓（363號2F）</span>
+          <span class="item-price-tag">NT$70</span>
+        </div>
+      </div>
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">2</span><span class="item-name">🥚 虫弟餅（蟳餅）</span></div>
+        <div class="item-desc">米漿外皮包高麗菜＋粉絲＋荷包蛋去炸，外酥內嫩。限定早晨，週一公休。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 陳家虫弟餅｜獅子市場2樓（334-3號）</span>
+          <span class="item-price-tag">加蛋肉NT$50</span>
+        </div>
+      </div>
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">3</span><span class="item-name">🥐 窯烤繼光餅</span></div>
+        <div class="item-desc">現烤芝麻厚餅，窯烤香氣十足，可加蔥蛋夾著吃，明代戚繼光流傳下來的主食。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 寶利軒｜介壽獅子市場2樓</span>
+          <span class="item-price-tag">NT$20/個</span>
+        </div>
+      </div>
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">4</span><span class="item-name">🦐 老酒蒸白蝦・佛手</span></div>
+        <div class="item-desc">馬祖人氣No.1餐廳。必點：紅糟炒飯、老酒蝦、淡菜、佛手。<strong>強烈建議訂位！</strong></div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 蝦寮食堂｜南竿牛角聚落附近</span>
+          <span class="item-price-tag">每道NT$200–400</span>
+        </div>
+      </div>
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">5</span><span class="item-name">🥟 地瓜餃</span></div>
+        <div class="item-desc">炸地瓜餃是南竿銅板美食代表，搭配各式滷味，平價飽足，在地人愛吃。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 大眾飲食店｜南竿仁愛村</span>
+          <span class="item-price-tag">NT$50–80</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-title" style="font-size:16px;color:var(--green);">🏝️ 北竿</div>
+    <div class="item-grid">
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">6</span><span class="item-name">🍜 手工魚麵湯・炸魚麵</span></div>
+        <div class="item-desc">超過40年老店，12道工法手工製作，魚麵Q彈鮮甜。炸魚麵像蝦餅，<strong>必吃！</strong>週一可能公休。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 阿婆魚麵店｜北竿中山路168號</span>
+          <span class="item-price-tag">綜合魚麵NT$120</span>
+        </div>
+      </div>
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">7</span><span class="item-name">🍜 手工魚麵（比較版）</span></div>
+        <div class="item-desc">與阿婆魚麵並列北竿兩大必吃，口感略有不同，來北竿兩家都試試！</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 魚之香魚麵行｜北竿</span>
+          <span class="item-price-tag">NT$100–150</span>
+        </div>
+      </div>
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">8</span><span class="item-name">🍝 老酒麵線（北竿版）</span></div>
+        <div class="item-desc">老酒香氣撲鼻，搭配紅糟肉＋荷包蛋，再點炒狗麵過癮，湯頭濃郁迷人。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 嚐客｜北竿</span>
+          <span class="item-price-tag">NT$150</span>
+        </div>
+      </div>
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">9</span><span class="item-name">🍝 老酒麵線（芹壁版）</span></div>
+        <div class="item-desc">隱身芹壁聚落的小吃部，Q彈麵條＋濃郁湯頭，住芹壁當晚吃最方便。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 鏡沃小吃部｜北竿芹壁村75號</span>
+          <span class="item-price-tag">NT$150｜10:00–13:30・16:00–18:30</span>
+        </div>
+      </div>
+
+      <div class="item-card eat">
+        <div class="item-header"><span class="item-num">10</span><span class="item-name">🍱 無菜單時令海鮮</span></div>
+        <div class="item-desc">南竿首家無菜單料理，主廚自配時令海鮮菜色，呈現最道地馬祖風味，需提前預訂。</div>
+        <div class="item-meta">
+          <span class="item-shop-tag">🏪 好食人家｜南竿（需預訂）</span>
+          <span class="item-price-tag">每人NT$350–500</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 住宿推薦 -->
+  <div id="hotel" class="tab-content">
+    <div class="section-title">🏨 住宿推薦</div>
+    <div class="alert green"><span class="alert-icon">📅</span><div><strong>資料：114–115年（2025–2026）</strong>｜10月仍屬旺季，建議 <strong>8月前訂房</strong>，熱門芹壁民宿更需提早。</div></div>
+
+    <!-- 南竿策略 -->
+    <div class="strategy-box">
+      <h3>🏠 南竿住宿策略（5人・2間房・10/16~10/18 共2晚）</h3>
+      <div style="font-size:14px;line-height:1.9;">
+        <div>👴👩 <strong>長輩房</strong>（爸媽）→ 優先選<strong>有電梯</strong>民宿，介壽村市區步行方便</div>
+        <div>👫🙋 <strong>第二房</strong>（我+太太+妹妹）→ 同民宿訂第二間，或同區步行距離內</div>
+        <div>📍 核心考量：靠近介壽村獅子市場（早市）+ 步行可達福澳碼頭（搭渡輪）</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:17px;color:var(--ocean);">🏝️ 南竿推薦（10/16–10/18，共2晚）</div>
+    <div class="hotel-grid">
+
+      <div class="hotel-card top-pick">
+        <div class="hotel-header">
+          <span class="hotel-num">1</span>
+          <span class="hotel-name">神農飯店</span>
+          <span class="hotel-badge badge-top">⭐ 首選</span>
+          <span class="hotel-badge badge-elder">🧓 長輩友善</span>
+        </div>
+        <div class="hotel-location">📍 介壽村216號（縣政府正對面・南竿最核心位置）</div>
+        <div class="hotel-price">NT$2,000–4,000/晚</div>
+        <div class="hotel-features">飯店規格管理，步行可達7-11、郵局、農會超市、各餐廳、伴手禮店。家族旅遊交通最便利的選擇，訂2間房分配長輩與年輕人。</div>
+        <div class="hotel-book">📲 Agoda / Booking.com 搜尋「神農飯店 南竿」</div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-header">
+          <span class="hotel-num">2</span>
+          <span class="hotel-name">多麗商務民宿</span>
+          <span class="hotel-badge badge-elder">🧓 有電梯</span>
+        </div>
+        <div class="hotel-location">📍 介壽村市區核心</div>
+        <div class="hotel-price">NT$2,000–3,600/晚</div>
+        <div class="hotel-features">有電梯，長輩上下樓免爬梯，商務型乾淨整潔，接受國旅卡，介壽村市區步行方便。</div>
+        <div class="hotel-book">📲 <a href="https://hotels.matsu.idv.tw" target="_blank">hotels.matsu.idv.tw</a></div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-header">
+          <span class="hotel-num">3</span>
+          <span class="hotel-name">麗堤（依嬤本館）民宿</span>
+          <span class="hotel-badge badge-elder">🧓 有電梯＋餐廳</span>
+        </div>
+        <div class="hotel-location">📍 介壽村</div>
+        <div class="hotel-price">NT$2,200–4,000/晚</div>
+        <div class="hotel-features">有電梯 + 附設餐廳，長輩早餐不用出門解決。可訂2間房，爸媽一間、妹妹或夫妻一間，家族行程強推。</div>
+        <div class="hotel-book">📲 <a href="https://hotels.matsu.idv.tw" target="_blank">hotels.matsu.idv.tw</a></div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-header">
+          <span class="hotel-num">4</span>
+          <span class="hotel-name">璞宿商旅</span>
+        </div>
+        <div class="hotel-location">📍 介壽村</div>
+        <div class="hotel-price">NT$2,400–8,000/晚（依房型）</div>
+        <div class="hotel-features">一樓附設餐廳，較高規格設施，預算彈性大，適合想住得舒適一點的選擇。</div>
+        <div class="hotel-book">📲 <a href="https://hotels.matsu.idv.tw" target="_blank">hotels.matsu.idv.tw</a></div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-header">
+          <span class="hotel-num">5</span>
+          <span class="hotel-name">白日夢花園海景民宿</span>
+          <span class="hotel-badge badge-sea">🚢 近福澳港</span>
+        </div>
+        <div class="hotel-location">📍 福澳村51號（步行5分鐘抵福澳港）</div>
+        <div class="hotel-price">依房型，約NT$1,800–3,000/晚</div>
+        <div class="hotel-features">附近有全家（30公尺）、星巴克，自營機車出租超方便。⚠️ <strong>無電梯</strong>，長輩若爬樓梯不便請謹慎，可作為夫妻房選擇。</div>
+        <div class="hotel-book">📞 0978-988-303 ｜ <a href="http://daydreamhostel.com" target="_blank">daydreamhostel.com</a></div>
+      </div>
+
+    </div>
+
+    <!-- 北竿策略 -->
+    <div class="strategy-box">
+      <h3>🏘️ 北竿芹壁村住宿策略（2人・B組・10/18 共1晚）</h3>
+      <div style="font-size:14px;line-height:1.9;">
+        <div>✅ 必選<strong>村內石厝老屋</strong>，感受閩東氛圍與夜晚燈光</div>
+        <div>✅ 確認訂<strong>套房（私人衛浴）</strong>，避免共用衛浴（雅房）</div>
+        <div>⚠️ 石厝空間較小、隔音較差，輕裝入住較舒適</div>
+        <div>⏰ 進村步道有坡，提前通知民宿協助搬行李上坡</div>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:17px;color:var(--purple);">🏝️ 北竿芹壁村推薦（10/18，1晚，2人）</div>
+    <div class="hotel-grid">
+
+      <div class="hotel-card beigan top-pick">
+        <div class="hotel-header">
+          <span class="hotel-num">1</span>
+          <span class="hotel-name">芹壁水漾民宿</span>
+          <span class="hotel-badge badge-top">⭐ 首選</span>
+          <span class="hotel-badge badge-sea">🌊 海景</span>
+          <span class="hotel-badge badge-stone">🪨 石厝</span>
+        </div>
+        <div class="hotel-location">📍 芹壁村62號（村內）｜合法民宿262號</div>
+        <div class="hotel-price">水漾兩人房，依季節定價</div>
+        <div class="hotel-features">花崗岩石頭屋外觀保留最完整，依山傍海，日落時分海面波光粼粼，兼顧老屋氛圍與現代舒適，強力推薦。</div>
+        <div class="hotel-book">📞 0836-55686 / 0972-060-591<br>📲 <a href="https://booking.owlting.com/waterripple" target="_blank">booking.owlting.com/waterripple</a></div>
+      </div>
+
+      <div class="hotel-card beigan">
+        <div class="hotel-header">
+          <span class="hotel-num">2</span>
+          <span class="hotel-name">芹壁休閒渡假村</span>
+          <span class="hotel-badge badge-sea">🌊 海景陽台</span>
+          <span class="hotel-badge badge-stone">🪨 石厝</span>
+        </div>
+        <div class="hotel-location">📍 芹壁村37號</div>
+        <div class="hotel-price">NT$2,500–3,200/晚</div>
+        <div class="hotel-features">傳統閩式石屋，陽台可賞夕陽，提供機場/碼頭接送服務，早餐有現做繼光餅漢堡，住宿體驗完整。</div>
+        <div class="hotel-book">📲 <a href="https://qinbe37.com.tw" target="_blank">qinbe37.com.tw</a></div>
+      </div>
+
+      <div class="hotel-card beigan">
+        <div class="hotel-header">
+          <span class="hotel-num">3</span>
+          <span class="hotel-name">芹壁山莊</span>
+          <span class="hotel-badge badge-sea">🌊 居高俯瞰</span>
+          <span class="hotel-badge badge-stone">🪨 石厝</span>
+        </div>
+        <div class="hotel-location">📍 芹壁村85號（聚落制高點）</div>
+        <div class="hotel-price">NT$2,500/晚起</div>
+        <div class="hotel-features">北竿最高民宿，可俯瞰整個芹壁村與龜島，全套房配置（無共用衛浴困擾），視野絕佳。</div>
+        <div class="hotel-book">📲 <a href="http://chinbe85.com.tw" target="_blank">chinbe85.com.tw</a></div>
+      </div>
+
+      <div class="hotel-card beigan">
+        <div class="hotel-header">
+          <span class="hotel-num">4</span>
+          <span class="hotel-name">芹壁愛芹小築</span>
+          <span class="hotel-badge badge-sea">🌊 全房海景</span>
+        </div>
+        <div class="hotel-location">📍 芹壁村11-2號</div>
+        <div class="hotel-price">NT$2,600–4,200/晚</div>
+        <div class="hotel-features">客房均有海景，預算適中，芹壁村內步行方便，適合想看海又不想花太多的選擇。</div>
+        <div class="hotel-book">📲 <a href="https://hotels.matsu.idv.tw/qinbi.php" target="_blank">馬祖住宿通・芹壁</a></div>
+      </div>
+
+      <div class="hotel-card beigan">
+        <div class="hotel-header">
+          <span class="hotel-num">5</span>
+          <span class="hotel-name">芹壁美芹居（Machigo）</span>
+          <span class="hotel-badge badge-sea">🌊 第一排海景</span>
+        </div>
+        <div class="hotel-location">📍 芹壁聚落內・正前方即大海</div>
+        <div class="hotel-price">NT$2,600–3,000/晚起</div>
+        <div class="hotel-features">海景第一排，老闆親切提供接送服務，私人衛浴，躺在床上就能看海，浪漫感十足。</div>
+        <div class="hotel-book">📲 Agoda / Booking.com 搜尋「芹壁美芹居」</div>
+      </div>
+
+    </div>
+
+    <div class="section-title" style="font-size:16px;">📲 訂房資源</div>
+    <table class="styled-table">
+      <thead><tr><th>平台</th><th>用途</th><th>連結</th></tr></thead>
+      <tbody>
+        <tr><td>馬祖住宿通（南竿）</td><td>南竿民宿完整列表</td><td><a href="https://hotels.matsu.idv.tw" target="_blank">hotels.matsu.idv.tw</a></td></tr>
+        <tr><td>馬祖住宿通（芹壁）</td><td>芹壁村民宿列表</td><td><a href="https://hotels.matsu.idv.tw/qinbi.php" target="_blank">hotels.matsu.idv.tw/qinbi.php</a></td></tr>
+        <tr><td>Agoda</td><td>南竿比價訂房</td><td>搜尋「南竿 馬祖」</td></tr>
+        <tr><td>芹壁水漾官網</td><td>直訂最優惠</td><td><a href="https://booking.owlting.com/waterripple" target="_blank">booking.owlting.com/waterripple</a></td></tr>
+        <tr><td>芹壁休閒渡假村</td><td>有接送服務</td><td><a href="https://qinbe37.com.tw" target="_blank">qinbe37.com.tw</a></td></tr>
+      </tbody>
+    </table>
+
+  </div>
+
 </div>
 
 <footer>
-  馬祖自由行 · 2026/09/25–09/27 · 4人家族 · 台中出發<br>
-  資訊截至2025年5月，出發前請再次確認班機及景點開放狀況
+  馬祖家族旅遊 · 2026/10/16–10/19 · A組台中↔南竿・B組高雄↔南竿<br>
+  資訊截至2026年5月，出發前請再次確認班機及景點開放狀況
 </footer>
 
 <script>
+var mapsInit = false;
+
+function mkIcon(color) {
+  return L.divIcon({
+    html: '<div style="width:14px;height:14px;border-radius:50%;background:'+color+';border:2px solid white;box-shadow:0 1px 5px rgba(0,0,0,0.4)"></div>',
+    iconSize:[14,14], iconAnchor:[7,7], className:''
+  });
+}
+
+function initMaps() {
+  if (mapsInit) return;
+  mapsInit = true;
+
+  var tiles = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+  var attr = '© <a href="https://openstreetmap.org">OpenStreetMap</a>';
+
+  /* ── 南竿 ── */
+  var mn = L.map('map-nangan').setView([26.155, 119.935], 13);
+  L.tileLayer(tiles,{attribution:attr}).addTo(mn);
+
+  var sight = mkIcon('#1a6b8a'), food = mkIcon('#c0392b'), shop = mkIcon('#3a7d44'), base = mkIcon('#e67e22');
+
+  /* 景點 */
+  L.marker([26.1698,119.9518],{icon:sight}).addTo(mn).bindPopup('<b>⚓ 北海坑道</b><br>手鑿地下水道，配合潮汐入場');
+  L.marker([26.1448,119.9551],{icon:sight}).addTo(mn).bindPopup('<b>🏔️ 大漢據點</b><br>砲陣地，長輩只逛1F平台');
+  L.marker([26.1452,119.9480],{icon:sight}).addTo(mn).bindPopup('<b>🌅 鐵堡</b><br>日落黃金景點，穿防滑鞋');
+  L.marker([26.1636,119.9328],{icon:sight}).addTo(mn).bindPopup('<b>🙏 媽祖巨神像</b><br>馬港天后宮，免費・長輩友善');
+  L.marker([26.1512,119.9128],{icon:sight}).addTo(mn).bindPopup('<b>🏘️ 津沙聚落</b><br>最完整閩東漁村，路平好走');
+  /* 美食 */
+  L.marker([26.1645,119.9468],{icon:food}).addTo(mn).bindPopup('<b>🥣 介壽獅子市場</b><br>鼎邊糊・虫弟餅・繼光餅<br><small>06:00–11:00，早起必搶</small>');
+  L.marker([26.1680,119.9370],{icon:food}).addTo(mn).bindPopup('<b>🦐 蝦寮食堂</b><br>馬祖人氣No.1，必訂位！');
+  L.marker([26.1645,119.9455],{icon:food}).addTo(mn).bindPopup('<b>🍱 好食人家</b><br>無菜單料理，需預訂<br>每人NT$350–500');
+  /* 購物 */
+  L.marker([26.1648,119.9462],{icon:shop}).addTo(mn).bindPopup('<b>🛍️ 兵兵友禮創意工坊</b><br>介壽村87-1號<br>08:30–22:00');
+  L.marker([26.1558,119.9388],{icon:shop}).addTo(mn).bindPopup('<b>🍶 馬祖酒廠</b><br>復興村208號，免費參觀品酒');
+  L.marker([26.1648,119.9450],{icon:shop}).addTo(mn).bindPopup('<b>🥯 超群繼光餅</b><br>介壽村，袋裝繼光餅');
+  /* 碼頭/機場 */
+  L.marker([26.1597,119.9582],{icon:base}).addTo(mn).bindPopup('<b>✈️ 南竿機場</b><br>A組10/18・B組10/19回程');
+  L.marker([26.1700,119.9430],{icon:base}).addTo(mn).bindPopup('<b>⛴️ 福澳碼頭</b><br>往北竿渡輪，160元・20分');
+
+  /* ── 北竿 ── */
+  var mb = L.map('map-beigan').setView([26.233, 119.978], 13);
+  L.tileLayer(tiles,{attribution:attr}).addTo(mb);
+
+  /* 景點 */
+  L.marker([26.2335,119.9736],{icon:sight}).addTo(mb).bindPopup('<b>🏘️ 芹壁村</b><br>台灣最美閩東石厝，住一晚必選');
+  L.marker([26.2415,119.9749],{icon:sight}).addTo(mb).bindPopup('<b>🐟 橋仔漁村</b><br>一村八廟，188尊神像');
+  L.marker([26.2530,119.9558],{icon:sight}).addTo(mb).bindPopup('<b>🦌 大坵島</b><br>橋仔碼頭搭船5分鐘，梅花鹿');
+  /* 美食 */
+  L.marker([26.2278,119.9965],{icon:food}).addTo(mb).bindPopup('<b>🍜 阿婆魚麵店</b><br>中山路168號，40年老店<br>11:00–13:30（週一可能休）');
+  L.marker([26.2280,119.9960],{icon:food}).addTo(mb).bindPopup('<b>🍜 魚之香魚麵行</b><br>北竿兩大魚麵之一');
+  L.marker([26.2282,119.9963],{icon:food}).addTo(mb).bindPopup('<b>🍝 嚐客</b><br>老酒麵線+炒狗麵，NT$150');
+  L.marker([26.2335,119.9737],{icon:food}).addTo(mb).bindPopup('<b>🍝 鏡沃小吃部</b><br>芹壁村75號，老酒麵線<br>10:00–13:30・16:00–18:30');
+  /* 購物 */
+  L.marker([26.2282,119.9955],{icon:shop}).addTo(mb).bindPopup('<b>🛍️ 協和食品行</b><br>中正路229號<br>08:00–21:30');
+  /* 碼頭/機場 */
+  L.marker([26.2278,119.9975],{icon:base}).addTo(mb).bindPopup('<b>⛴️ 塘岐碼頭</b><br>往南竿渡輪，B組10/19 11:15搭');
+  L.marker([26.2281,119.9968],{icon:base}).addTo(mb).bindPopup('<b>✈️ 北竿機場</b><br>（A組改程備用）');
+}
+
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
