@@ -202,6 +202,9 @@
     <button class="tab-btn" onclick="switchTab('day3',this)">Day 3 爸媽回台</button>
     <button class="tab-btn" onclick="switchTab('day4',this)">Day 4 💑 夫妻日</button>
     <button class="tab-btn" onclick="switchTab('hotel1018',this)">🏨 10/18 住宿選評</button>
+    <button class="tab-btn" onclick="switchTab('ferry',this)">⛴️ 渡輪時刻</button>
+    <button class="tab-btn" onclick="switchTab('souvenirs',this)">🛍️ 伴手禮</button>
+    <button class="tab-btn" onclick="switchTab('altspots',this)">🗺️ 備案景點</button>
     <button class="tab-btn" onclick="switchTab('backup',this)">🌧 氣候備案</button>
     <button class="tab-btn" onclick="switchTab('budget',this)">💰 預算</button>
     <button class="tab-btn" onclick="switchTab('checklist',this)">清單</button>
@@ -316,6 +319,7 @@
       <div class="timeline-item"><div class="time-label">14:30–17:30</div><div class="tcard"><div class="act">🏘️ 芹壁村漫遊</div><div class="note">觀景台 → 老街石厝 → 海濱・傍晚人潮散去最美</div></div></div>
       <div class="timeline-item"><div class="time-label">18:00</div><div class="tcard"><div class="act">🌙 芹壁村晚餐</div><div class="note">石厝夜晚燈光氛圍獨特</div></div></div>
     </div>
+    <div class="alert red"><span class="alert-icon">⛴️</span><div><strong>北竿→南竿最後渡輪 17:30</strong>晚餐後已無法搭渡輪回南竿，原計畫在北竿住一晚（芹壁村民宿），Day 3 早上再回南竿。</div></div>
     <div class="section-title">🗺️ 景點詳情</div>
     <div class="spots-grid">
       <div class="spot-card cul"><div class="spot-name">🙏 媽祖巨神像</div><div class="stars">★★★★</div><div class="spot-desc">馬港天后宮旁巨型媽祖像，有祈福坑道。免費、無需爬坡，長輩最適合的上午開場。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div></div>
@@ -447,6 +451,234 @@
     </div>
 
     <div class="alert blue" style="margin-top:16px"><span class="alert-icon">💡</span><div><strong>選B備案</strong>若 10/18 當天渡輪停航，臨時改留南竿即可。建議事先查好南竿 1–2 間備用民宿電話，以備不時之需。</div></div>
+  </div>
+
+  <!-- 渡輪時刻 -->
+  <div id="ferry" class="tab-content">
+    <div class="section-title">⛴️ 南北竿島際渡輪時刻表</div>
+    <div class="alert blue"><span class="alert-icon">ℹ️</span><div><strong>業者資訊</strong>南北海運／鴻宇海運（2024年12月起負責南北竿航線）。票價：成人 <strong>160元</strong>，半票80元，航程約15–20分鐘。</div></div>
+    <div class="alert yellow"><span class="alert-icon">⚠️</span><div><strong>重要：最後班次 17:30</strong>北竿→南竿最後班 17:30，晚餐後無法再搭船。本行程 Day 2 在北竿住宿，Day 3 早上回南竿，請依此安排。</div></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px">
+      <div>
+        <div class="section-title" style="font-size:16px">🟢 南竿 → 北竿</div>
+        <table class="styled-table">
+          <thead><tr><th>班次</th><th>起飛時間</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>07:00</td></tr>
+            <tr><td>2</td><td>07:30</td></tr>
+            <tr><td>3</td><td>08:00</td></tr>
+            <tr><td>4</td><td>08:30</td></tr>
+            <tr><td>5</td><td>09:00</td></tr>
+            <tr><td>6</td><td>10:00</td></tr>
+            <tr><td>7</td><td>11:00</td></tr>
+            <tr><td>8</td><td>11:30</td></tr>
+            <tr><td>9</td><td>12:30</td></tr>
+            <tr><td>10</td><td>13:30</td></tr>
+            <tr><td>11</td><td>15:00</td></tr>
+            <tr><td>12</td><td>16:00</td></tr>
+            <tr><td>13</td><td>16:30</td></tr>
+            <tr><td>14</td><td>17:10</td></tr>
+            <tr><td>15</td><td><strong>17:30 最後班</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="section-title" style="font-size:16px">🔵 北竿 → 南竿</div>
+        <table class="styled-table">
+          <thead><tr><th>班次</th><th>起飛時間</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>07:00</td></tr>
+            <tr><td>2</td><td>07:30</td></tr>
+            <tr><td>3</td><td>08:00</td></tr>
+            <tr><td>4</td><td>08:30</td></tr>
+            <tr><td>5</td><td>09:30</td></tr>
+            <tr><td>6</td><td>10:20</td></tr>
+            <tr><td>7</td><td>11:00</td></tr>
+            <tr><td>8</td><td>11:30</td></tr>
+            <tr><td>9</td><td>12:00</td></tr>
+            <tr><td>10</td><td>13:00</td></tr>
+            <tr><td>11</td><td>15:20</td></tr>
+            <tr><td>12</td><td>16:00</td></tr>
+            <tr><td>13</td><td>16:30</td></tr>
+            <tr><td>14</td><td>17:10</td></tr>
+            <tr><td>15</td><td><strong>17:30 最後班</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="alert green"><span class="alert-icon">🔗</span><div><strong>出發前建議確認最新班表（可能因季節/天候調整）</strong><br>
+      ・<a href="https://www.motcmpb.gov.tw/PassengerShip/Schedule?SiteId=1&NodeId=610&ShipLaneNo=C014" target="_blank" style="color:var(--ocean);font-weight:700">交通部航港局 — 馬祖南北竿即時船班</a>（最官方、可即時查詢）<br>
+      ・<a href="https://www.matsu-nsa.gov.tw/articles.aspx?a=2627&l=1" target="_blank" style="color:var(--ocean);font-weight:700">馬祖國家風景區官網 — 島際交通</a><br>
+      ・<a href="https://client.matsu.idv.tw/North-South/index.html" target="_blank" style="color:var(--ocean);font-weight:700">馬祖南北海運官網</a>
+    </div></div>
+
+    <div class="weather-card">
+      <h3>📍 本次行程渡輪使用時機</h3>
+      <table class="styled-table" style="margin-bottom:0">
+        <thead><tr><th>天</th><th>方向</th><th>建議班次</th><th>說明</th></tr></thead>
+        <tbody>
+          <tr><td>Day 2</td><td>南竿 → 北竿</td><td>13:30 班</td><td>酒廠結束後午餐，下午渡輪</td></tr>
+          <tr><td>Day 3</td><td>北竿 → 南竿</td><td>11:00 班（爸媽組）</td><td>趕 12:50 B7-8732，必須這班</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 伴手禮 -->
+  <div id="souvenirs" class="tab-content">
+    <div class="section-title">🛍️ 馬祖10大必買伴手禮</div>
+    <div class="alert blue"><span class="alert-icon">💡</span><div><strong>購買建議</strong>大部分伴手禮在介壽村老街、馬祖酒廠、南竿機場均有販售。預算有限優先買1–4項，酒類注意航班托運規定。</div></div>
+    <div class="spots-grid">
+      <div class="spot-card cul">
+        <div class="spot-name">🥐 繼光餅</div>
+        <div class="stars">★★★★★</div>
+        <div class="spot-desc">馬祖版「漢堡」，烤芝麻餅Q彈鹹香。超群繼光餅曾獲伴手禮票選第一，現場夾蔥燒肉或紅糟鰻最道地。</div>
+        <div class="spot-tags"><span class="tag done">必買第一</span><span class="tag info">現烤限量</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">🍶 高粱酒 / 老酒</div>
+        <div class="stars">★★★★★</div>
+        <div class="spot-desc">東湧陳高（58度）是馬祖代表酒，馬祖酒廠直購最便宜。老酒（紅麴釀造）適合長輩伴手禮。</div>
+        <div class="spot-tags"><span class="tag warn">托運注意</span><span class="tag info">酒廠直購</span></div>
+      </div>
+      <div class="spot-card nat">
+        <div class="spot-name">🍜 魚麵</div>
+        <div class="stars">★★★★★</div>
+        <div class="spot-desc">馬祖特產，用鮸魚、海鰻等魚漿壓製成麵，口感 Q 彈。北竿阿婆魚麵最有名，可帶回家烹煮。</div>
+        <div class="spot-tags"><span class="tag done">北竿特產</span><span class="tag free">常溫可帶</span></div>
+      </div>
+      <div class="spot-card nat">
+        <div class="spot-name">🦪 淡菜</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">馬祖特有淡菜（翡翠貽貝），肉質飽滿，曬乾後可帶回。乾淡菜可煮湯或炒菜，是珍貴的在地海味。</div>
+        <div class="spot-tags"><span class="tag done">唯馬祖有</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">🍺 忍冬啤酒（金銀花）</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">以馬祖特有忍冬花（金銀花）釀製的精釀啤酒，花香清爽，台灣買不到的限定款，送禮高分。</div>
+        <div class="spot-tags"><span class="tag pink">限定款</span><span class="tag warn">托運注意</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">🧆 地瓜餃</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">地瓜皮包花生/肉末內餡，軟Q彈牙，甜鹹口味都有。北竿五行地瓜餃剉冰很有名，也有袋裝可帶走。</div>
+        <div class="spot-tags"><span class="tag info">甜鹹兩款</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">🎂 馬祖酥 / 芙蓉酥</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">包裝精緻，黑糖/海苔/花生綜合口味，機場有售。攜帶方便，常溫保存，適合大量採購送同事。</div>
+        <div class="spot-tags"><span class="tag free">機場有售</span><span class="tag info">常溫</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">🍮 老酒奶茶</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">馬祖老酒風味的奶茶粉包，近年超熱銷，獨特米香帶微甜酒味，朋友試喝都驚豔。</div>
+        <div class="spot-tags"><span class="tag pink">近年爆紅</span><span class="tag free">輕巧好帶</span></div>
+      </div>
+      <div class="spot-card nat">
+        <div class="spot-name">🐟 魚丸 / 魚卵</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">馬祖魚丸彈牙鮮甜，魚卵醃製後鹹鮮下酒。現買現吃或真空包帶回，是最道地的海味伴手禮。</div>
+        <div class="spot-tags"><span class="tag info">真空包裝</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">🔴 紅糟 / 紅麴產品</div>
+        <div class="stars">★★★</div>
+        <div class="spot-desc">釀老酒沉澱的紅麴渣料，可拿來燉肉、醃魚，富含保健成分。紅糟肉醬、紅糟花生也是熱門選項。</div>
+        <div class="spot-tags"><span class="tag info">料理食材</span></div>
+      </div>
+    </div>
+
+    <div class="alert green"><span class="alert-icon">🏪</span><div><strong>哪裡買最好？</strong><br>
+      ・<strong>馬祖酒廠</strong>：高粱酒、老酒、忍冬啤酒直購最便宜<br>
+      ・<strong>介壽村老街</strong>：繼光餅現烤、魚丸、地瓜餃<br>
+      ・<strong>北竿橋仔村/塘岐市場</strong>：淡菜、魚麵、阿婆魚麵（北竿限定）<br>
+      ・<strong>南竿機場免稅區</strong>：馬祖酥、老酒奶茶、精裝禮盒，最後補貨最方便
+    </div></div>
+  </div>
+
+  <!-- 備案景點 -->
+  <div id="altspots" class="tab-content">
+    <div class="section-title">🗺️ 備案景點推薦</div>
+    <div class="alert blue"><span class="alert-icon">💡</span><div><strong>使用時機</strong>原定景點臨時關閉/天氣不佳/時間多出來，或 Day 4 夫妻自由日想新增地點時參考。</div></div>
+
+    <div class="section-title" style="margin-top:8px;font-size:16px">🏖️ 南竿備案景點</div>
+    <div class="spots-grid">
+      <div class="spot-card nat">
+        <div class="spot-name">🏘️ 津沙聚落</div>
+        <div class="stars">★★★★★</div>
+        <div class="spot-desc">南竿最安靜小漁村，石板路、彩繪牆、弧形小沙灘。無商業喧囂，兩人散步最佳。距天后會館開車約10分鐘。</div>
+        <div class="spot-tags"><span class="tag free">免費</span><span class="tag pink">夫妻推薦</span><span class="tag info">Day 4 首選</span></div>
+      </div>
+      <div class="spot-card mil">
+        <div class="spot-name">⛰️ 雲台山（248m）</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">南竿制高點，360度俯瞰全島，晴天可見中國大陸海岸。山頂軍情館。早晨雲霧繚繞尤其壯觀。</div>
+        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">需租機車</span></div>
+      </div>
+      <div class="spot-card mil">
+        <div class="spot-name">🏛️ 勝利堡</div>
+        <div class="stars">★★★</div>
+        <div class="spot-desc">前戰地指揮中心，現改為戰地文化博物館。了解馬祖戰地歷史，爸爸會最有共鳴。</div>
+        <div class="spot-tags"><span class="tag info">博物館</span><span class="tag info">室內景點</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">💙 藍眼淚生態館</div>
+        <div class="stars">★★★</div>
+        <div class="spot-desc">室內模擬藍眼淚展示，全年可參觀。10月戶外觀測機率低，室內版為最佳替代。</div>
+        <div class="spot-tags"><span class="tag info">全室內</span><span class="tag warn">需查開放時間</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">🎭 馬祖民俗文物館</div>
+        <div class="stars">★★★</div>
+        <div class="spot-desc">全室內，展示閩東文化、戰地文物。下雨天或天氣差時最佳備案，適合長輩。</div>
+        <div class="spot-tags"><span class="tag info">全室內</span><span class="tag info">長輩友善</span></div>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-name">🛕 白馬文武大王廟</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">馬港北側海邊廟宇，傳統閩東廟宇建築，坐擁無敵海景。媽祖巨神像附近，可合併參觀。</div>
+        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">媽祖像旁</span></div>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:16px">🏘️ 北竿備案景點</div>
+    <div class="spots-grid">
+      <div class="spot-card mil">
+        <div class="spot-name">📡 芹山播音站</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">曾是全東南亞輸出功率最大的播音站，對中國大陸廣播。廢棄後開放參觀，戰地氣氛濃厚，離芹壁村近。</div>
+        <div class="spot-tags"><span class="tag info">芹壁村旁</span><span class="tag free">免費</span></div>
+      </div>
+      <div class="spot-card nat">
+        <div class="spot-name">⛰️ 壁山觀景台</div>
+        <div class="stars">★★★★★</div>
+        <div class="spot-desc">北竿最高峰，俯瞰芹壁村全景＋龜島＋海面。日出日落都壯觀，是北竿攝影首選制高點。</div>
+        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">攝影聖地</span></div>
+      </div>
+      <div class="spot-card nat">
+        <div class="spot-name">🌊 塘后沙灘</div>
+        <div class="stars">★★★★</div>
+        <div class="spot-desc">北竿最長沙灘，秋冬藍眼淚出沒秘境（10月機率較低但仍有）。旁邊有軍事廢棄機庫，景色特殊。</div>
+        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">藍眼淚秘境</span></div>
+      </div>
+      <div class="spot-card nat">
+        <div class="spot-name">🌿 螺山自然步道</div>
+        <div class="stars">★★★</div>
+        <div class="spot-desc">輕鬆健行步道，沿途有戰地遺址和海景，約40分鐘可完成。適合時間充裕的早晨行程。</div>
+        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">輕度健行</span></div>
+      </div>
+    </div>
+
+    <div class="alert green"><span class="alert-icon">📋</span><div><strong>建議行程組合</strong><br>
+      ・<strong>Day 4 上午（夫妻）</strong>：津沙聚落 → 雲台山 → 機場（不趕、最浪漫）<br>
+      ・<strong>Day 2 有剩餘時間</strong>：芹壁村 → 芹山播音站 → 壁山觀景台夕陽<br>
+      ・<strong>下雨備案</strong>：藍眼淚生態館 → 民俗文物館 → 馬祖酒廠（全室內）
+    </div></div>
   </div>
 
   <!-- 氣候備案 -->
