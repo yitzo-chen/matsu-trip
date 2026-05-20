@@ -198,8 +198,8 @@
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab('overview',this)">總覽</button>
     <button class="tab-btn" onclick="switchTab('day1',this)">Day 1 南竿</button>
-    <button class="tab-btn" onclick="switchTab('day2',this)">Day 2 南→北竿</button>
-    <button class="tab-btn" onclick="switchTab('day3',this)">Day 3 爸媽回台</button>
+    <button class="tab-btn" onclick="switchTab('day2',this)">Day 2 北竿日遊</button>
+    <button class="tab-btn" onclick="switchTab('day3',this)">Day 3 送爸媽・夫妻自由</button>
     <button class="tab-btn" onclick="switchTab('day4',this)">Day 4 💑 夫妻日</button>
     <button class="tab-btn" onclick="switchTab('hotel1018',this)">🏨 10/18 住宿選評</button>
     <button class="tab-btn" onclick="switchTab('ferry',this)">⛴️ 渡輪時刻</button>
@@ -266,8 +266,8 @@
       <thead><tr><th>天數</th><th>日期</th><th>主題</th><th>重點景點</th></tr></thead>
       <tbody>
         <tr><td><strong>Day 1</strong></td><td>10/16（四）</td><td>南竿戰地</td><td>北海坑道・大漢據點・鐵堡日落・介壽村</td></tr>
-        <tr><td><strong>Day 2</strong></td><td>10/17（五）</td><td>南→北竿</td><td>媽祖巨神像・馬祖酒廠・芹壁村</td></tr>
-        <tr><td><strong>Day 3</strong></td><td>10/18（六）</td><td>北竿→爸媽回台</td><td>橋仔漁村・大坵島（可選）・爸媽12:50飛台中</td></tr>
+        <tr><td><strong>Day 2</strong></td><td>10/17（五）</td><td>北竿日遊</td><td>媽祖巨神像・馬祖酒廠・北竿芹壁村（日遊）・17:30末班返南竿</td></tr>
+        <tr><td><strong>Day 3</strong></td><td>10/18（六）</td><td>送爸媽・南竿自由</td><td>伴手禮採購・爸媽12:50飛台中・夫妻津沙聚落</td></tr>
         <tr><td><strong>Day 4</strong></td><td>10/19（日）</td><td>💑 夫妻自由日</td><td>自由探索・13:40 華信飛高雄</td></tr>
       </tbody>
     </table>
@@ -306,25 +306,28 @@
   <div id="day2" class="tab-content">
     <div class="day-header d2">
       <div class="day-badge"><div class="dn">2</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>媽祖巨神像＋酒廠 → 北竿芹壁村</h2><p>10月17日（週五）· 上午南竿・下午渡輪到北竿</p></div>
+      <div class="day-info"><h2>媽祖巨神像＋酒廠 → 北竿芹壁村日遊</h2><p>10月17日（週五）· 上午南竿・下午渡輪北竿・17:30末班船返南竿</p></div>
     </div>
     <div class="alert yellow"><span class="alert-icon">⏰</span><div><strong>酒廠午休注意</strong>馬祖酒廠 11:30 關閉，09:30 前往，11:00 前離開。</div></div>
+    <div class="alert red"><span class="alert-icon">⚠️</span><div><strong>17:30 末班渡輪不能誤點</strong>北竿→南竿末班船 17:30，否則全員困在北竿。<strong>17:00 前必須出發前往塘岐碼頭。</strong></div></div>
     <div class="section-title">⏱ 時間表</div>
     <div class="timeline">
       <div class="timeline-item"><div class="time-label">08:30–09:15</div><div class="tcard"><div class="act">🙏 媽祖巨神像（馬港）</div><div class="note">免費・祈福坑道・長輩最適合</div></div></div>
       <div class="timeline-item"><div class="time-label">09:30–11:00</div><div class="tcard"><div class="act">🍶 馬祖酒廠</div><div class="note">參觀釀酒・品嚐・買伴手禮（高粱酒、魚卵、花生）</div><div class="warn">⚠️ 11:30 前離開</div></div></div>
-      <div class="timeline-item"><div class="time-label">11:00–12:30</div><div class="tcard"><div class="act">🍱 午餐＋整理行李 check out</div><div class="note">天后會館 check out，行李寄放</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:30</div><div class="tcard"><div class="act">⛴️ 渡輪 南竿→北竿</div><div class="note">福澳碼頭出發・約20分鐘・160元/人</div></div></div>
-      <div class="timeline-item"><div class="time-label">14:00</div><div class="tcard"><div class="act">🧳 芹壁村 Check in</div><div class="note">計程車從塘岐碼頭・提前告知民宿協助搬行李</div></div></div>
-      <div class="timeline-item"><div class="time-label">14:30–17:30</div><div class="tcard"><div class="act">🏘️ 芹壁村漫遊</div><div class="note">觀景台 → 老街石厝 → 海濱・傍晚人潮散去最美</div></div></div>
-      <div class="timeline-item"><div class="time-label">18:00</div><div class="tcard"><div class="act">🌙 芹壁村晚餐</div><div class="note">石厝夜晚燈光氛圍獨特</div></div></div>
+      <div class="timeline-item"><div class="time-label">11:30–13:00</div><div class="tcard"><div class="act">🍱 南竿午餐</div><div class="note">飽餐一頓，下午準備渡輪</div></div></div>
+      <div class="timeline-item go"><div class="time-label">13:30</div><div class="tcard hl-green"><div class="act">⛴️ 渡輪 南竿→北竿（全家5人）</div><div class="note">福澳碼頭出發・約20分鐘・160元/人</div></div></div>
+      <div class="timeline-item"><div class="time-label">14:00</div><div class="tcard"><div class="act">🧳 抵達塘岐碼頭・計程車往芹壁村</div></div></div>
+      <div class="timeline-item"><div class="time-label">14:30–17:00</div><div class="tcard"><div class="act">🏘️ 芹壁村漫遊（日遊）</div><div class="note">觀景台 → 老街石厝 → 海濱・傍晚人潮散去最美</div></div></div>
+      <div class="timeline-item key"><div class="time-label">17:00</div><div class="tcard hl-red"><div class="act">⚠️ 趕回塘岐碼頭</div><div class="note">時間緊！先行集合，步行或計程車回碼頭</div></div></div>
+      <div class="timeline-item key"><div class="time-label">17:30</div><div class="tcard hl-red"><div class="act">⛴️ 末班渡輪 北竿→南竿（全家5人）</div><div class="note">塘岐碼頭・160元/人・約20分鐘・<strong>不能誤點</strong></div></div></div>
+      <div class="timeline-item"><div class="time-label">18:10</div><div class="tcard"><div class="act">🛬 抵達南竿福澳碼頭</div></div></div>
+      <div class="timeline-item"><div class="time-label">19:00</div><div class="tcard"><div class="act">🍽️ 5人共進晚餐（最後一個5人夜晚）</div><div class="note">挑一間好餐廳，不趕場</div></div></div>
     </div>
-    <div class="alert red"><span class="alert-icon">⛴️</span><div><strong>北竿→南竿最後渡輪 17:30</strong>晚餐後已無法搭渡輪回南竿，原計畫在北竿住一晚（芹壁村民宿），Day 3 早上再回南竿。</div></div>
     <div class="section-title">🗺️ 景點詳情</div>
     <div class="spots-grid">
       <div class="spot-card cul"><div class="spot-name">🙏 媽祖巨神像</div><div class="stars">★★★★</div><div class="spot-desc">馬港天后宮旁巨型媽祖像，有祈福坑道。免費、無需爬坡，長輩最適合的上午開場。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div></div>
       <div class="spot-card cul"><div class="spot-name">🍶 馬祖酒廠</div><div class="stars">★★★★</div><div class="spot-desc">馬祖高粱酒發源地，免費參觀釀酒流程，現場品嚐。必買：高粱酒、魚卵、花生。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">午休11:30-13:40</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🏘️ 芹壁村</div><div class="stars">★★★★★</div><div class="spot-desc">台灣最美閩東石厝聚落「馬祖地中海」。住一晚體驗夜晚寧靜石厝氛圍，進村步道有坡，提前告知民宿搬行李。</div><div class="spot-tags"><span class="tag info">住一晚必選</span><span class="tag warn">行李告知民宿</span></div></div>
+      <div class="spot-card nat"><div class="spot-name">🏘️ 芹壁村（日遊）</div><div class="stars">★★★★★</div><div class="spot-desc">台灣最美閩東石厝聚落「馬祖地中海」。傍晚人潮散去後最美，進村步道有坡，長輩慢行。日遊模式：17:00前需出發回碼頭。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">17:00前離開</span><span class="tag info">長輩可達</span></div></div>
     </div>
   </div>
 
@@ -332,23 +335,26 @@
   <div id="day3" class="tab-content">
     <div class="day-header d3">
       <div class="day-badge"><div class="dn">3</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>橋仔漁村 → 爸媽飛台中・夫妻留島</h2><p>10月18日（週六）· 爸媽12:50飛台中 · 夫妻晚上留宿待定</p></div>
+      <div class="day-info"><h2>送爸媽返台 · 夫妻南竿二人世界</h2><p>10月18日（週六）· 全程南竿 · 爸媽12:50飛台中 · 夫妻津沙聚落</p></div>
     </div>
-    <div class="alert yellow"><span class="alert-icon">✈️</span><div><strong>爸媽組回程注意</strong>立榮 B7-8732 南竿 12:50 起飛，需在 11:00 前搭渡輪北竿→南竿，12:20 前到機場報到。</div></div>
+    <div class="alert yellow"><span class="alert-icon">✈️</span><div><strong>爸媽組回程注意</strong>立榮 B7-8732 南竿 12:50 起飛，建議 <strong>11:45 前往機場</strong>，12:20 前到機場報到。全程在南竿，不需渡輪。</div></div>
     <div class="alert blue"><span class="alert-icon">✈️</span><div><strong>班機取消備案</strong>東北季風影響時可候補下班次，或改搭台馬之星回基隆（約8小時）。</div></div>
-    <div class="section-title">⏱ 時間表（全員）</div>
+    <div class="section-title">⏱ 時間表（全員・上午）</div>
     <div class="timeline">
-      <div class="timeline-item"><div class="time-label">08:00–09:00</div><div class="tcard"><div class="act">☀️ 早餐＋芹壁村晨光散步</div><div class="note">晨光下石厝最美，人少清靜</div></div></div>
-      <div class="timeline-item"><div class="time-label">09:00–10:30</div><div class="tcard"><div class="act">🐟 橋仔漁村</div><div class="note">一村八廟・188尊神像・最原味漁鄉</div></div></div>
-      <div class="timeline-item"><div class="time-label">10:30–11:00</div><div class="tcard"><div class="act">🦌 大坵島梅花鹿（可選）</div><div class="note">橋仔碼頭搭船約5分鐘・需確認當日船班</div></div></div>
-      <div class="timeline-item"><div class="time-label">11:00</div><div class="tcard"><div class="act">⛴️ 爸媽組搭渡輪 北竿→南竿</div><div class="note">必須趕上，準時抵達福澳碼頭</div><div class="warn">⚠️ 爸媽組12:50 B7-8732飛台中，不能遲！</div></div></div>
+      <div class="timeline-item"><div class="time-label">08:00–09:30</div><div class="tcard"><div class="act">☀️ 早餐＋介壽村晨光散步（全員）</div><div class="note">最後一個5人早晨</div></div></div>
+      <div class="timeline-item"><div class="time-label">09:30–11:30</div><div class="tcard"><div class="act">🛍️ 伴手禮補買（全員）</div><div class="note">高粱酒・花生糖・魚麵・繼光餅</div></div></div>
+      <div class="timeline-item key"><div class="time-label">11:45</div><div class="tcard hl-red"><div class="act">🧳 爸媽前往南竿機場</div><div class="note">計程車約10分鐘・提前出發</div></div></div>
       <div class="timeline-item"><div class="time-label">12:50</div><div class="tcard"><div class="act">✈️ 爸媽組 立榮 B7-8732 返台中</div><div class="note">抵達台中清泉崗 13:55</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:00後</div><div class="tcard"><div class="act">💑 夫妻自由時光開始</div><div class="note">下午自由探索，10/18 晚住宿（見住宿選評分頁）</div></div></div>
     </div>
-    <div class="section-title">🗺️ 景點詳情</div>
+    <div class="section-title">⏱ 時間表（夫妻・下午）</div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="time-label">13:00</div><div class="tcard"><div class="act">🍱 夫妻午餐</div><div class="note">放鬆，不趕</div></div></div>
+      <div class="timeline-item"><div class="time-label">14:00–17:00</div><div class="tcard"><div class="act">🏘️ 津沙聚落散步</div><div class="note">南竿最完整閩東漁村・石板路平緩・沙灘漫步・日落最美</div></div></div>
+      <div class="timeline-item"><div class="time-label">19:00</div><div class="tcard"><div class="act">🌙 夫妻晚餐・馬祖海鮮</div><div class="note">兩人世界第一晚・好好慶祝</div></div></div>
+    </div>
+    <div class="section-title">🗺️ 景點詳情（夫妻・南竿）</div>
     <div class="spots-grid">
-      <div class="spot-card cul"><div class="spot-name">🐟 橋仔漁村</div><div class="stars">★★★★</div><div class="spot-desc">「一村八廟、188尊神像」，北竿最原味的漁村。現居民不足百人，清幽安靜。無重型爬坡，長輩輕鬆。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🦌 大坵島梅花鹿</div><div class="stars">★★★★</div><div class="spot-desc">從橋仔碼頭搭船約5分鐘。野生梅花鹿在島上自由走動，近距離接觸。視時間決定。</div><div class="spot-tags"><span class="tag info">可選加入</span><span class="tag warn">確認船班</span></div></div>
+      <div class="spot-card rom"><div class="spot-name">🏘️ 津沙聚落</div><div class="stars">★★★★</div><div class="spot-desc">南竿保存最完整的閩東老漁村，石板小路平緩，面朝沙灘，老厝風味十足。傍晚日落前最美，遊人少，夫妻散步最佳。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag pink">夫妻首選</span></div></div>
     </div>
   </div>
 
@@ -362,7 +368,7 @@
     <div class="section-title">⏱ 建議時間表</div>
     <div class="timeline">
       <div class="timeline-item"><div class="time-label">08:00–09:30</div><div class="tcard"><div class="act">☕ 悠閒早餐・民宿慢起</div><div class="note">不用趕、不用顧長輩，享受兩人早晨</div></div></div>
-      <div class="timeline-item"><div class="time-label">09:30–11:30</div><div class="tcard"><div class="act">🗺️ 自由探索（視昨晚住宿地點）</div><div class="note">南竿：津沙聚落・雲台山・藍眼淚生態館<br>北竿：芹壁村再漫步・壁山景觀</div></div></div>
+      <div class="timeline-item"><div class="time-label">09:30–11:30</div><div class="tcard"><div class="act">🗺️ 南竿自由探索</div><div class="note">雲台山・藍眼淚生態館・或在介壽村慢逛</div></div></div>
       <div class="timeline-item"><div class="time-label">12:00</div><div class="tcard"><div class="act">🍱 最後午餐＋補買伴手禮</div><div class="note">回南竿・高粱酒・花生・魚卵補貨</div></div></div>
       <div class="timeline-item"><div class="time-label">12:30</div><div class="tcard"><div class="act">🏛️ 南竿機場 check in</div></div></div>
       <div class="timeline-item"><div class="time-label">13:40</div><div class="tcard"><div class="act">✈️ 華信 AE-7926 返高雄</div><div class="note">抵達高雄清泉崗 15:20・訂位代號 E7L8A5</div></div></div>
