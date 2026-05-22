@@ -6,228 +6,207 @@
 <title>馬祖自由行 2026/10/16–19 | 南竿＋北竿</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Canva-style palette */
-    --teal:        #0F766E;
-    --teal-light:  #14B8A6;
-    --teal-dark:   #0D5F58;
-    --teal-50:     #F0FDFA;
-    --amber:       #D97706;
-    --amber-light: #F59E0B;
-    --amber-50:    #FFFBEB;
-    --purple:      #6D28D9;
-    --purple-light:#8B5CF6;
-    --purple-50:   #F5F3FF;
-    --red:         #DC2626;
-    --red-50:      #FEF2F2;
-    --green:       #059669;
-    --green-50:    #ECFDF5;
-    --blue:        #1D4ED8;
-    --blue-50:     #EFF6FF;
-    --fort:        #92400E;
-    --fort-light:  #B45309;
-    /* legacy aliases */
-    --ocean:       #0F766E;
-    --ocean-light: #14B8A6;
-    --sand:        #FFF7ED;
-    --sand-dark:   #FED7AA;
-    --pink:        #6D28D9;
-    --pink-light:  #8B5CF6;
-    --yellow:      #F59E0B;
-    /* surfaces */
-    --bg:          #F8FAFC;
-    --surface:     #FFFFFF;
-    --text:        #0F172A;
-    --text-light:  #475569;
-    --text-muted:  #94A3B8;
-    --border:      #E2E8F0;
-    --white:       #ffffff;
-    /* shadows */
-    --shadow-sm:   0 1px 4px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow:      0 4px 20px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
-    --shadow-lg:   0 16px 48px rgba(15,118,110,0.15), 0 4px 16px rgba(0,0,0,0.08);
-    --radius:      16px;
-    --radius-sm:   10px;
+    --sage:        #9BAD8A;
+    --sage-dark:   #7A9468;
+    --sage-light:  #EBF0E5;
+    --sage-bg:     #F2F5EE;
+    --coral:       #C8614A;
+    --coral-light: #D97560;
+    --golden:      #E8A820;
+    --golden-light:#F5C84A;
+    --teal:        #4A90A4;
+    --teal-light:  #6BAEC2;
+    --accent:      #E8472A;
+    --green:       #5A9A6A;
+    --paper:       #EDE9E0;
+    --surface:     #F8F5EF;
+    --text:        #333333;
+    --text-light:  #666666;
+    --text-muted:  #999999;
+    --border:      #D0CBBF;
+    --shadow-sm:   0 1px 4px rgba(0,0,0,0.07);
+    --shadow:      0 4px 16px rgba(0,0,0,0.09);
+    --shadow-lg:   0 8px 32px rgba(0,0,0,0.13);
+    --radius:      12px;
+    --radius-sm:   8px;
     --radius-full: 9999px;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Poppins', 'PingFang TC', 'Noto Sans TC', sans-serif;
-    background: var(--bg);
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    background: var(--paper);
     color: var(--text);
-    line-height: 1.7;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
   }
 
   /* ── HERO ── */
   .hero {
-    background: linear-gradient(135deg, #0D3F5E 0%, #0F766E 50%, #0891B2 100%);
-    color: white;
-    padding: 72px 24px 88px;
+    background: linear-gradient(rgba(130,155,118,0.87), rgba(130,155,118,0.90)),
+                url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/%E8%8A%B9%E5%A3%81%E8%81%9A%E8%90%BD.jpg/1280px-%E8%8A%B9%E5%A3%81%E8%81%9A%E8%90%BD.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 24px 72px;
     text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  /* wave bottom */
-  .hero::before {
-    content: '';
-    position: absolute;
-    bottom: -2px; left: 0; right: 0;
-    height: 52px;
-    background: var(--bg);
-    clip-path: ellipse(55% 100% at 50% 100%);
-  }
-  /* decorative blob */
-  .hero::after {
-    content: '';
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 320px; height: 320px;
-    background: rgba(255,255,255,0.06);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .hero .badge {
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 6px;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.28);
-    backdrop-filter: blur(8px);
-    padding: 6px 20px;
-    border-radius: var(--radius-full);
+  }
+  .hero-circle {
+    width: 200px; height: 200px;
+    background: var(--coral);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 32px rgba(200,97,74,0.35);
+  }
+  .hero-dest {
+    color: white;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 12px;
+    line-height: 1;
+    padding-left: 12px;
+  }
+  .hero-dest-sub {
+    color: rgba(255,255,255,0.8);
     font-size: 13px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
+    letter-spacing: 3px;
+    margin-top: 8px;
+    font-weight: 400;
   }
-  .hero h1 {
-    font-size: clamp(32px, 6vw, 56px);
-    font-weight: 900;
-    margin-bottom: 10px;
-    letter-spacing: -0.5px;
-    text-shadow: 0 2px 24px rgba(0,0,0,0.22);
+  .hero-season {
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    margin-bottom: 8px;
   }
-  .hero .subtitle { font-size: 16px; opacity: 0.88; margin-bottom: 8px; font-weight: 500; }
-  .hero .dates { font-size: 18px; font-weight: 700; opacity: 0.95; margin-bottom: 36px; letter-spacing: 0.5px; }
-  .hero-stats { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
-  .hero-stat {
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.24);
-    backdrop-filter: blur(8px);
-    border-radius: var(--radius);
-    padding: 16px 24px;
-    min-width: 90px;
+  .hero-dates {
+    color: rgba(255,255,255,0.92);
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    font-weight: 400;
   }
-  .hero-stat .num { font-size: 30px; font-weight: 900; display: block; line-height: 1; }
-  .hero-stat .lbl { font-size: 11px; opacity: 0.78; font-weight: 500; margin-top: 5px; display: block; }
+  .hero-info {
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
 
   /* ── CONTAINER ── */
-  .container { max-width: 920px; margin: 0 auto; padding: 36px 20px 80px; }
+  .container { max-width: 900px; margin: 0 auto; padding: 36px 20px 80px; }
 
   /* ── TABS ── */
-  .tabs { display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap; }
+  .tabs {
+    display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap;
+  }
   .tab-btn {
-    padding: 9px 18px;
-    border: 2px solid transparent;
+    padding: 8px 16px;
+    border: 1.5px solid var(--border);
     border-radius: var(--radius-full);
     background: var(--surface);
     color: var(--text-light);
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(.4,0,.2,1);
-    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
     font-family: inherit;
+    letter-spacing: 0.5px;
   }
   .tab-btn.active {
-    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    background: var(--coral);
     color: white;
-    border-color: transparent;
-    box-shadow: 0 4px 16px rgba(15,118,110,0.38);
-    transform: translateY(-1px);
+    border-color: var(--coral);
+    box-shadow: 0 3px 12px rgba(200,97,74,0.32);
   }
   .tab-btn:hover:not(.active) {
-    border-color: var(--teal-light);
-    color: var(--teal);
-    transform: translateY(-1px);
+    border-color: var(--coral-light);
+    color: var(--coral);
   }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
   /* ── SECTION TITLES ── */
   .section-title {
-    font-size: 18px;
-    font-weight: 800;
-    color: var(--text);
-    margin-bottom: 20px;
-    padding-bottom: 12px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    position: relative;
+    gap: 14px;
+    margin: 32px 0 18px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text);
   }
+  .section-title::before,
   .section-title::after {
     content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 48px; height: 3px;
-    background: linear-gradient(90deg, var(--teal), var(--teal-light));
-    border-radius: 2px;
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, var(--sage-dark), var(--coral));
+    border-radius: 1px;
   }
+
+  /* ── LANDSCAPE ILLUSTRATION ── */
+  .landscape {
+    width: 100%;
+    height: 120px;
+    border-radius: var(--radius) var(--radius) 0 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .landscape svg { width: 100%; height: 100%; display: block; }
 
   /* ── DAY HEADERS ── */
   .day-header {
+    background: var(--surface);
     border-radius: var(--radius);
-    padding: 28px 30px;
     margin-bottom: 28px;
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    box-shadow: var(--shadow-lg);
-    color: white;
-    position: relative;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
     overflow: hidden;
   }
-  .day-header::after {
-    content: '';
-    position: absolute;
-    right: -40px; top: -40px;
-    width: 140px; height: 140px;
-    background: rgba(255,255,255,0.09);
-    border-radius: 50%;
-    pointer-events: none;
+  .day-header-body {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 28px;
   }
-  .day-header.d1 { background: linear-gradient(135deg, #0D4F6E 0%, #0891B2 100%); }
-  .day-header.d2 { background: linear-gradient(135deg, #78350F 0%, #B45309 100%); }
-  .day-header.d3 { background: linear-gradient(135deg, #064E3B 0%, #059669 100%); }
-  .day-header.d4 { background: linear-gradient(135deg, #4C1D95 0%, #8B5CF6 100%); }
   .day-badge {
-    background: rgba(255,255,255,0.18);
-    border: 2px solid rgba(255,255,255,0.3);
-    border-radius: var(--radius-sm);
-    padding: 10px 16px;
-    text-align: center;
-    min-width: 76px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
+    color: white;
   }
-  .day-badge .dn { font-size: 28px; font-weight: 900; line-height: 1; }
-  .day-badge .dl { font-size: 11px; opacity: 0.8; font-weight: 600; letter-spacing: 2px; margin-top: 3px; }
-  .day-info h2 { font-size: 20px; font-weight: 800; }
-  .day-info p { font-size: 13px; opacity: 0.85; margin-top: 5px; font-weight: 400; }
+  .day-badge.d1 { background: var(--teal); }
+  .day-badge.d2 { background: var(--golden); }
+  .day-badge.d3 { background: var(--green); }
+  .day-badge.d4 { background: var(--coral); }
+  .day-badge .dn { font-size: 11px; font-weight: 700; letter-spacing: 2px; opacity: 0.9; }
+  .day-badge .dnum { font-size: 30px; font-weight: 700; line-height: 1; }
+  .day-info h2 { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: 1px; }
+  .day-info p { font-size: 13px; color: var(--text-light); margin-top: 4px; }
 
   /* ── FLIGHT CARDS ── */
-  .flight-group { margin-bottom: 28px; }
+  .flight-group { margin-bottom: 24px; }
   .flight-group-label {
     font-size: 12px; font-weight: 700;
     color: var(--text-muted);
-    letter-spacing: 0.8px;
+    letter-spacing: 1px;
     margin-bottom: 10px;
-    text-transform: uppercase;
   }
   .flight-box { display: flex; gap: 14px; flex-wrap: wrap; }
   .flight-card {
@@ -237,54 +216,43 @@
     padding: 20px 22px;
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
-    position: relative;
-    overflow: hidden;
+    border-top: 4px solid var(--teal);
     transition: transform 0.15s, box-shadow 0.15s;
   }
   .flight-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-  .flight-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--teal), var(--teal-light));
-  }
-  .flight-card.ret::before  { background: linear-gradient(90deg, var(--green), #34D399); }
-  .flight-card.alt::before  { background: linear-gradient(90deg, var(--amber), var(--amber-light)); }
-  .flight-card.alt-ret::before { background: linear-gradient(90deg, var(--purple), var(--purple-light)); }
+  .flight-card.ret  { border-top-color: var(--green); }
+  .flight-card.alt  { border-top-color: var(--golden); }
+  .flight-card.alt-ret { border-top-color: var(--coral); }
   .flight-card .fc-label { font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px; }
-  .flight-card .fc-route { font-size: 22px; font-weight: 800; color: var(--teal); }
-  .flight-card.ret .fc-route { color: var(--green); }
-  .flight-card.alt .fc-route { color: var(--amber); }
-  .flight-card.alt-ret .fc-route { color: var(--purple); }
+  .flight-card .fc-route { font-size: 22px; font-weight: 700; color: var(--teal); letter-spacing: 1px; }
+  .flight-card.ret .fc-route  { color: var(--green); }
+  .flight-card.alt .fc-route  { color: var(--golden); }
+  .flight-card.alt-ret .fc-route { color: var(--coral); }
   .flight-card .fc-time { font-size: 15px; font-weight: 700; margin-top: 6px; color: var(--text); }
   .flight-card .fc-flight { font-size: 12px; color: var(--text-light); margin-top: 4px; }
   .flight-card .fc-code {
     font-size: 11px;
-    background: var(--teal-50);
-    color: var(--teal);
-    border-radius: 6px;
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    border-radius: 5px;
     padding: 3px 10px;
     display: inline-block;
     margin-top: 8px;
     font-weight: 700;
     letter-spacing: 0.5px;
   }
-  .flight-card.ret .fc-code  { background: var(--green-50);  color: var(--green); }
-  .flight-card.alt .fc-code  { background: var(--amber-50);  color: var(--amber); }
-  .flight-card.alt-ret .fc-code { background: var(--purple-50); color: var(--purple); }
 
   /* ── TIMELINE ── */
-  .timeline { position: relative; padding-left: 32px; margin-bottom: 36px; }
+  .timeline { position: relative; padding-left: 32px; margin-bottom: 32px; }
   .timeline::before {
     content: '';
     position: absolute;
     left: 10px; top: 8px; bottom: 8px;
     width: 2px;
-    background: linear-gradient(to bottom, var(--teal-light), var(--border));
+    background: linear-gradient(to bottom, var(--teal), var(--border));
     border-radius: 2px;
   }
-  .timeline-item { position: relative; margin-bottom: 20px; }
+  .timeline-item { position: relative; margin-bottom: 18px; }
   .timeline-item::before {
     content: '';
     position: absolute;
@@ -293,74 +261,72 @@
     border-radius: 50%;
     background: var(--teal);
     border: 2px solid white;
-    box-shadow: 0 0 0 3px var(--teal-light);
+    box-shadow: 0 0 0 2px var(--teal-light);
   }
-  .time-label { font-size: 12px; color: var(--teal); font-weight: 700; letter-spacing: 0.3px; margin-bottom: 4px; }
+  .time-label { font-size: 12px; color: var(--teal); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 4px; }
   .tcard {
     background: var(--surface);
     border-radius: var(--radius-sm);
     padding: 14px 18px;
     margin-top: 4px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
+    border-left: 3px solid var(--teal);
     transition: transform 0.15s;
   }
   .tcard:hover { transform: translateX(3px); }
-  .tcard .act { font-weight: 700; font-size: 15px; color: var(--text); }
+  .tcard .act { font-weight: 700; font-size: 14px; color: var(--text); }
   .tcard .note { font-size: 13px; color: var(--text-light); margin-top: 4px; }
-  .tcard .warn { font-size: 12px; color: var(--red); margin-top: 6px; font-weight: 600; }
+  .tcard .warn { font-size: 12px; color: var(--accent); margin-top: 6px; font-weight: 600; }
 
   /* ── SPOT CARDS ── */
-  .spots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 16px; margin-bottom: 32px; }
+  .spots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px,1fr)); gap: 16px; margin-bottom: 28px; }
   .spot-card {
     background: var(--surface);
     border-radius: var(--radius);
-    padding: 22px;
-    box-shadow: var(--shadow);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
-    transition: all 0.2s cubic-bezier(.4,0,.2,1);
-    position: relative;
-    overflow: hidden;
+    border-top: 4px solid var(--sage);
+    transition: all 0.2s;
   }
-  .spot-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 5px;
-    background: linear-gradient(90deg, var(--teal), var(--teal-light));
-  }
-  .spot-card.mil::before { background: linear-gradient(90deg, var(--fort), var(--fort-light)); }
-  .spot-card.nat::before { background: linear-gradient(90deg, var(--green), #34D399); }
-  .spot-card.cul::before { background: linear-gradient(90deg, var(--amber), var(--amber-light)); }
-  .spot-card.rom::before { background: linear-gradient(90deg, var(--purple), var(--purple-light)); }
-  .spot-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-  .spot-name { font-size: 17px; font-weight: 800; margin-bottom: 6px; color: var(--text); }
-  .stars { color: #F59E0B; font-size: 13px; margin-bottom: 8px; letter-spacing: 2px; }
+  .spot-card.mil { border-top-color: var(--teal); }
+  .spot-card.nat { border-top-color: var(--green); }
+  .spot-card.cul { border-top-color: var(--golden); }
+  .spot-card.rom { border-top-color: var(--coral); }
+  .spot-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+  .spot-name { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .stars { color: var(--golden); font-size: 13px; margin-bottom: 8px; }
   .spot-desc { font-size: 13px; color: var(--text-light); line-height: 1.65; }
   .spot-tags { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag { display: inline-block; padding: 3px 10px; border-radius: var(--radius-full); font-size: 11px; font-weight: 600; }
-  .tag.free { background: var(--green-50); color: var(--green); }
-  .tag.warn { background: var(--amber-50); color: var(--fort); }
-  .tag.info { background: var(--blue-50); color: var(--blue); }
-  .tag.done { background: var(--green-50); color: var(--green); }
-  .tag.pink { background: var(--purple-50); color: var(--purple); }
+  .tag {
+    display: inline-block; padding: 3px 10px;
+    border-radius: var(--radius-full);
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .tag.free { background: #E8F5E9; color: var(--green); }
+  .tag.warn { background: #FFF3E0; color: #E65100; }
+  .tag.info { background: #E3F2FD; color: var(--teal); }
+  .tag.done { background: var(--sage-light); color: var(--sage-dark); }
+  .tag.pink { background: #FDE8E4; color: var(--coral); }
 
   /* ── ALERTS ── */
   .alert {
     border-radius: var(--radius-sm);
     padding: 14px 18px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     font-size: 14px;
     display: flex;
-    gap: 14px;
+    gap: 12px;
     align-items: flex-start;
     border: 1px solid transparent;
   }
-  .alert.red    { background: var(--red-50);    border-color: #FECACA; }
-  .alert.yellow { background: var(--amber-50);  border-color: #FDE68A; }
-  .alert.blue   { background: var(--blue-50);   border-color: #BFDBFE; }
-  .alert.green  { background: var(--green-50);  border-color: #A7F3D0; }
-  .alert.pink   { background: var(--purple-50); border-color: #DDD6FE; }
+  .alert.red    { background: #FDE8E4; border-color: #F5C4B8; }
+  .alert.yellow { background: #FFF8E5; border-color: #F5DDAA; }
+  .alert.blue   { background: #E8F4FA; border-color: #B8D8E8; }
+  .alert.green  { background: #E8F5E9; border-color: #B8DEC0; }
+  .alert.pink   { background: #FDE8E4; border-color: #EDB8AA; }
   .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
   .alert strong { display: block; margin-bottom: 3px; font-weight: 700; }
 
@@ -371,45 +337,42 @@
     background: var(--surface);
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: var(--shadow);
-    margin-bottom: 24px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 20px;
     font-size: 14px;
     border: 1px solid var(--border);
   }
-  .styled-table thead tr {
-    background: linear-gradient(135deg, var(--teal), var(--teal-light));
-    color: white;
-  }
-  .styled-table th { padding: 13px 16px; text-align: left; font-weight: 700; font-size: 13px; letter-spacing: 0.3px; }
-  .styled-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text); }
+  .styled-table thead tr { background: var(--sage); color: white; }
+  .styled-table th { padding: 12px 16px; text-align: left; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; }
+  .styled-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text); }
   .styled-table tr:last-child td { border-bottom: none; }
-  .styled-table tr:nth-child(even) td { background: #FAFAFA; }
+  .styled-table tr:nth-child(even) td { background: var(--sage-bg); }
 
   /* ── OVERVIEW GRID ── */
-  .overview-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(190px,1fr)); gap: 14px; margin-bottom: 28px; }
+  .overview-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(185px,1fr)); gap: 14px; margin-bottom: 24px; }
   .ov-card {
     background: var(--surface);
     border-radius: var(--radius);
-    padding: 22px 18px;
+    padding: 20px 16px;
     text-align: center;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
     transition: transform 0.15s;
   }
   .ov-card:hover { transform: translateY(-2px); }
-  .ov-icon { font-size: 30px; margin-bottom: 10px; }
-  .ov-label { font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; }
-  .ov-value { font-size: 14px; font-weight: 700; color: var(--teal); margin-top: 4px; }
+  .ov-icon { font-size: 28px; margin-bottom: 10px; }
+  .ov-label { font-size: 11px; color: var(--text-muted); font-weight: 600; letter-spacing: 1px; }
+  .ov-value { font-size: 13px; font-weight: 700; color: var(--teal); margin-top: 4px; }
 
   /* ── BUDGET ── */
   .budget-total {
-    background: linear-gradient(135deg, #0D3F5E 0%, #0F766E 50%, #0891B2 100%);
+    background: var(--sage);
     color: white;
     border-radius: var(--radius);
     padding: 36px;
     text-align: center;
     margin-top: 20px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
   }
@@ -417,22 +380,22 @@
     content: '';
     position: absolute;
     top: -50px; right: -50px;
-    width: 180px; height: 180px;
-    background: rgba(255,255,255,0.07);
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.1);
     border-radius: 50%;
     pointer-events: none;
   }
-  .budget-total .amount { font-size: 40px; font-weight: 900; display: block; margin: 8px 0; letter-spacing: -1px; }
+  .budget-total .amount { font-size: 38px; font-weight: 700; display: block; margin: 8px 0; letter-spacing: -0.5px; }
 
   /* ── CHECKLIST ── */
   .checklist {
     list-style: none;
     background: var(--surface);
     border-radius: var(--radius);
-    padding: 20px 24px;
-    box-shadow: var(--shadow);
+    padding: 18px 22px;
+    box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
-    margin-bottom: 20px;
+    margin-bottom: 18px;
   }
   .checklist li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; display: flex; align-items: flex-start; gap: 12px; }
   .checklist li:last-child { border-bottom: none; }
@@ -447,7 +410,7 @@
   .indoor-list li::before {
     content: counter(i);
     position: absolute; left: 0; top: 10px;
-    background: linear-gradient(135deg, var(--teal), var(--teal-light));
+    background: var(--teal);
     color: white;
     width: 24px; height: 24px;
     border-radius: 50%;
@@ -456,55 +419,109 @@
   }
 
   /* ── WEATHER CARD ── */
-  .weather-card { background: var(--surface); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 20px; }
-  .weather-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .weather-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border);
+    margin-bottom: 18px;
+  }
+  .weather-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--text); }
 
   /* ── HOTEL COMPARE ── */
-  .hotel-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+  .hotel-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 24px; }
   .hotel-option {
     background: var(--surface);
     border-radius: var(--radius);
-    padding: 24px;
-    box-shadow: var(--shadow);
+    padding: 22px;
+    box-shadow: var(--shadow-sm);
     border: 2px solid var(--border);
     transition: box-shadow 0.2s;
   }
-  .hotel-option.recommended { border-color: var(--green); box-shadow: 0 4px 20px rgba(5,150,105,0.15); }
-  .hotel-option-label { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; }
-  .hotel-option h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
-  .prob-bar-wrap { margin: 14px 0; }
+  .hotel-option.recommended { border-color: var(--green); box-shadow: 0 4px 16px rgba(90,154,106,0.15); }
+  .hotel-option-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 10px; }
+  .hotel-option h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .prob-bar-wrap { margin: 12px 0; }
   .prob-bar-label { font-size: 12px; color: var(--text-light); margin-bottom: 6px; font-weight: 500; }
-  .prob-bar { height: 10px; border-radius: 5px; background: var(--border); overflow: hidden; }
-  .prob-bar-fill { height: 100%; border-radius: 5px; }
-  .prob-bar-fill.high { background: linear-gradient(90deg, var(--green), #34D399); }
-  .prob-bar-fill.mid  { background: linear-gradient(90deg, var(--amber), var(--amber-light)); }
+  .prob-bar { height: 8px; border-radius: 4px; background: var(--border); overflow: hidden; }
+  .prob-bar-fill { height: 100%; border-radius: 4px; }
+  .prob-bar-fill.high { background: linear-gradient(90deg, var(--green), #8FD09F); }
+  .prob-bar-fill.mid  { background: linear-gradient(90deg, var(--golden), var(--golden-light)); }
 
   .hotel-card {
-    background: var(--bg);
+    background: var(--sage-bg);
     border-radius: var(--radius-sm);
-    padding: 18px 20px 18px 24px;
-    margin-bottom: 14px;
+    padding: 16px 18px 16px 22px;
+    margin-bottom: 12px;
     border: 1px solid var(--border);
+    border-left: 4px solid var(--teal);
     position: relative;
-    overflow: hidden;
     transition: transform 0.15s;
   }
   .hotel-card:hover { transform: translateX(3px); }
-  .hotel-card::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 4px;
-    background: linear-gradient(to bottom, var(--teal), var(--teal-light));
-  }
-  .hotel-card.b::before { background: linear-gradient(to bottom, var(--purple), var(--purple-light)); }
-  .hotel-card .hc-name  { font-size: 15px; font-weight: 800; margin-bottom: 5px; }
+  .hotel-card.b { border-left-color: var(--coral); }
+  .hotel-card .hc-name  { font-size: 15px; font-weight: 700; margin-bottom: 5px; }
   .hotel-card .hc-price { font-size: 13px; color: var(--green); font-weight: 700; margin-bottom: 5px; }
   .hotel-card .hc-desc  { font-size: 13px; color: var(--text-light); line-height: 1.6; }
   .hotel-card .hc-tags  { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
 
+  /* ── SPOT PHOTO ── */
+  .spot-img-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 16px;
+  }
+  .spot-img {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.13);
+  }
+  .spot-photo-ph {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px;
+    border: 3px solid white;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+  }
+  .spot-photo-ph.mil { background: linear-gradient(135deg, #C5DDE8, #A8C5D5); }
+  .spot-photo-ph.nat { background: linear-gradient(135deg, #C8DFC8, #A8C8A8); }
+  .spot-photo-ph.cul { background: linear-gradient(135deg, #F5E8C8, #E8D5A8); }
+  .spot-photo-ph.rom { background: linear-gradient(135deg, #F5D8D0, #E8C0B5); }
+  .spot-link {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 5px 14px;
+    background: var(--sage-light);
+    color: var(--teal);
+    border-radius: var(--radius-full);
+    font-size: 12px; font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+    letter-spacing: 0.3px;
+  }
+  .spot-link:hover { background: var(--teal); color: white; }
+
+  /* ── DASHED DIVIDER (知識框) ── */
+  .knowledge-box {
+    border: 2px dashed var(--teal-light);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 16px;
+    background: var(--surface);
+  }
+  .knowledge-box h4 {
+    font-size: 14px; font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+
   /* ── DIVIDER ── */
-  .divider { height: 1px; background: var(--border); margin: 28px 0; }
+  .divider { height: 1px; background: var(--border); margin: 24px 0; }
 
   /* ── FOOTER ── */
   footer {
@@ -515,34 +532,34 @@
     border-top: 1px solid var(--border);
     background: var(--surface);
     font-weight: 500;
+    letter-spacing: 0.5px;
   }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
-    .hero { padding: 48px 16px 72px; }
-    .hero-stats { gap: 10px; }
-    .hero-stat { padding: 12px 16px; }
-    .day-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .hero { padding: 48px 16px 60px; }
+    .hero-circle { width: 160px; height: 160px; }
+    .hero-dest { font-size: 32px; }
+    .day-header-body { flex-direction: column; align-items: flex-start; gap: 12px; }
     .spots-grid { grid-template-columns: 1fr; }
     .overview-grid { grid-template-columns: 1fr 1fr; }
     .flight-box { flex-direction: column; }
     .hotel-compare { grid-template-columns: 1fr; }
+    .section-title { font-size: 14px; letter-spacing: 2px; }
   }
 </style>
 </head>
 <body>
 
+<!-- ── HERO ── -->
 <div class="hero">
-  <div class="badge">🏝️ 家族旅遊 · 2026年10月</div>
-  <h1>馬祖自由行</h1>
-  <p class="subtitle">南竿 ＋ 北竿 · 5人 · 高雄＋台中出發</p>
-  <p class="dates">📅 2026 / 10/16（四）– 10/19（日）</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><span class="num">4</span><span class="lbl">天（夫妻）</span></div>
-    <div class="hero-stat"><span class="num">3</span><span class="lbl">天（爸媽）</span></div>
-    <div class="hero-stat"><span class="num">2</span><span class="lbl">座島</span></div>
-    <div class="hero-stat"><span class="num">8+</span><span class="lbl">個景點</span></div>
+  <div class="hero-circle">
+    <span class="hero-dest">馬 祖</span>
+    <span class="hero-dest-sub">南竿 ・ 北竿</span>
   </div>
+  <div class="hero-season">秋 ・ 2026</div>
+  <div class="hero-dates">2026 / 10/16（四）— 10/19（日）</div>
+  <div class="hero-info">家族旅遊 ・ 5人 ・ 高雄＋台中出發</div>
 </div>
 
 <div class="container">
@@ -630,12 +647,24 @@
 
   <!-- Day 1 -->
   <div id="day1" class="tab-content">
-    <div class="day-header d1">
-      <div class="day-badge"><div class="dn">1</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>南竿戰地巡禮</h2><p>10月16日（週四）· 兩組約同時抵達 · 下午跑三個戰地景點</p></div>
+    <div class="day-header">
+      <div class="landscape">
+        <svg viewBox="0 0 900 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="900" height="120" fill="#C5E8F5"/>
+          <ellipse cx="200" cy="20" rx="80" ry="40" fill="white" opacity="0.85"/>
+          <ellipse cx="320" cy="10" rx="60" ry="30" fill="white" opacity="0.75"/>
+          <ellipse cx="700" cy="25" rx="90" ry="42" fill="white" opacity="0.8"/>
+          <path d="M0 90 Q225 55 450 80 Q675 105 900 65 L900 120 L0 120 Z" fill="#7A9468"/>
+          <path d="M0 105 Q200 85 450 100 Q680 115 900 90 L900 120 L0 120 Z" fill="#9BAD8A"/>
+        </svg>
+      </div>
+      <div class="day-header-body">
+        <div class="day-badge d1"><div class="dn">DAY</div><div class="dnum">1</div></div>
+        <div class="day-info"><h2>南竿戰地巡禮</h2><p>10月16日（週四）・ 兩組約同時抵達 ・ 下午跑三個戰地景點</p></div>
+      </div>
     </div>
     <div class="alert red"><span class="alert-icon">🌊</span><div><strong>出發前必做：查北海坑道當日潮汐</strong>受潮汐影響，實際入場時間不固定。可能需微調下午景點順序。電話 0836-25630</div></div>
-    <div class="section-title">⏱ 時間表</div>
+    <div class="section-title">時 間 表</div>
     <div class="timeline">
       <div class="timeline-item"><div class="time-label">11:05 / 11:15</div><div class="tcard"><div class="act">✈️ 出發（兩地同時）</div><div class="note">台中組 B7-8731 11:05 起飛・高雄組 AE-7925 11:15 起飛</div></div></div>
       <div class="timeline-item"><div class="time-label">12:10 / 12:55</div><div class="tcard"><div class="act">🛬 抵達南竿機場</div><div class="note">台中組 12:10 先到・高雄組 12:55 抵達・天后會館 check in・放行李</div></div></div>
@@ -645,78 +674,140 @@
       <div class="timeline-item"><div class="time-label">17:30–19:00</div><div class="tcard"><div class="act">🌅 鐵堡</div><div class="note">日落黃金時段（10月底約17:40日落）・穿防滑鞋</div></div></div>
       <div class="timeline-item"><div class="time-label">19:00–21:00</div><div class="tcard"><div class="act">🌃 介壽村老街晚餐＋夜遊</div><div class="note">夜景更美・廟宇老建築・宵夜小攤</div></div></div>
     </div>
-    <div class="section-title">🗺️ 景點詳情</div>
+    <div class="section-title">景 點 詳 情</div>
     <div class="spots-grid">
-      <div class="spot-card mil"><div class="spot-name">⚓ 北海坑道</div><div class="stars">★★★★★</div><div class="spot-desc">當年士兵用手鑿出的地下水道，可容納戰艦進入。爸爸當年服役最具歷史共鳴的景點。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">查潮汐</span></div></div>
-      <div class="spot-card mil"><div class="spot-name">🏔️ 大漢據點</div><div class="stars">★★★★</div><div class="spot-desc">2024年全面開放，三層坑道免費。長輩建議只逛第一層觀海平台，有無障礙坡道。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">無障礙坡道</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🌅 鐵堡</div><div class="stars">★★★★★</div><div class="spot-desc">海濱軍事碉堡，地形壯觀。日落前1.5小時到達效果最佳。岩礁地形請穿防滑鞋。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">穿防滑鞋</span></div></div>
+      <div class="spot-card mil">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Beihai_Military_Tunnel_%E5%8C%97%E6%B5%B7%E5%9D%91%E9%81%93_-_panoramio_%281%29.jpg/330px-Beihai_Military_Tunnel_%E5%8C%97%E6%B5%B7%E5%9D%91%E9%81%93_-_panoramio_%281%29.jpg" alt="北海坑道" loading="lazy"></div>
+        <div class="spot-name">⚓ 北海坑道</div><div class="stars">★★★★★</div><div class="spot-desc">當年士兵用手鑿出的地下水道，可容納戰艦進入。爸爸當年服役最具歷史共鳴的景點。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">查潮汐</span></div>
+        <a class="spot-link" href="https://ajtravel.tw/nangan-highlights/" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
+      <div class="spot-card mil">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/%E5%A4%A7%E6%B1%89%E6%8D%AE%E7%82%B9_-_Dahan_Stronghold_-_2014.04_-_panoramio.jpg/330px-%E5%A4%A7%E6%B1%89%E6%8D%AE%E7%82%B9_-_Dahan_Stronghold_-_2014.04_-_panoramio.jpg" alt="大漢據點" loading="lazy"></div>
+        <div class="spot-name">🏔️ 大漢據點</div><div class="stars">★★★★</div><div class="spot-desc">2024年全面開放，三層坑道免費。長輩建議只逛第一層觀海平台，有無障礙坡道。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">無障礙坡道</span></div>
+        <a class="spot-link" href="https://vocus.cc/article/65c8ca90fd8978000133422f" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
+      <div class="spot-card nat">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/%E9%A6%AC%E7%A5%96%E9%90%B5%E5%A0%A1_20220311_074551193.jpg/330px-%E9%A6%AC%E7%A5%96%E9%90%B5%E5%A0%A1_20220311_074551193.jpg" alt="鐵堡" loading="lazy"></div>
+        <div class="spot-name">🌅 鐵堡</div><div class="stars">★★★★★</div><div class="spot-desc">海濱軍事碉堡，地形壯觀。日落前1.5小時到達效果最佳。岩礁地形請穿防滑鞋。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">穿防滑鞋</span></div>
+        <a class="spot-link" href="https://vocus.cc/article/65c8ca90fd8978000133422f" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
     </div>
   </div>
 
   <!-- Day 2 -->
   <div id="day2" class="tab-content">
-    <div class="day-header d2">
-      <div class="day-badge"><div class="dn">2</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>媽祖巨神像＋酒廠 → 北竿芹壁村日遊</h2><p>10月17日（週五）· 上午南竿・下午渡輪北竿・17:30末班船返南竿</p></div>
+    <div class="day-header">
+      <div class="landscape">
+        <svg viewBox="0 0 900 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="900" height="120" fill="#D4EAF5"/>
+          <ellipse cx="120" cy="15" rx="70" ry="35" fill="white" opacity="0.8"/>
+          <ellipse cx="500" cy="20" rx="100" ry="45" fill="white" opacity="0.75"/>
+          <ellipse cx="800" cy="12" rx="65" ry="32" fill="white" opacity="0.8"/>
+          <path d="M0 85 Q300 50 600 78 Q750 90 900 60 L900 120 L0 120 Z" fill="#7A9468"/>
+          <path d="M0 100 Q250 82 500 98 Q720 112 900 88 L900 120 L0 120 Z" fill="#9BAD8A"/>
+        </svg>
+      </div>
+      <div class="day-header-body">
+        <div class="day-badge d2"><div class="dn">DAY</div><div class="dnum">2</div></div>
+        <div class="day-info"><h2>媽祖巨神像＋酒廠 → 北竿芹壁村日遊</h2><p>10月17日（週五）・ 上午南竿 ・ 下午渡輪北竿 ・ 17:30末班船返南竿</p></div>
+      </div>
     </div>
     <div class="alert yellow"><span class="alert-icon">⏰</span><div><strong>酒廠午休注意</strong>馬祖酒廠 11:30 關閉，09:30 前往，11:00 前離開。</div></div>
     <div class="alert red"><span class="alert-icon">⚠️</span><div><strong>17:30 末班渡輪不能誤點</strong>北竿→南竿末班船 17:30，否則全員困在北竿。<strong>17:00 前必須出發前往塘岐碼頭。</strong></div></div>
-    <div class="section-title">⏱ 時間表</div>
+    <div class="section-title">時 間 表</div>
     <div class="timeline">
       <div class="timeline-item"><div class="time-label">08:30–09:15</div><div class="tcard"><div class="act">🙏 媽祖巨神像（馬港）</div><div class="note">免費・祈福坑道・長輩最適合</div></div></div>
       <div class="timeline-item"><div class="time-label">09:30–11:00</div><div class="tcard"><div class="act">🍶 馬祖酒廠</div><div class="note">參觀釀酒・品嚐・買伴手禮（高粱酒、魚卵、花生）</div><div class="warn">⚠️ 11:30 前離開</div></div></div>
       <div class="timeline-item"><div class="time-label">11:30–13:00</div><div class="tcard"><div class="act">🍱 南竿午餐</div><div class="note">飽餐一頓，下午準備渡輪</div></div></div>
-      <div class="timeline-item go"><div class="time-label">13:30</div><div class="tcard hl-green"><div class="act">⛴️ 渡輪 南竿→北竿（全家5人）</div><div class="note">福澳碼頭出發・約20分鐘・160元/人</div></div></div>
+      <div class="timeline-item"><div class="time-label">13:30</div><div class="tcard"><div class="act">⛴️ 渡輪 南竿→北竿（全家5人）</div><div class="note">福澳碼頭出發・約20分鐘・160元/人</div></div></div>
       <div class="timeline-item"><div class="time-label">14:00</div><div class="tcard"><div class="act">🧳 抵達塘岐碼頭・計程車往芹壁村</div></div></div>
       <div class="timeline-item"><div class="time-label">14:30–17:00</div><div class="tcard"><div class="act">🏘️ 芹壁村漫遊（日遊）</div><div class="note">觀景台 → 老街石厝 → 海濱・傍晚人潮散去最美</div></div></div>
-      <div class="timeline-item key"><div class="time-label">17:00</div><div class="tcard hl-red"><div class="act">⚠️ 趕回塘岐碼頭</div><div class="note">時間緊！先行集合，步行或計程車回碼頭</div></div></div>
-      <div class="timeline-item key"><div class="time-label">17:30</div><div class="tcard hl-red"><div class="act">⛴️ 末班渡輪 北竿→南竿（全家5人）</div><div class="note">塘岐碼頭・160元/人・約20分鐘・<strong>不能誤點</strong></div></div></div>
+      <div class="timeline-item"><div class="time-label">17:00</div><div class="tcard"><div class="act">⚠️ 趕回塘岐碼頭</div><div class="note">時間緊！先行集合，步行或計程車回碼頭</div></div></div>
+      <div class="timeline-item"><div class="time-label">17:30</div><div class="tcard"><div class="act">⛴️ 末班渡輪 北竿→南竿（全家5人）</div><div class="note">塘岐碼頭・160元/人・約20分鐘・<strong>不能誤點</strong></div></div></div>
       <div class="timeline-item"><div class="time-label">18:10</div><div class="tcard"><div class="act">🛬 抵達南竿福澳碼頭</div></div></div>
       <div class="timeline-item"><div class="time-label">19:00</div><div class="tcard"><div class="act">🍽️ 5人共進晚餐（最後一個5人夜晚）</div><div class="note">挑一間好餐廳，不趕場</div></div></div>
     </div>
-    <div class="section-title">🗺️ 景點詳情</div>
+    <div class="section-title">景 點 詳 情</div>
     <div class="spots-grid">
-      <div class="spot-card cul"><div class="spot-name">🙏 媽祖巨神像</div><div class="stars">★★★★</div><div class="spot-desc">馬港天后宮旁巨型媽祖像，有祈福坑道。免費、無需爬坡，長輩最適合的上午開場。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div></div>
-      <div class="spot-card cul"><div class="spot-name">🍶 馬祖酒廠</div><div class="stars">★★★★</div><div class="spot-desc">馬祖高粱酒發源地，免費參觀釀酒流程，現場品嚐。必買：高粱酒、魚卵、花生。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">午休11:30-13:40</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🏘️ 芹壁村（日遊）</div><div class="stars">★★★★★</div><div class="spot-desc">台灣最美閩東石厝聚落「馬祖地中海」。傍晚人潮散去後最美，進村步道有坡，長輩慢行。日遊模式：17:00前需出發回碼頭。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">17:00前離開</span><span class="tag info">長輩可達</span></div></div>
+      <div class="spot-card cul">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/%E5%8D%97%E7%AB%BF%E5%A4%A9%E5%90%8E%E5%AE%AE.JPG/330px-%E5%8D%97%E7%AB%BF%E5%A4%A9%E5%90%8E%E5%AE%AE.JPG" alt="媽祖天后宮" loading="lazy"></div>
+        <div class="spot-name">🙏 媽祖巨神像</div><div class="stars">★★★★</div><div class="spot-desc">馬港天后宮旁巨型媽祖像，有祈福坑道。免費、無需爬坡，長輩最適合的上午開場。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">長輩友善</span></div>
+        <a class="spot-link" href="https://www.bigfang.tw/blog/post/statue-of-the-goddess-matzu" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Matsu_Distillery%2C_Nangan%2C_Matsu%2C_Taiwan.JPG/330px-Matsu_Distillery%2C_Nangan%2C_Matsu%2C_Taiwan.JPG" alt="馬祖酒廠" loading="lazy"></div>
+        <div class="spot-name">🍶 馬祖酒廠</div><div class="stars">★★★★</div><div class="spot-desc">馬祖高粱酒發源地，免費參觀釀酒流程，現場品嚐。必買：高粱酒、魚卵、花生。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">午休11:30-13:40</span></div>
+        <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
+      <div class="spot-card nat">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/%E8%8A%B9%E5%A3%81%E8%81%9A%E8%90%BD.jpg/330px-%E8%8A%B9%E5%A3%81%E8%81%9A%E8%90%BD.jpg" alt="芹壁村" loading="lazy"></div>
+        <div class="spot-name">🏘️ 芹壁村（日遊）</div><div class="stars">★★★★★</div><div class="spot-desc">台灣最美閩東石厝聚落「馬祖地中海」。傍晚人潮散去後最美，進村步道有坡，長輩慢行。日遊模式：17:00前需出發回碼頭。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag warn">17:00前離開</span><span class="tag info">長輩可達</span></div>
+        <a class="spot-link" href="https://travelss.net/2026/03/22/2026%e9%a6%ac%e7%a5%96%e6%97%85%e9%81%8a%e5%85%a8%e6%94%bb%e7%95%a5%ef%bc%9a%e8%b5%b0%e9%80%b2%e8%8a%b9%e5%a3%81%e8%81%9a%e8%90%bd%e8%88%87%e5%a4%a7%e5%9d%b5%e5%b3%b6%ef%bc%8c%e9%ab%94%e9%a9%97/" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
     </div>
   </div>
 
   <!-- Day 3 -->
   <div id="day3" class="tab-content">
-    <div class="day-header d3">
-      <div class="day-badge"><div class="dn">3</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>送爸媽返台 · 夫妻南竿二人世界</h2><p>10月18日（週六）· 全程南竿 · 爸媽12:50飛台中 · 夫妻津沙聚落</p></div>
+    <div class="day-header">
+      <div class="landscape">
+        <svg viewBox="0 0 900 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="900" height="120" fill="#B8D8E8"/>
+          <ellipse cx="150" cy="18" rx="75" ry="38" fill="white" opacity="0.8"/>
+          <ellipse cx="600" cy="10" rx="90" ry="42" fill="white" opacity="0.75"/>
+          <path d="M0 88 Q200 62 450 82 Q650 98 900 68 L900 120 L0 120 Z" fill="#7A9468"/>
+          <path d="M0 102 Q280 84 520 100 Q730 114 900 92 L900 120 L0 120 Z" fill="#9BAD8A"/>
+        </svg>
+      </div>
+      <div class="day-header-body">
+        <div class="day-badge d3"><div class="dn">DAY</div><div class="dnum">3</div></div>
+        <div class="day-info"><h2>送爸媽返台 · 夫妻南竿二人世界</h2><p>10月18日（週六）・ 全程南竿 ・ 爸媽12:50飛台中 ・ 夫妻津沙聚落</p></div>
+      </div>
     </div>
     <div class="alert yellow"><span class="alert-icon">✈️</span><div><strong>爸媽組回程注意</strong>立榮 B7-8732 南竿 12:50 起飛，建議 <strong>11:45 前往機場</strong>，12:20 前到機場報到。全程在南竿，不需渡輪。</div></div>
     <div class="alert blue"><span class="alert-icon">✈️</span><div><strong>班機取消備案</strong>東北季風影響時可候補下班次，或改搭台馬之星回基隆（約8小時）。</div></div>
-    <div class="section-title">⏱ 時間表（全員・上午）</div>
+    <div class="section-title">時間表（全員・上午）</div>
     <div class="timeline">
       <div class="timeline-item"><div class="time-label">08:00–09:30</div><div class="tcard"><div class="act">☀️ 早餐＋介壽村晨光散步（全員）</div><div class="note">最後一個5人早晨</div></div></div>
       <div class="timeline-item"><div class="time-label">09:30–11:30</div><div class="tcard"><div class="act">🛍️ 伴手禮補買（全員）</div><div class="note">高粱酒・花生糖・魚麵・繼光餅</div></div></div>
-      <div class="timeline-item key"><div class="time-label">11:45</div><div class="tcard hl-red"><div class="act">🧳 爸媽前往南竿機場</div><div class="note">計程車約10分鐘・提前出發</div></div></div>
+      <div class="timeline-item"><div class="time-label">11:45</div><div class="tcard"><div class="act">🧳 爸媽前往南竿機場</div><div class="note">計程車約10分鐘・提前出發</div></div></div>
       <div class="timeline-item"><div class="time-label">12:50</div><div class="tcard"><div class="act">✈️ 爸媽組 立榮 B7-8732 返台中</div><div class="note">抵達台中清泉崗 13:55</div></div></div>
     </div>
-    <div class="section-title">⏱ 時間表（夫妻・下午）</div>
+    <div class="section-title">時間表（夫妻・下午）</div>
     <div class="timeline">
       <div class="timeline-item"><div class="time-label">13:00</div><div class="tcard"><div class="act">🍱 夫妻午餐</div><div class="note">放鬆，不趕</div></div></div>
       <div class="timeline-item"><div class="time-label">14:00–17:00</div><div class="tcard"><div class="act">🏘️ 津沙聚落散步</div><div class="note">南竿最完整閩東漁村・石板路平緩・沙灘漫步・日落最美</div></div></div>
       <div class="timeline-item"><div class="time-label">19:00</div><div class="tcard"><div class="act">🌙 夫妻晚餐・馬祖海鮮</div><div class="note">兩人世界第一晚・好好慶祝</div></div></div>
     </div>
-    <div class="section-title">🗺️ 景點詳情（夫妻・南竿）</div>
+    <div class="section-title">景點詳情（夫妻・南竿）</div>
     <div class="spots-grid">
-      <div class="spot-card rom"><div class="spot-name">🏘️ 津沙聚落</div><div class="stars">★★★★</div><div class="spot-desc">南竿保存最完整的閩東老漁村，石板小路平緩，面朝沙灘，老厝風味十足。傍晚日落前最美，遊人少，夫妻散步最佳。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag pink">夫妻首選</span></div></div>
+      <div class="spot-card rom">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Jinsha_village%2C_Nangan%2C_Matsu%2C_Taiwan.JPG/330px-Jinsha_village%2C_Nangan%2C_Matsu%2C_Taiwan.JPG" alt="津沙聚落" loading="lazy"></div>
+        <div class="spot-name">🏘️ 津沙聚落</div><div class="stars">★★★★</div><div class="spot-desc">南竿保存最完整的閩東老漁村，石板小路平緩，面朝沙灘，老厝風味十足。傍晚日落前最美，遊人少，夫妻散步最佳。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag pink">夫妻首選</span></div>
+        <a class="spot-link" href="https://kimiyo.tw/jinsha-village/" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
     </div>
   </div>
 
   <!-- Day 4 -->
   <div id="day4" class="tab-content">
-    <div class="day-header d4">
-      <div class="day-badge"><div class="dn">4</div><div class="dl">DAY</div></div>
-      <div class="day-info"><h2>💑 夫妻自由日 → 飛回高雄</h2><p>10月19日（週日）· 13:40 華信 AE-7926 返高雄</p></div>
+    <div class="day-header">
+      <div class="landscape">
+        <svg viewBox="0 0 900 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect width="900" height="120" fill="#F5DDD0"/>
+          <ellipse cx="250" cy="22" rx="85" ry="40" fill="white" opacity="0.75"/>
+          <ellipse cx="650" cy="14" rx="75" ry="36" fill="white" opacity="0.8"/>
+          <path d="M0 86 Q300 56 550 80 Q720 96 900 62 L900 120 L0 120 Z" fill="#7A9468"/>
+          <path d="M0 104 Q220 86 500 102 Q710 116 900 94 L900 120 L0 120 Z" fill="#9BAD8A"/>
+        </svg>
+      </div>
+      <div class="day-header-body">
+        <div class="day-badge d4"><div class="dn">DAY</div><div class="dnum">4</div></div>
+        <div class="day-info"><h2>💑 夫妻自由日 → 飛回高雄</h2><p>10月19日（週日）・ 13:40 華信 AE-7926 返高雄</p></div>
+      </div>
     </div>
     <div class="alert pink"><span class="alert-icon">💑</span><div><strong>兩人世界</strong>爸媽昨天已回台中，今天只有你們兩個人，上午可完全依自己步調安排。13:40 前到機場即可。</div></div>
-    <div class="section-title">⏱ 建議時間表</div>
+    <div class="section-title">建 議 時 間 表</div>
     <div class="timeline">
       <div class="timeline-item"><div class="time-label">08:00–09:30</div><div class="tcard"><div class="act">☕ 悠閒早餐・民宿慢起</div><div class="note">不用趕、不用顧長輩，享受兩人早晨</div></div></div>
       <div class="timeline-item"><div class="time-label">09:30–11:30</div><div class="tcard"><div class="act">🗺️ 南竿自由探索</div><div class="note">雲台山・藍眼淚生態館・或在介壽村慢逛</div></div></div>
@@ -724,11 +815,23 @@
       <div class="timeline-item"><div class="time-label">12:30</div><div class="tcard"><div class="act">🏛️ 南竿機場 check in</div></div></div>
       <div class="timeline-item"><div class="time-label">13:40</div><div class="tcard"><div class="act">✈️ 華信 AE-7926 返高雄</div><div class="note">抵達高雄清泉崗 15:20・訂位代號 E7L8A5</div></div></div>
     </div>
-    <div class="section-title">🗺️ Day 4 可選景點</div>
+    <div class="section-title">Day 4 可 選 景 點</div>
     <div class="spots-grid">
-      <div class="spot-card rom"><div class="spot-name">🌊 津沙聚落</div><div class="stars">★★★★★</div><div class="spot-desc">南竿最安靜的小漁村，石板路、彩繪牆、沙灘。沒有觀光客喧囂，兩人漫步最佳。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag pink">夫妻首選</span></div></div>
-      <div class="spot-card rom"><div class="spot-name">⛰️ 雲台山</div><div class="stars">★★★★</div><div class="spot-desc">南竿制高點，晴天可遠眺北竿及中國大陸海岸。早晨雲霧繚繞尤其壯觀。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">早晨最美</span></div></div>
-      <div class="spot-card cul"><div class="spot-name">💙 藍眼淚生態館</div><div class="stars">★★★</div><div class="spot-desc">室內模擬藍眼淚展示，10月戶外觀測已接近尾聲，室內版為替代選擇。</div><div class="spot-tags"><span class="tag info">室內展館</span></div></div>
+      <div class="spot-card rom">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Jinsha_village%2C_Nangan%2C_Matsu%2C_Taiwan.JPG/330px-Jinsha_village%2C_Nangan%2C_Matsu%2C_Taiwan.JPG" alt="津沙聚落" loading="lazy"></div>
+        <div class="spot-name">🌊 津沙聚落</div><div class="stars">★★★★★</div><div class="spot-desc">南竿最安靜的小漁村，石板路、彩繪牆、沙灘。沒有觀光客喧囂，兩人漫步最佳。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag pink">夫妻首選</span></div>
+        <a class="spot-link" href="https://kimiyo.tw/jinsha-village/" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
+      <div class="spot-card rom">
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/%E4%BA%91%E5%8F%B0%E5%B1%B1_-_Yuntai_Mountain_-_2014.04_-_panoramio.jpg/330px-%E4%BA%91%E5%8F%B0%E5%B1%B1_-_Yuntai_Mountain_-_2014.04_-_panoramio.jpg" alt="雲台山" loading="lazy"></div>
+        <div class="spot-name">⛰️ 雲台山</div><div class="stars">★★★★</div><div class="spot-desc">南竿制高點，晴天可遠眺北竿及中國大陸海岸。早晨雲霧繚繞尤其壯觀。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">早晨最美</span></div>
+        <a class="spot-link" href="https://www.welcometw.com/%E9%A6%AC%E7%A5%96%E6%97%85%E9%81%8A%EF%BD%9C%E5%9B%9B%E9%84%89%E4%BA%94%E5%B3%B6%E8%87%AA%E7%94%B1%E8%A1%8C%E5%BF%85%E6%8E%92%E6%99%AF%E9%BB%9E%EF%BC%81%E6%8E%A2%E7%B4%A2%E5%9C%8B%E4%B9%8B%E5%8C%97/" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
+      <div class="spot-card cul">
+        <div class="spot-img-wrap"><div class="spot-photo-ph cul">💙</div></div>
+        <div class="spot-name">💙 藍眼淚生態館</div><div class="stars">★★★</div><div class="spot-desc">室內模擬藍眼淚展示，10月戶外觀測已接近尾聲，室內版為替代選擇。</div><div class="spot-tags"><span class="tag info">室內展館</span></div>
+        <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
+      </div>
     </div>
   </div>
 
@@ -737,7 +840,7 @@
     <div class="section-title">🏨 10/18 晚住宿選評（夫妻2人）</div>
     <div class="alert pink"><span class="alert-icon">💑</span><div><strong>背景</strong>爸媽 12:50 飛走後，你們整個下午＋晚上＋10/19 早上都是自由時光。13:40 才需要到南竿機場。</div></div>
 
-    <div class="section-title" style="margin-top:8px">⚖️ 選A vs 選B：氣候機率分析</div>
+    <div class="section-title">選A vs 選B：氣候機率分析</div>
     <div class="hotel-compare">
       <div class="hotel-option recommended">
         <div class="hotel-option-label">✅ 選項 A — 留南竿</div>
@@ -757,7 +860,7 @@
         <div class="prob-bar-wrap">
           <div class="prob-bar-label">計畫順利執行機率</div>
           <div class="prob-bar"><div class="prob-bar-fill mid" style="width:70%"></div></div>
-          <div style="font-size:13px;font-weight:700;color:var(--yellow);margin-top:4px">約 65–75%</div>
+          <div style="font-size:13px;font-weight:700;color:var(--golden);margin-top:4px">約 65–75%</div>
         </div>
         <p style="font-size:12px;color:var(--text-light)">風險：10月東北季風，每次渡輪停航率約15–20%；去+回需2次都順利</p>
       </div>
@@ -818,47 +921,29 @@
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:22px">
       <div>
-        <div class="section-title" style="font-size:16px">🟢 南竿 → 北竿</div>
+        <div class="section-title" style="font-size:14px">🟢 南竿 → 北竿</div>
         <table class="styled-table">
           <thead><tr><th>班次</th><th>起飛時間</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>07:00</td></tr>
-            <tr><td>2</td><td>07:30</td></tr>
-            <tr><td>3</td><td>08:00</td></tr>
-            <tr><td>4</td><td>08:30</td></tr>
-            <tr><td>5</td><td>09:00</td></tr>
-            <tr><td>6</td><td>10:00</td></tr>
-            <tr><td>7</td><td>11:00</td></tr>
-            <tr><td>8</td><td>11:30</td></tr>
-            <tr><td>9</td><td>12:30</td></tr>
-            <tr><td>10</td><td>13:30</td></tr>
-            <tr><td>11</td><td>15:00</td></tr>
-            <tr><td>12</td><td>16:00</td></tr>
-            <tr><td>13</td><td>16:30</td></tr>
-            <tr><td>14</td><td>17:10</td></tr>
+            <tr><td>1</td><td>07:00</td></tr><tr><td>2</td><td>07:30</td></tr><tr><td>3</td><td>08:00</td></tr>
+            <tr><td>4</td><td>08:30</td></tr><tr><td>5</td><td>09:00</td></tr><tr><td>6</td><td>10:00</td></tr>
+            <tr><td>7</td><td>11:00</td></tr><tr><td>8</td><td>11:30</td></tr><tr><td>9</td><td>12:30</td></tr>
+            <tr><td>10</td><td>13:30</td></tr><tr><td>11</td><td>15:00</td></tr><tr><td>12</td><td>16:00</td></tr>
+            <tr><td>13</td><td>16:30</td></tr><tr><td>14</td><td>17:10</td></tr>
             <tr><td>15</td><td><strong>17:30 最後班</strong></td></tr>
           </tbody>
         </table>
       </div>
       <div>
-        <div class="section-title" style="font-size:16px">🔵 北竿 → 南竿</div>
+        <div class="section-title" style="font-size:14px">🔵 北竿 → 南竿</div>
         <table class="styled-table">
           <thead><tr><th>班次</th><th>起飛時間</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>07:00</td></tr>
-            <tr><td>2</td><td>07:30</td></tr>
-            <tr><td>3</td><td>08:00</td></tr>
-            <tr><td>4</td><td>08:30</td></tr>
-            <tr><td>5</td><td>09:30</td></tr>
-            <tr><td>6</td><td>10:20</td></tr>
-            <tr><td>7</td><td>11:00</td></tr>
-            <tr><td>8</td><td>11:30</td></tr>
-            <tr><td>9</td><td>12:00</td></tr>
-            <tr><td>10</td><td>13:00</td></tr>
-            <tr><td>11</td><td>15:20</td></tr>
-            <tr><td>12</td><td>16:00</td></tr>
-            <tr><td>13</td><td>16:30</td></tr>
-            <tr><td>14</td><td>17:10</td></tr>
+            <tr><td>1</td><td>07:00</td></tr><tr><td>2</td><td>07:30</td></tr><tr><td>3</td><td>08:00</td></tr>
+            <tr><td>4</td><td>08:30</td></tr><tr><td>5</td><td>09:30</td></tr><tr><td>6</td><td>10:20</td></tr>
+            <tr><td>7</td><td>11:00</td></tr><tr><td>8</td><td>11:30</td></tr><tr><td>9</td><td>12:00</td></tr>
+            <tr><td>10</td><td>13:00</td></tr><tr><td>11</td><td>15:20</td></tr><tr><td>12</td><td>16:00</td></tr>
+            <tr><td>13</td><td>16:30</td></tr><tr><td>14</td><td>17:10</td></tr>
             <tr><td>15</td><td><strong>17:30 最後班</strong></td></tr>
           </tbody>
         </table>
@@ -866,9 +951,9 @@
     </div>
 
     <div class="alert green"><span class="alert-icon">🔗</span><div><strong>出發前建議確認最新班表（可能因季節/天候調整）</strong><br>
-      ・<a href="https://www.motcmpb.gov.tw/PassengerShip/Schedule?SiteId=1&NodeId=610&ShipLaneNo=C014" target="_blank" style="color:var(--ocean);font-weight:700">交通部航港局 — 馬祖南北竿即時船班</a>（最官方、可即時查詢）<br>
-      ・<a href="https://www.matsu-nsa.gov.tw/articles.aspx?a=2627&l=1" target="_blank" style="color:var(--ocean);font-weight:700">馬祖國家風景區官網 — 島際交通</a><br>
-      ・<a href="https://client.matsu.idv.tw/North-South/index.html" target="_blank" style="color:var(--ocean);font-weight:700">馬祖南北海運官網</a>
+      ・<a href="https://www.motcmpb.gov.tw/PassengerShip/Schedule?SiteId=1&NodeId=610&ShipLaneNo=C014" target="_blank" style="color:var(--teal);font-weight:700">交通部航港局 — 馬祖南北竿即時船班</a>（最官方、可即時查詢）<br>
+      ・<a href="https://www.matsu-nsa.gov.tw/articles.aspx?a=2627&l=1" target="_blank" style="color:var(--teal);font-weight:700">馬祖國家風景區官網 — 島際交通</a><br>
+      ・<a href="https://client.matsu.idv.tw/North-South/index.html" target="_blank" style="color:var(--teal);font-weight:700">馬祖南北海運官網</a>
     </div></div>
 
     <div class="weather-card">
@@ -888,66 +973,16 @@
     <div class="section-title">🛍️ 馬祖10大必買伴手禮</div>
     <div class="alert blue"><span class="alert-icon">💡</span><div><strong>購買建議</strong>大部分伴手禮在介壽村老街、馬祖酒廠、南竿機場均有販售。預算有限優先買1–4項，酒類注意航班托運規定。</div></div>
     <div class="spots-grid">
-      <div class="spot-card cul">
-        <div class="spot-name">🥐 繼光餅</div>
-        <div class="stars">★★★★★</div>
-        <div class="spot-desc">馬祖版「漢堡」，烤芝麻餅Q彈鹹香。超群繼光餅曾獲伴手禮票選第一，現場夾蔥燒肉或紅糟鰻最道地。</div>
-        <div class="spot-tags"><span class="tag done">必買第一</span><span class="tag info">現烤限量</span></div>
-      </div>
-      <div class="spot-card cul">
-        <div class="spot-name">🍶 高粱酒 / 老酒</div>
-        <div class="stars">★★★★★</div>
-        <div class="spot-desc">東湧陳高（58度）是馬祖代表酒，馬祖酒廠直購最便宜。老酒（紅麴釀造）適合長輩伴手禮。</div>
-        <div class="spot-tags"><span class="tag warn">托運注意</span><span class="tag info">酒廠直購</span></div>
-      </div>
-      <div class="spot-card nat">
-        <div class="spot-name">🍜 魚麵</div>
-        <div class="stars">★★★★★</div>
-        <div class="spot-desc">馬祖特產，用鮸魚、海鰻等魚漿壓製成麵，口感 Q 彈。北竿阿婆魚麵最有名，可帶回家烹煮。</div>
-        <div class="spot-tags"><span class="tag done">北竿特產</span><span class="tag free">常溫可帶</span></div>
-      </div>
-      <div class="spot-card nat">
-        <div class="spot-name">🦪 淡菜</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">馬祖特有淡菜（翡翠貽貝），肉質飽滿，曬乾後可帶回。乾淡菜可煮湯或炒菜，是珍貴的在地海味。</div>
-        <div class="spot-tags"><span class="tag done">唯馬祖有</span></div>
-      </div>
-      <div class="spot-card cul">
-        <div class="spot-name">🍺 忍冬啤酒（金銀花）</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">以馬祖特有忍冬花（金銀花）釀製的精釀啤酒，花香清爽，台灣買不到的限定款，送禮高分。</div>
-        <div class="spot-tags"><span class="tag pink">限定款</span><span class="tag warn">托運注意</span></div>
-      </div>
-      <div class="spot-card cul">
-        <div class="spot-name">🧆 地瓜餃</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">地瓜皮包花生/肉末內餡，軟Q彈牙，甜鹹口味都有。北竿五行地瓜餃剉冰很有名，也有袋裝可帶走。</div>
-        <div class="spot-tags"><span class="tag info">甜鹹兩款</span></div>
-      </div>
-      <div class="spot-card cul">
-        <div class="spot-name">🎂 馬祖酥 / 芙蓉酥</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">包裝精緻，黑糖/海苔/花生綜合口味，機場有售。攜帶方便，常溫保存，適合大量採購送同事。</div>
-        <div class="spot-tags"><span class="tag free">機場有售</span><span class="tag info">常溫</span></div>
-      </div>
-      <div class="spot-card cul">
-        <div class="spot-name">🍮 老酒奶茶</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">馬祖老酒風味的奶茶粉包，近年超熱銷，獨特米香帶微甜酒味，朋友試喝都驚豔。</div>
-        <div class="spot-tags"><span class="tag pink">近年爆紅</span><span class="tag free">輕巧好帶</span></div>
-      </div>
-      <div class="spot-card nat">
-        <div class="spot-name">🐟 魚丸 / 魚卵</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">馬祖魚丸彈牙鮮甜，魚卵醃製後鹹鮮下酒。現買現吃或真空包帶回，是最道地的海味伴手禮。</div>
-        <div class="spot-tags"><span class="tag info">真空包裝</span></div>
-      </div>
-      <div class="spot-card cul">
-        <div class="spot-name">🔴 紅糟 / 紅麴產品</div>
-        <div class="stars">★★★</div>
-        <div class="spot-desc">釀老酒沉澱的紅麴渣料，可拿來燉肉、醃魚，富含保健成分。紅糟肉醬、紅糟花生也是熱門選項。</div>
-        <div class="spot-tags"><span class="tag info">料理食材</span></div>
-      </div>
+      <div class="spot-card cul"><div class="spot-name">🥐 繼光餅</div><div class="stars">★★★★★</div><div class="spot-desc">馬祖版「漢堡」，烤芝麻餅Q彈鹹香。超群繼光餅曾獲伴手禮票選第一，現場夾蔥燒肉或紅糟鰻最道地。</div><div class="spot-tags"><span class="tag done">必買第一</span><span class="tag info">現烤限量</span></div></div>
+      <div class="spot-card cul"><div class="spot-name">🍶 高粱酒 / 老酒</div><div class="stars">★★★★★</div><div class="spot-desc">東湧陳高（58度）是馬祖代表酒，馬祖酒廠直購最便宜。老酒（紅麴釀造）適合長輩伴手禮。</div><div class="spot-tags"><span class="tag warn">托運注意</span><span class="tag info">酒廠直購</span></div></div>
+      <div class="spot-card nat"><div class="spot-name">🍜 魚麵</div><div class="stars">★★★★★</div><div class="spot-desc">馬祖特產，用鮸魚、海鰻等魚漿壓製成麵，口感 Q 彈。北竿阿婆魚麵最有名，可帶回家烹煮。</div><div class="spot-tags"><span class="tag done">北竿特產</span><span class="tag free">常溫可帶</span></div></div>
+      <div class="spot-card nat"><div class="spot-name">🦪 淡菜</div><div class="stars">★★★★</div><div class="spot-desc">馬祖特有淡菜（翡翠貽貝），肉質飽滿，曬乾後可帶回。乾淡菜可煮湯或炒菜，是珍貴的在地海味。</div><div class="spot-tags"><span class="tag done">唯馬祖有</span></div></div>
+      <div class="spot-card cul"><div class="spot-name">🍺 忍冬啤酒（金銀花）</div><div class="stars">★★★★</div><div class="spot-desc">以馬祖特有忍冬花（金銀花）釀製的精釀啤酒，花香清爽，台灣買不到的限定款，送禮高分。</div><div class="spot-tags"><span class="tag pink">限定款</span><span class="tag warn">托運注意</span></div></div>
+      <div class="spot-card cul"><div class="spot-name">🧆 地瓜餃</div><div class="stars">★★★★</div><div class="spot-desc">地瓜皮包花生/肉末內餡，軟Q彈牙，甜鹹口味都有。北竿五行地瓜餃剉冰很有名，也有袋裝可帶走。</div><div class="spot-tags"><span class="tag info">甜鹹兩款</span></div></div>
+      <div class="spot-card cul"><div class="spot-name">🎂 馬祖酥 / 芙蓉酥</div><div class="stars">★★★★</div><div class="spot-desc">包裝精緻，黑糖/海苔/花生綜合口味，機場有售。攜帶方便，常溫保存，適合大量採購送同事。</div><div class="spot-tags"><span class="tag free">機場有售</span><span class="tag info">常溫</span></div></div>
+      <div class="spot-card cul"><div class="spot-name">🍮 老酒奶茶</div><div class="stars">★★★★</div><div class="spot-desc">馬祖老酒風味的奶茶粉包，近年超熱銷，獨特米香帶微甜酒味，朋友試喝都驚豔。</div><div class="spot-tags"><span class="tag pink">近年爆紅</span><span class="tag free">輕巧好帶</span></div></div>
+      <div class="spot-card nat"><div class="spot-name">🐟 魚丸 / 魚卵</div><div class="stars">★★★★</div><div class="spot-desc">馬祖魚丸彈牙鮮甜，魚卵醃製後鹹鮮下酒。現買現吃或真空包帶回，是最道地的海味伴手禮。</div><div class="spot-tags"><span class="tag info">真空包裝</span></div></div>
+      <div class="spot-card cul"><div class="spot-name">🔴 紅糟 / 紅麴產品</div><div class="stars">★★★</div><div class="spot-desc">釀老酒沉澱的紅麴渣料，可拿來燉肉、醃魚，富含保健成分。紅糟肉醬、紅糟花生也是熱門選項。</div><div class="spot-tags"><span class="tag info">料理食材</span></div></div>
     </div>
 
     <div class="alert green"><span class="alert-icon">🏪</span><div><strong>哪裡買最好？</strong><br>
@@ -963,71 +998,61 @@
     <div class="section-title">🗺️ 備案景點推薦</div>
     <div class="alert blue"><span class="alert-icon">💡</span><div><strong>使用時機</strong>原定景點臨時關閉/天氣不佳/時間多出來，或 Day 4 夫妻自由日想新增地點時參考。</div></div>
 
-    <div class="section-title" style="margin-top:8px;font-size:16px">🏖️ 南竿備案景點</div>
+    <div class="section-title" style="font-size:14px">🏖️ 南竿備案景點</div>
     <div class="spots-grid">
       <div class="spot-card nat">
-        <div class="spot-name">🏘️ 津沙聚落</div>
-        <div class="stars">★★★★★</div>
-        <div class="spot-desc">南竿最安靜小漁村，石板路、彩繪牆、弧形小沙灘。無商業喧囂，兩人散步最佳。距天后會館開車約10分鐘。</div>
-        <div class="spot-tags"><span class="tag free">免費</span><span class="tag pink">夫妻推薦</span><span class="tag info">Day 4 首選</span></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Jinsha_village%2C_Nangan%2C_Matsu%2C_Taiwan.JPG/330px-Jinsha_village%2C_Nangan%2C_Matsu%2C_Taiwan.JPG" alt="津沙聚落" loading="lazy"></div>
+        <div class="spot-name">🏘️ 津沙聚落</div><div class="stars">★★★★★</div><div class="spot-desc">南竿最安靜小漁村，石板路、彩繪牆、弧形小沙灘。無商業喧囂，兩人散步最佳。距天后會館開車約10分鐘。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag pink">夫妻推薦</span><span class="tag info">Day 4 首選</span></div>
+        <a class="spot-link" href="https://kimiyo.tw/jinsha-village/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card mil">
-        <div class="spot-name">⛰️ 雲台山（248m）</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">南竿制高點，360度俯瞰全島，晴天可見中國大陸海岸。山頂軍情館。早晨雲霧繚繞尤其壯觀。</div>
-        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">需租機車</span></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/%E4%BA%91%E5%8F%B0%E5%B1%B1_-_Yuntai_Mountain_-_2014.04_-_panoramio.jpg/330px-%E4%BA%91%E5%8F%B0%E5%B1%B1_-_Yuntai_Mountain_-_2014.04_-_panoramio.jpg" alt="雲台山" loading="lazy"></div>
+        <div class="spot-name">⛰️ 雲台山（248m）</div><div class="stars">★★★★</div><div class="spot-desc">南竿制高點，360度俯瞰全島，晴天可見中國大陸海岸。山頂軍情館。早晨雲霧繚繞尤其壯觀。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">需租機車</span></div>
+        <a class="spot-link" href="https://www.welcometw.com/%E9%A6%AC%E7%A5%96%E6%97%85%E9%81%8A%EF%BD%9C%E5%9B%9B%E9%84%89%E4%BA%94%E5%B3%B6%E8%87%AA%E7%94%B1%E8%A1%8C%E5%BF%85%E6%8E%92%E6%99%AF%E9%BB%9E%EF%BC%81%E6%8E%A2%E7%B4%A2%E5%9C%8B%E4%B9%8B%E5%8C%97/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card mil">
-        <div class="spot-name">🏛️ 勝利堡</div>
-        <div class="stars">★★★</div>
-        <div class="spot-desc">前戰地指揮中心，現改為戰地文化博物館。了解馬祖戰地歷史，爸爸會最有共鳴。</div>
-        <div class="spot-tags"><span class="tag info">博物館</span><span class="tag info">室內景點</span></div>
+        <div class="spot-img-wrap"><div class="spot-photo-ph mil">🏛️</div></div>
+        <div class="spot-name">🏛️ 勝利堡</div><div class="stars">★★★</div><div class="spot-desc">前戰地指揮中心，現改為戰地文化博物館。了解馬祖戰地歷史，爸爸會最有共鳴。</div><div class="spot-tags"><span class="tag info">博物館</span><span class="tag info">室內景點</span></div>
+        <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card cul">
-        <div class="spot-name">💙 藍眼淚生態館</div>
-        <div class="stars">★★★</div>
-        <div class="spot-desc">室內模擬藍眼淚展示，全年可參觀。10月戶外觀測機率低，室內版為最佳替代。</div>
-        <div class="spot-tags"><span class="tag info">全室內</span><span class="tag warn">需查開放時間</span></div>
+        <div class="spot-img-wrap"><div class="spot-photo-ph cul">💙</div></div>
+        <div class="spot-name">💙 藍眼淚生態館</div><div class="stars">★★★</div><div class="spot-desc">室內模擬藍眼淚展示，全年可參觀。10月戶外觀測機率低，室內版為最佳替代。</div><div class="spot-tags"><span class="tag info">全室內</span><span class="tag warn">需查開放時間</span></div>
+        <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card cul">
-        <div class="spot-name">🎭 馬祖民俗文物館</div>
-        <div class="stars">★★★</div>
-        <div class="spot-desc">全室內，展示閩東文化、戰地文物。下雨天或天氣差時最佳備案，適合長輩。</div>
-        <div class="spot-tags"><span class="tag info">全室內</span><span class="tag info">長輩友善</span></div>
+        <div class="spot-img-wrap"><div class="spot-photo-ph cul">🎭</div></div>
+        <div class="spot-name">🎭 馬祖民俗文物館</div><div class="stars">★★★</div><div class="spot-desc">全室內，展示閩東文化、戰地文物。下雨天或天氣差時最佳備案，適合長輩。</div><div class="spot-tags"><span class="tag info">全室內</span><span class="tag info">長輩友善</span></div>
+        <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card cul">
-        <div class="spot-name">🛕 白馬文武大王廟</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">馬港北側海邊廟宇，傳統閩東廟宇建築，坐擁無敵海景。媽祖巨神像附近，可合併參觀。</div>
-        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">媽祖像旁</span></div>
+        <div class="spot-img-wrap"><div class="spot-photo-ph cul">🛕</div></div>
+        <div class="spot-name">🛕 白馬文武大王廟</div><div class="stars">★★★★</div><div class="spot-desc">馬港北側海邊廟宇，傳統閩東廟宇建築，坐擁無敵海景。媽祖巨神像附近，可合併參觀。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">媽祖像旁</span></div>
+        <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
     </div>
 
-    <div class="section-title" style="font-size:16px">🏘️ 北竿備案景點</div>
+    <div class="section-title" style="font-size:14px">🏘️ 北竿備案景點</div>
     <div class="spots-grid">
       <div class="spot-card mil">
-        <div class="spot-name">📡 芹山播音站</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">曾是全東南亞輸出功率最大的播音站，對中國大陸廣播。廢棄後開放參觀，戰地氣氛濃厚，離芹壁村近。</div>
-        <div class="spot-tags"><span class="tag info">芹壁村旁</span><span class="tag free">免費</span></div>
+        <div class="spot-img-wrap"><div class="spot-photo-ph mil">📡</div></div>
+        <div class="spot-name">📡 芹山播音站</div><div class="stars">★★★★</div><div class="spot-desc">曾是全東南亞輸出功率最大的播音站，對中國大陸廣播。廢棄後開放參觀，戰地氣氛濃厚，離芹壁村近。</div><div class="spot-tags"><span class="tag info">芹壁村旁</span><span class="tag free">免費</span></div>
+        <a class="spot-link" href="https://www.jsimplelife.com/matsu-trip/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card nat">
-        <div class="spot-name">⛰️ 壁山觀景台</div>
-        <div class="stars">★★★★★</div>
-        <div class="spot-desc">北竿最高峰，俯瞰芹壁村全景＋龜島＋海面。日出日落都壯觀，是北竿攝影首選制高點。</div>
-        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">攝影聖地</span></div>
+        <div class="spot-img-wrap"><div class="spot-photo-ph nat">⛰️</div></div>
+        <div class="spot-name">⛰️ 壁山觀景台</div><div class="stars">★★★★★</div><div class="spot-desc">北竿最高峰，俯瞰芹壁村全景＋龜島＋海面。日出日落都壯觀，是北竿攝影首選制高點。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">攝影聖地</span></div>
+        <a class="spot-link" href="https://mygoldenlife.org.tw/%E9%A6%AC%E7%A5%96%E5%8C%97%E7%AB%BF%E6%99%AF%E9%BB%9E%E5%8C%AF%E6%95%B4/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card nat">
-        <div class="spot-name">🌊 塘后沙灘</div>
-        <div class="stars">★★★★</div>
-        <div class="spot-desc">北竿最長沙灘，秋冬藍眼淚出沒秘境（10月機率較低但仍有）。旁邊有軍事廢棄機庫，景色特殊。</div>
-        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">藍眼淚秘境</span></div>
+        <div class="spot-img-wrap"><div class="spot-photo-ph nat">🌊</div></div>
+        <div class="spot-name">🌊 塘后沙灘</div><div class="stars">★★★★</div><div class="spot-desc">北竿最長沙灘，秋冬藍眼淚出沒秘境（10月機率較低但仍有）。旁邊有軍事廢棄機庫，景色特殊。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">藍眼淚秘境</span></div>
+        <a class="spot-link" href="https://mygoldenlife.org.tw/%E9%A6%AC%E7%A5%96%E5%8C%97%E7%AB%BF%E6%99%AF%E9%BB%9E%E5%8C%AF%E6%95%B4/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card nat">
-        <div class="spot-name">🌿 螺山自然步道</div>
-        <div class="stars">★★★</div>
-        <div class="spot-desc">輕鬆健行步道，沿途有戰地遺址和海景，約40分鐘可完成。適合時間充裕的早晨行程。</div>
-        <div class="spot-tags"><span class="tag free">免費</span><span class="tag info">輕度健行</span></div>
+        <div class="spot-img-wrap"><div class="spot-photo-ph nat">🌿</div></div>
+        <div class="spot-name">🌿 螺山自然步道</div><div class="stars">★★★</div><div class="spot-desc">輕鬆健行步道，沿途有戰地遺址和海景，約40分鐘可完成。適合時間充裕的早晨行程。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">輕度健行</span></div>
+        <a class="spot-link" href="https://mygoldenlife.org.tw/%E9%A6%AC%E7%A5%96%E5%8C%97%E7%AB%BF%E6%99%AF%E9%BB%9E%E5%8C%AF%E6%95%B4/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
     </div>
 
