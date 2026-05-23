@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <style>
   :root {
     --sage:        #9BAD8A;
@@ -523,6 +524,14 @@
   /* ── DIVIDER ── */
   .divider { height: 1px; background: var(--border); margin: 24px 0; }
 
+  /* ── MAP ── */
+  #mapContainer { width:100%; height:480px; border-radius:var(--radius); border:1px solid var(--border); overflow:hidden; position:relative; z-index:1; }
+  .map-legend { display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; padding:14px 18px; background:var(--surface); border-radius:var(--radius); border:1px solid var(--border); font-size:13px; }
+  .map-legend-item { display:flex; align-items:center; gap:6px; }
+  .map-dot { width:12px; height:12px; border-radius:50%; display:inline-block; }
+  .leaflet-popup-content { font-family:'Noto Sans TC',sans-serif; font-size:13px; line-height:1.6; }
+  .leaflet-popup-content strong { font-size:14px; display:block; margin-bottom:4px; }
+
   /* ── FOOTER ── */
   footer {
     text-align: center;
@@ -576,6 +585,7 @@
     <button class="tab-btn" onclick="switchTab('backup',this)">🌧 氣候備案</button>
     <button class="tab-btn" onclick="switchTab('budget',this)">💰 預算</button>
     <button class="tab-btn" onclick="switchTab('checklist',this)">清單</button>
+    <button class="tab-btn" onclick="switchTab('map',this)">📍 景點地圖</button>
   </div>
 
   <!-- 總覽 -->
@@ -828,7 +838,7 @@
         <a class="spot-link" href="https://www.welcometw.com/%E9%A6%AC%E7%A5%96%E6%97%85%E9%81%8A%EF%BD%9C%E5%9B%9B%E9%84%89%E4%BA%94%E5%B3%B6%E8%87%AA%E7%94%B1%E8%A1%8C%E5%BF%85%E6%8E%92%E6%99%AF%E9%BB%9E%EF%BC%81%E6%8E%A2%E7%B4%A2%E5%9C%8B%E4%B9%8B%E5%8C%97/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card cul">
-        <div class="spot-img-wrap"><div class="spot-photo-ph cul">💙</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/%E5%A4%9C%E8%B3%9E%E8%97%8D%E7%9C%BC%E6%B7%9A_1.jpeg" alt="藍眼淚" loading="lazy"></div>
         <div class="spot-name">💙 藍眼淚生態館</div><div class="stars">★★★</div><div class="spot-desc">室內模擬藍眼淚展示，10月戶外觀測已接近尾聲，室內版為替代選擇。</div><div class="spot-tags"><span class="tag info">室內展館</span></div>
         <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
@@ -973,16 +983,16 @@
     <div class="section-title">🛍️ 馬祖10大必買伴手禮</div>
     <div class="alert blue"><span class="alert-icon">💡</span><div><strong>購買建議</strong>大部分伴手禮在介壽村老街、馬祖酒廠、南竿機場均有販售。預算有限優先買1–4項，酒類注意航班托運規定。</div></div>
     <div class="spots-grid">
-      <div class="spot-card cul"><div class="spot-name">🥐 繼光餅</div><div class="stars">★★★★★</div><div class="spot-desc">馬祖版「漢堡」，烤芝麻餅Q彈鹹香。超群繼光餅曾獲伴手禮票選第一，現場夾蔥燒肉或紅糟鰻最道地。</div><div class="spot-tags"><span class="tag done">必買第一</span><span class="tag info">現烤限量</span></div></div>
-      <div class="spot-card cul"><div class="spot-name">🍶 高粱酒 / 老酒</div><div class="stars">★★★★★</div><div class="spot-desc">東湧陳高（58度）是馬祖代表酒，馬祖酒廠直購最便宜。老酒（紅麴釀造）適合長輩伴手禮。</div><div class="spot-tags"><span class="tag warn">托運注意</span><span class="tag info">酒廠直購</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🍜 魚麵</div><div class="stars">★★★★★</div><div class="spot-desc">馬祖特產，用鮸魚、海鰻等魚漿壓製成麵，口感 Q 彈。北竿阿婆魚麵最有名，可帶回家烹煮。</div><div class="spot-tags"><span class="tag done">北竿特產</span><span class="tag free">常溫可帶</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🦪 淡菜</div><div class="stars">★★★★</div><div class="spot-desc">馬祖特有淡菜（翡翠貽貝），肉質飽滿，曬乾後可帶回。乾淡菜可煮湯或炒菜，是珍貴的在地海味。</div><div class="spot-tags"><span class="tag done">唯馬祖有</span></div></div>
-      <div class="spot-card cul"><div class="spot-name">🍺 忍冬啤酒（金銀花）</div><div class="stars">★★★★</div><div class="spot-desc">以馬祖特有忍冬花（金銀花）釀製的精釀啤酒，花香清爽，台灣買不到的限定款，送禮高分。</div><div class="spot-tags"><span class="tag pink">限定款</span><span class="tag warn">托運注意</span></div></div>
-      <div class="spot-card cul"><div class="spot-name">🧆 地瓜餃</div><div class="stars">★★★★</div><div class="spot-desc">地瓜皮包花生/肉末內餡，軟Q彈牙，甜鹹口味都有。北竿五行地瓜餃剉冰很有名，也有袋裝可帶走。</div><div class="spot-tags"><span class="tag info">甜鹹兩款</span></div></div>
-      <div class="spot-card cul"><div class="spot-name">🎂 馬祖酥 / 芙蓉酥</div><div class="stars">★★★★</div><div class="spot-desc">包裝精緻，黑糖/海苔/花生綜合口味，機場有售。攜帶方便，常溫保存，適合大量採購送同事。</div><div class="spot-tags"><span class="tag free">機場有售</span><span class="tag info">常溫</span></div></div>
-      <div class="spot-card cul"><div class="spot-name">🍮 老酒奶茶</div><div class="stars">★★★★</div><div class="spot-desc">馬祖老酒風味的奶茶粉包，近年超熱銷，獨特米香帶微甜酒味，朋友試喝都驚豔。</div><div class="spot-tags"><span class="tag pink">近年爆紅</span><span class="tag free">輕巧好帶</span></div></div>
-      <div class="spot-card nat"><div class="spot-name">🐟 魚丸 / 魚卵</div><div class="stars">★★★★</div><div class="spot-desc">馬祖魚丸彈牙鮮甜，魚卵醃製後鹹鮮下酒。現買現吃或真空包帶回，是最道地的海味伴手禮。</div><div class="spot-tags"><span class="tag info">真空包裝</span></div></div>
-      <div class="spot-card cul"><div class="spot-name">🔴 紅糟 / 紅麴產品</div><div class="stars">★★★</div><div class="spot-desc">釀老酒沉澱的紅麴渣料，可拿來燉肉、醃魚，富含保健成分。紅糟肉醬、紅糟花生也是熱門選項。</div><div class="spot-tags"><span class="tag info">料理食材</span></div></div>
+      <div class="spot-card cul"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/6939ade8-a001-4ef2-8a65-e55d6fb87e6e.jpg" alt="繼光餅" loading="lazy"></div><div class="spot-name">🥐 繼光餅</div><div class="stars">★★★★★</div><div class="spot-desc">馬祖版「漢堡」，烤芝麻餅Q彈鹹香。超群繼光餅曾獲伴手禮票選第一，現場夾蔥燒肉或紅糟鰻最道地。</div><div class="spot-tags"><span class="tag done">必買第一</span><span class="tag info">現烤限量</span></div></div>
+      <div class="spot-card cul"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/81503bfc-8907-435b-9d16-77fca05ac184.jpg" alt="馬祖高粱酒" loading="lazy"></div><div class="spot-name">🍶 高粱酒 / 老酒</div><div class="stars">★★★★★</div><div class="spot-desc">東湧陳高（58度）是馬祖代表酒，馬祖酒廠直購最便宜。老酒（紅麴釀造）適合長輩伴手禮。</div><div class="spot-tags"><span class="tag warn">托運注意</span><span class="tag info">酒廠直購</span></div></div>
+      <div class="spot-card nat"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/26da47f2-8cf4-4172-85fb-5a54e91fa06e.jpg" alt="魚麵" loading="lazy"></div><div class="spot-name">🍜 魚麵</div><div class="stars">★★★★★</div><div class="spot-desc">馬祖特產，用鮸魚、海鰻等魚漿壓製成麵，口感 Q 彈。北竿阿婆魚麵最有名，可帶回家烹煮。</div><div class="spot-tags"><span class="tag done">北竿特產</span><span class="tag free">常溫可帶</span></div></div>
+      <div class="spot-card nat"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/7de37fbb-df0b-4e28-87a6-a0154f656713.jpg" alt="淡菜" loading="lazy"></div><div class="spot-name">🦪 淡菜</div><div class="stars">★★★★</div><div class="spot-desc">馬祖特有淡菜（翡翠貽貝），肉質飽滿，曬乾後可帶回。乾淡菜可煮湯或炒菜，是珍貴的在地海味。</div><div class="spot-tags"><span class="tag done">唯馬祖有</span></div></div>
+      <div class="spot-card cul"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/2690c279-4343-4892-8606-9486a7cb8bf5.jpg" alt="忍冬啤酒" loading="lazy"></div><div class="spot-name">🍺 忍冬啤酒（金銀花）</div><div class="stars">★★★★</div><div class="spot-desc">以馬祖特有忍冬花（金銀花）釀製的精釀啤酒，花香清爽，台灣買不到的限定款，送禮高分。</div><div class="spot-tags"><span class="tag pink">限定款</span><span class="tag warn">托運注意</span></div></div>
+      <div class="spot-card cul"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/dd5b5a48-276c-4c47-92e8-0e3c55dfa9d4.jpg" alt="地瓜餃" loading="lazy"></div><div class="spot-name">🧆 地瓜餃</div><div class="stars">★★★★</div><div class="spot-desc">地瓜皮包花生/肉末內餡，軟Q彈牙，甜鹹口味都有。北竿五行地瓜餃剉冰很有名，也有袋裝可帶走。</div><div class="spot-tags"><span class="tag info">甜鹹兩款</span></div></div>
+      <div class="spot-card cul"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/d236d9fe-51b9-4e4a-9f5f-7bd6fc6bba2f.jpg" alt="芙蓉酥" loading="lazy"></div><div class="spot-name">🎂 馬祖酥 / 芙蓉酥</div><div class="stars">★★★★</div><div class="spot-desc">包裝精緻，黑糖/海苔/花生綜合口味，機場有售。攜帶方便，常溫保存，適合大量採購送同事。</div><div class="spot-tags"><span class="tag free">機場有售</span><span class="tag info">常溫</span></div></div>
+      <div class="spot-card cul"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/63b45fbd-8503-40f0-867b-a873823302d5.jpg" alt="老酒奶茶" loading="lazy"></div><div class="spot-name">🍮 老酒奶茶</div><div class="stars">★★★★</div><div class="spot-desc">馬祖老酒風味的奶茶粉包，近年超熱銷，獨特米香帶微甜酒味，朋友試喝都驚豔。</div><div class="spot-tags"><span class="tag pink">近年爆紅</span><span class="tag free">輕巧好帶</span></div></div>
+      <div class="spot-card nat"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/2cbb0f58-7c2c-4117-9e83-a969dff123e3.jpg" alt="魚丸" loading="lazy"></div><div class="spot-name">🐟 魚丸 / 魚卵</div><div class="stars">★★★★</div><div class="spot-desc">馬祖魚丸彈牙鮮甜，魚卵醃製後鹹鮮下酒。現買現吃或真空包帶回，是最道地的海味伴手禮。</div><div class="spot-tags"><span class="tag info">真空包裝</span></div></div>
+      <div class="spot-card cul"><div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/de144443-99b9-474f-8c5a-3f466c59e9cb.jpg" alt="紅糟肉" loading="lazy"></div><div class="spot-name">🔴 紅糟 / 紅麴產品</div><div class="stars">★★★</div><div class="spot-desc">釀老酒沉澱的紅麴渣料，可拿來燉肉、醃魚，富含保健成分。紅糟肉醬、紅糟花生也是熱門選項。</div><div class="spot-tags"><span class="tag info">料理食材</span></div></div>
     </div>
 
     <div class="alert green"><span class="alert-icon">🏪</span><div><strong>哪裡買最好？</strong><br>
@@ -1011,22 +1021,22 @@
         <a class="spot-link" href="https://www.welcometw.com/%E9%A6%AC%E7%A5%96%E6%97%85%E9%81%8A%EF%BD%9C%E5%9B%9B%E9%84%89%E4%BA%94%E5%B3%B6%E8%87%AA%E7%94%B1%E8%A1%8C%E5%BF%85%E6%8E%92%E6%99%AF%E9%BB%9E%EF%BC%81%E6%8E%A2%E7%B4%A2%E5%9C%8B%E4%B9%8B%E5%8C%97/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card mil">
-        <div class="spot-img-wrap"><div class="spot-photo-ph mil">🏛️</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/attractions/4ddaaf3b55974948ab9bea21ac181853.jpg" alt="勝利堡" loading="lazy"></div>
         <div class="spot-name">🏛️ 勝利堡</div><div class="stars">★★★</div><div class="spot-desc">前戰地指揮中心，現改為戰地文化博物館。了解馬祖戰地歷史，爸爸會最有共鳴。</div><div class="spot-tags"><span class="tag info">博物館</span><span class="tag info">室內景點</span></div>
         <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card cul">
-        <div class="spot-img-wrap"><div class="spot-photo-ph cul">💙</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/others/%E5%A4%9C%E8%B3%9E%E8%97%8D%E7%9C%BC%E6%B7%9A_1.jpeg" alt="藍眼淚" loading="lazy"></div>
         <div class="spot-name">💙 藍眼淚生態館</div><div class="stars">★★★</div><div class="spot-desc">室內模擬藍眼淚展示，全年可參觀。10月戶外觀測機率低，室內版為最佳替代。</div><div class="spot-tags"><span class="tag info">全室內</span><span class="tag warn">需查開放時間</span></div>
         <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card cul">
-        <div class="spot-img-wrap"><div class="spot-photo-ph cul">🎭</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/attractions/e20b166421ab4268877790357e7b24ec.jpg" alt="馬祖民俗文物館" loading="lazy"></div>
         <div class="spot-name">🎭 馬祖民俗文物館</div><div class="stars">★★★</div><div class="spot-desc">全室內，展示閩東文化、戰地文物。下雨天或天氣差時最佳備案，適合長輩。</div><div class="spot-tags"><span class="tag info">全室內</span><span class="tag info">長輩友善</span></div>
         <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card cul">
-        <div class="spot-img-wrap"><div class="spot-photo-ph cul">🛕</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/attractions/50e0a3ff-6610-46f2-bc7d-318592c09002.jpg" alt="白馬文武大王廟" loading="lazy"></div>
         <div class="spot-name">🛕 白馬文武大王廟</div><div class="stars">★★★★</div><div class="spot-desc">馬港北側海邊廟宇，傳統閩東廟宇建築，坐擁無敵海景。媽祖巨神像附近，可合併參觀。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">媽祖像旁</span></div>
         <a class="spot-link" href="https://www.matsu-nsa.gov.tw/zh-TW" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
@@ -1035,22 +1045,22 @@
     <div class="section-title" style="font-size:14px">🏘️ 北竿備案景點</div>
     <div class="spots-grid">
       <div class="spot-card mil">
-        <div class="spot-img-wrap"><div class="spot-photo-ph mil">📡</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/attractions/%E5%A4%A7%E6%BC%A2%E6%93%9A%E9%BB%9E_%E5%8C%97%E7%AB%BF_2025_2.jpg" alt="芹山播音站" loading="lazy"></div>
         <div class="spot-name">📡 芹山播音站</div><div class="stars">★★★★</div><div class="spot-desc">曾是全東南亞輸出功率最大的播音站，對中國大陸廣播。廢棄後開放參觀，戰地氣氛濃厚，離芹壁村近。</div><div class="spot-tags"><span class="tag info">芹壁村旁</span><span class="tag free">免費</span></div>
         <a class="spot-link" href="https://www.jsimplelife.com/matsu-trip/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card nat">
-        <div class="spot-img-wrap"><div class="spot-photo-ph nat">⛰️</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/attractions/%E5%A3%81%E5%B1%B1_%E5%8C%97%E7%AB%BF_2025_6-1.png" alt="壁山觀景台" loading="lazy"></div>
         <div class="spot-name">⛰️ 壁山觀景台</div><div class="stars">★★★★★</div><div class="spot-desc">北竿最高峰，俯瞰芹壁村全景＋龜島＋海面。日出日落都壯觀，是北竿攝影首選制高點。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">攝影聖地</span></div>
         <a class="spot-link" href="https://mygoldenlife.org.tw/%E9%A6%AC%E7%A5%96%E5%8C%97%E7%AB%BF%E6%99%AF%E9%BB%9E%E5%8C%AF%E6%95%B4/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card nat">
-        <div class="spot-img-wrap"><div class="spot-photo-ph nat">🌊</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/attractions/b9955c59-4c31-4bee-9e78-9117d441a53d.jpg" alt="塘后沙灘" loading="lazy"></div>
         <div class="spot-name">🌊 塘后沙灘</div><div class="stars">★★★★</div><div class="spot-desc">北竿最長沙灘，秋冬藍眼淚出沒秘境（10月機率較低但仍有）。旁邊有軍事廢棄機庫，景色特殊。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">藍眼淚秘境</span></div>
         <a class="spot-link" href="https://mygoldenlife.org.tw/%E9%A6%AC%E7%A5%96%E5%8C%97%E7%AB%BF%E6%99%AF%E9%BB%9E%E5%8C%AF%E6%95%B4/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
       <div class="spot-card nat">
-        <div class="spot-img-wrap"><div class="spot-photo-ph nat">🌿</div></div>
+        <div class="spot-img-wrap"><img class="spot-img" src="https://www.matsu-nsa.gov.tw/api/uploads/attractions/%E8%9E%BA%E5%B1%B1%E8%87%AA%E7%84%B6%E6%AD%A5%E9%81%93_%E5%8C%97%E7%AB%BF_2025_3.jpg" alt="螺山自然步道" loading="lazy"></div>
         <div class="spot-name">🌿 螺山自然步道</div><div class="stars">★★★</div><div class="spot-desc">輕鬆健行步道，沿途有戰地遺址和海景，約40分鐘可完成。適合時間充裕的早晨行程。</div><div class="spot-tags"><span class="tag free">免費</span><span class="tag info">輕度健行</span></div>
         <a class="spot-link" href="https://mygoldenlife.org.tw/%E9%A6%AC%E7%A5%96%E5%8C%97%E7%AB%BF%E6%99%AF%E9%BB%9E%E5%8C%AF%E6%95%B4/" target="_blank" rel="noopener">查看詳情 →</a>
       </div>
@@ -1167,6 +1177,21 @@
       <li>高粱酒（酒廠購買）</li>
     </ul>
   </div>
+
+  <!-- 景點地圖 -->
+  <div id="map" class="tab-content">
+    <div class="section-title">📍 馬祖景點地圖</div>
+    <div class="alert blue"><span class="alert-icon">ℹ️</span><div>點擊地圖上的標記查看景點名稱與說明。<strong>青色</strong>＝南竿 ・ <strong>珊瑚紅</strong>＝北竿。點擊圖層可切換南竿／北竿顯示。</div></div>
+    <div id="mapContainer"></div>
+    <div class="map-legend">
+      <div class="map-legend-item"><span class="map-dot" style="background:#4A90A4"></span>南竿景點</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#C8614A"></span>北竿景點</div>
+      <div class="map-legend-item">🏛️ 軍事/戰地</div>
+      <div class="map-legend-item">🌿 自然景觀</div>
+      <div class="map-legend-item">🏛 文化/宗教</div>
+      <div class="map-legend-item">💑 浪漫首選</div>
+    </div>
+  </div>
 </div>
 
 <footer>
@@ -1174,12 +1199,79 @@
   資訊截至2026年5月，出發前請再次確認班機及景點開放狀況
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  if (id === 'map') initMap();
+}
+
+let mapInited = false;
+function initMap() {
+  if (mapInited) return;
+  mapInited = true;
+
+  const map = L.map('mapContainer').setView([26.18, 119.955], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18
+  }).addTo(map);
+
+  function icon(emoji, color) {
+    return L.divIcon({
+      html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)">${emoji}</div>`,
+      iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -18], className: ''
+    });
+  }
+
+  const teal = '#4A90A4', coral = '#C8614A';
+
+  // 南竿景點
+  const nangan = [
+    { pos:[26.1458,119.9337], emoji:'⚓', color:teal, name:'北海坑道', desc:'手鑿地下水道，爸爸最有共鳴' },
+    { pos:[26.1283,119.9228], emoji:'🏔️', color:teal, name:'大漢據點', desc:'三層坑道免費，長輩逛第一層' },
+    { pos:[26.1456,119.9469], emoji:'🌅', color:teal, name:'鐵堡', desc:'日落黃金景點，需穿防滑鞋' },
+    { pos:[26.1614,119.9371], emoji:'🙏', color:teal, name:'媽祖巨神像', desc:'馬港天后宮，免費長輩友善' },
+    { pos:[26.1543,119.9355], emoji:'🍶', color:teal, name:'馬祖酒廠', desc:'高粱酒發源地，免費參觀品嚐' },
+    { pos:[26.1585,119.9369], emoji:'🌃', color:teal, name:'介壽村老街', desc:'夜景更美，廟宇老建築' },
+    { pos:[26.1255,119.9168], emoji:'🏘️', color:teal, name:'津沙聚落', desc:'南竿最完整閩東老漁村，夫妻首選' },
+    { pos:[26.1525,119.9283], emoji:'⛰️', color:teal, name:'雲台山(248m)', desc:'南竿制高點，遠眺大陸海岸' },
+    { pos:[26.1581,119.9409], emoji:'💙', color:teal, name:'藍眼淚生態館', desc:'室內展館，全年可參觀' },
+    { pos:[26.1578,119.9376], emoji:'🏛️', color:teal, name:'勝利堡', desc:'前戰地指揮中心，現為博物館' },
+    { pos:[26.1582,119.9373], emoji:'🎭', color:teal, name:'民俗文物館', desc:'室內，展示閩東文化戰地文物' },
+    { pos:[26.1618,119.9371], emoji:'🛕', color:teal, name:'白馬文武大王廟', desc:'海邊廟宇，媽祖像附近合併參觀' },
+  ];
+
+  // 北竿景點
+  const beigan = [
+    { pos:[26.2255,119.9803], emoji:'🏘️', color:coral, name:'芹壁村', desc:'台灣最美閩東石厝，馬祖地中海' },
+    { pos:[26.2178,119.9776], emoji:'⛰️', color:coral, name:'壁山觀景台', desc:'北竿最高峰，俯瞰芹壁全景' },
+    { pos:[26.2173,119.9909], emoji:'🌊', color:coral, name:'塘后沙灘', desc:'北竿最長沙灘，藍眼淚秘境' },
+    { pos:[26.2275,119.9822], emoji:'📡', color:coral, name:'芹山播音站', desc:'全東南亞最大播音站，戰地氣氛濃' },
+    { pos:[26.2195,119.9727], emoji:'🌿', color:coral, name:'螺山自然步道', desc:'輕鬆健行，沿途戰地遺址與海景' },
+  ];
+
+  const nanganLayer = L.layerGroup();
+  const beiganLayer = L.layerGroup();
+
+  [...nangan].forEach(s => {
+    L.marker(s.pos, { icon: icon(s.emoji, s.color) })
+      .bindPopup(`<strong>${s.name}</strong>${s.desc}`)
+      .addTo(nanganLayer);
+  });
+  [...beigan].forEach(s => {
+    L.marker(s.pos, { icon: icon(s.emoji, s.color) })
+      .bindPopup(`<strong>${s.name}</strong>${s.desc}`)
+      .addTo(beiganLayer);
+  });
+
+  nanganLayer.addTo(map);
+  beiganLayer.addTo(map);
+
+  L.control.layers(null, { '🟢 南竿景點': nanganLayer, '🔴 北竿景點': beiganLayer }, { collapsed: false }).addTo(map);
 }
 </script>
 </body>
