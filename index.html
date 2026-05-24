@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <style>
   :root {
     --sage:        #9BAD8A;
@@ -1213,18 +1214,13 @@
   <!-- 景點地圖 -->
   <div id="map" class="tab-content">
     <div class="section-title">📍 行程路線地圖</div>
-    <div class="alert blue"><span class="alert-icon">ℹ️</span><div>4天行程路線圖，含各日景點標記與折線路線。點擊標記查看時間與說明。</div></div>
-    <div id="mapContainer">
-      <iframe
-        src="https://maps.google.com/maps?q=https://yitzo-chen.github.io/matsu-trip/matsu_trip.kml&output=embed&t=m&z=13&ll=26.15,119.93"
-        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+    <div class="alert blue"><span class="alert-icon">ℹ️</span><div>點擊標記查看景點名稱與時間。折線顏色＝各日路線。</div></div>
+    <div id="mapContainer"></div>
     <div class="map-legend">
-      <div class="map-legend-item"><span class="map-dot" style="background:#ff2222"></span>Day 1・戰地巡禮</div>
-      <div class="map-legend-item"><span class="map-dot" style="background:#ff9900"></span>Day 2・南竿尋根</div>
-      <div class="map-legend-item"><span class="map-dot" style="background:#00aa00"></span>Day 3・升天祭・送爸媽</div>
-      <div class="map-legend-item"><span class="map-dot" style="background:#aa00ff"></span>Day 4・夫妻自由日</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#e63333"></span>Day 1・戰地巡禮</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#e67e00"></span>Day 2・南竿尋根</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#009933"></span>Day 3・升天祭・送爸媽</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#7700cc"></span>Day 4・夫妻自由日</div>
       <div class="map-legend-item">🏨 住宿</div>
       <div class="map-legend-item">✈️ 機場</div>
     </div>
@@ -1236,12 +1232,88 @@
   資訊截至2026年5月，出發前請再次確認班機及景點開放狀況
 </footer>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  if (id === 'map') initMap();
+}
+
+let mapInited = false;
+function initMap() {
+  if (mapInited) return;
+  mapInited = true;
+
+  const map = L.map('mapContainer').setView([26.148, 119.930], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+    maxZoom: 18
+  }).addTo(map);
+
+  function mkIcon(emoji, color) {
+    return L.divIcon({
+      html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)">${emoji}</div>`,
+      iconSize:[32,32], iconAnchor:[16,16], popupAnchor:[0,-18], className:''
+    });
+  }
+
+  const c1='#e63333', c2='#e67e00', c3='#009933', c4='#7700cc', ch='#2255cc';
+
+  // 住宿 & 機場
+  L.marker([26.1601,119.9558], {icon:mkIcon('✈️','#555')}).bindPopup('<strong>南竿機場</strong>去程12:10/12:55抵・回程13:40飛高雄').addTo(map);
+  L.marker([26.1598,119.9183], {icon:mkIcon('🏨',ch)}).bindPopup('<strong>天后會館（夜1–2）</strong>馬港天后宮旁').addTo(map);
+  L.marker([26.1461,119.9132], {icon:mkIcon('🏨',ch)}).bindPopup('<strong>沐光民宿（夜3）</strong>津沙村137號').addTo(map);
+
+  // Day 1 景點
+  const d1 = [
+    {pos:[26.1559,119.9401], e:'🪖', t:'①枕戈待旦', d:'13:15｜10分｜爸爸朝聖必來'},
+    {pos:[26.1598,119.9183], e:'🏨', t:'②天后會館check-in/午餐', d:'13:35｜80分'},
+    {pos:[26.1590,119.9346], e:'🏛️', t:'③勝利堡', d:'15:00｜45分｜免費戰地博物館'},
+    {pos:[26.1406,119.9291], e:'🏔️', t:'④大漢據點', d:'16:00｜45分｜長輩逛第一層'},
+    {pos:[26.1420,119.9209], e:'🌅', t:'⑤鐵堡（日落）', d:'17:10｜日落17:30–17:40，穿防滑鞋'},
+    {pos:[26.1570,119.9510], e:'🌃', t:'⑥介壽村晚餐', d:'19:00｜夜遊老街'},
+  ];
+  // Day 2 景點
+  const d2 = [
+    {pos:[26.1425,119.9290], e:'⚓', t:'①北海坑道', d:'08:00｜90分｜查潮汐0836-25630'},
+    {pos:[26.1451,119.9263], e:'🏘️', t:'②鐵板仁愛村—爸爸帶路', d:'09:45｜105分'},
+    {pos:[26.1450,119.9300], e:'🍱', t:'③午餐（鐵板/馬港）', d:'11:30｜等酒廠開門'},
+    {pos:[26.1475,119.9349], e:'🎬', t:'④梅石文康中心', d:'13:30｜75分｜免費'},
+    {pos:[26.1610,119.9518], e:'🍶', t:'⑤馬祖酒廠', d:'15:00｜60分｜午休至13:40'},
+    {pos:[26.1461,119.9132], e:'🏘️', t:'⑥津沙聚落', d:'16:15｜90分｜傍晚最美'},
+    {pos:[26.1570,119.9510], e:'🍽️', t:'⑦五人最後晚餐', d:'19:00'},
+  ];
+  // Day 3 景點
+  const d3 = [
+    {pos:[26.1609,119.9169], e:'🙏', t:'①馬港天后宮（升天祭）', d:'08:00–11:00｜農曆九月初九'},
+    {pos:[26.1570,119.9510], e:'🛍️', t:'②介壽村伴手禮', d:'11:00–11:45'},
+    {pos:[26.1601,119.9558], e:'✈️', t:'③機場送爸媽', d:'11:45出發｜12:50起飛→台中'},
+    {pos:[26.1461,119.9132], e:'💑', t:'④津沙聚落（夫妻）', d:'14:00–17:00'},
+  ];
+  // Day 4 景點
+  const d4 = [
+    {pos:[26.1525,119.9283], e:'⛰️', t:'①雲台山', d:'08:00｜90分｜制高點早晨最美'},
+    {pos:[26.1677,119.9191], e:'💙', t:'②藍眼淚生態館', d:'09:45｜45分｜室內展館'},
+    {pos:[26.1570,119.9510], e:'🍱', t:'③介壽村午餐+補伴手禮', d:'10:45｜90分'},
+    {pos:[26.1601,119.9558], e:'✈️', t:'④機場返高雄', d:'12:30到機場｜13:40起飛'},
+  ];
+
+  [[d1,c1],[d2,c2],[d3,c3],[d4,c4]].forEach(([spots,color]) => {
+    spots.forEach(s => L.marker(s.pos, {icon:mkIcon(s.e,color)}).bindPopup(`<strong>${s.t}</strong><br>${s.d}`).addTo(map));
+  });
+
+  // 路線折線
+  L.polyline([[26.1601,119.9558],[26.1559,119.9401],[26.1598,119.9183],[26.1590,119.9346],[26.1406,119.9291],[26.1420,119.9209],[26.1570,119.9510]],
+    {color:c1, weight:4, opacity:0.8}).addTo(map);
+  L.polyline([[26.1598,119.9183],[26.1425,119.9290],[26.1451,119.9263],[26.1450,119.9300],[26.1475,119.9349],[26.1610,119.9518],[26.1461,119.9132],[26.1570,119.9510]],
+    {color:c2, weight:4, opacity:0.8}).addTo(map);
+  L.polyline([[26.1598,119.9183],[26.1609,119.9169],[26.1570,119.9510],[26.1601,119.9558],[26.1461,119.9132]],
+    {color:c3, weight:4, opacity:0.8}).addTo(map);
+  L.polyline([[26.1461,119.9132],[26.1525,119.9283],[26.1677,119.9191],[26.1570,119.9510],[26.1601,119.9558]],
+    {color:c4, weight:4, opacity:0.8}).addTo(map);
 }
 </script>
 </body>

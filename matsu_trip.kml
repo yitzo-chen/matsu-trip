@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
   <name>馬祖行程 2026/10/16–19</name>
-  <description>5人家族行程，南竿4天。座標來源：index.html 校正版 2026-05-24</description>
+  <description>5人家族行程，南竿4天。座標校正版 2026-05-24</description>
 
   <!-- 顏色樣式（KML 顏色格式：AABBGGRR） -->
   <Style id="day1">
@@ -77,7 +77,7 @@
       <Point><coordinates>119.9401,26.1559,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>②  天后會館 / 介壽村午餐</name>
+      <name>②  天后會館 check-in / 午餐</name>
       <styleUrl>#day1</styleUrl>
       <description>13:35｜80分｜Check-in + 馬祖米糕、魚丸湯</description>
       <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
@@ -103,8 +103,8 @@
     <Placemark>
       <name>⑥  介壽村晚餐</name>
       <styleUrl>#day1</styleUrl>
-      <description>19:00｜夜遊老街，廟宇燈火，宵夜小攤</description>
-      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
+      <description>19:00｜介壽村老街，夜遊廟宇燈火，宵夜小攤</description>
+      <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>Day 1 路線</name>
@@ -118,7 +118,7 @@
           119.9346,26.1590,0
           119.9291,26.1406,0
           119.9209,26.1420,0
-          119.9183,26.1598,0
+          119.9510,26.1570,0
         </coordinates>
       </LineString>
     </Placemark>
@@ -167,7 +167,7 @@
       <name>⑦  五人最後晚餐</name>
       <styleUrl>#day2</styleUrl>
       <description>19:00｜挑好餐廳，5人唯一完整晚餐</description>
-      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
+      <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>Day 2 路線</name>
@@ -182,7 +182,7 @@
           119.9349,26.1475,0
           119.9518,26.1610,0
           119.9132,26.1461,0
-          119.9183,26.1598,0
+          119.9510,26.1570,0
         </coordinates>
       </LineString>
     </Placemark>
@@ -201,7 +201,7 @@
       <name>②  介壽村伴手禮</name>
       <styleUrl>#day3</styleUrl>
       <description>11:00–11:45｜全員｜高粱酒、花生糖、魚麵、繼光餅</description>
-      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
+      <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>③  南竿機場（送爸媽）</name>
@@ -235,7 +235,7 @@
         <coordinates>
           119.9183,26.1598,0
           119.9169,26.1609,0
-          119.9183,26.1598,0
+          119.9510,26.1570,0
           119.9558,26.1601,0
           119.9132,26.1461,0
         </coordinates>
@@ -262,7 +262,7 @@
       <name>③  介壽村午餐 + 補伴手禮</name>
       <styleUrl>#day4</styleUrl>
       <description>10:45｜90分｜最後一餐 + 最後採購機會</description>
-      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
+      <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>④  南竿機場（返高雄）</name>
@@ -279,7 +279,7 @@
           119.9132,26.1461,0
           119.9283,26.1525,0
           119.9191,26.1677,0
-          119.9183,26.1598,0
+          119.9510,26.1570,0
           119.9558,26.1601,0
         </coordinates>
       </LineString>
