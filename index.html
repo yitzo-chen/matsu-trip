@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <style>
   :root {
     --sage:        #9BAD8A;
@@ -527,7 +526,8 @@
   .divider { height: 1px; background: var(--border); margin: 24px 0; }
 
   /* ── MAP ── */
-  #mapContainer { width:100%; height:480px; border-radius:var(--radius); border:1px solid var(--border); overflow:hidden; position:relative; z-index:1; }
+  #mapContainer { width:100%; height:520px; border-radius:var(--radius); border:1px solid var(--border); overflow:hidden; position:relative; z-index:1; }
+  #mapContainer iframe { width:100%; height:100%; border:0; }
   .map-legend { display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; padding:14px 18px; background:var(--surface); border-radius:var(--radius); border:1px solid var(--border); font-size:13px; }
   .map-legend-item { display:flex; align-items:center; gap:6px; }
   .map-dot { width:12px; height:12px; border-radius:50%; display:inline-block; }
@@ -636,7 +636,7 @@
 
     <div class="section-title">🗺️ 旅程總覽</div>
     <div class="overview-grid">
-      <div class="ov-card"><div class="ov-icon">🏨</div><div class="ov-label">住宿</div><div class="ov-value">夜1–2：天后會館（南竿）<br><small style="font-weight:400;font-size:12px">夜3：10/18 待定（夫妻）</small></div></div>
+      <div class="ov-card"><div class="ov-icon">🏨</div><div class="ov-label">住宿</div><div class="ov-value">夜1–2：天后會館（馬港旁）<br><small style="font-weight:400;font-size:12px">夜3：沐光民宿（津沙村137號，夫妻）</small></div></div>
       <div class="ov-card"><div class="ov-icon">⛴️</div><div class="ov-label">島際渡輪</div><div class="ov-value">南竿↔北竿<br><small style="font-weight:400;font-size:12px">160元/人・20分</small></div></div>
       <div class="ov-card"><div class="ov-icon">🛵</div><div class="ov-label">島內交通</div><div class="ov-value">機車為主<br>爬坡景點叫計程車</div></div>
       <div class="ov-card"><div class="ov-icon">🎖️</div><div class="ov-label">特別意義</div><div class="ov-value">爸爸曾在南竿服役</div></div>
@@ -645,14 +645,14 @@
     <table class="styled-table">
       <thead><tr><th>天數</th><th>日期</th><th>主題</th><th>重點景點</th></tr></thead>
       <tbody>
-        <tr><td><strong>Day 1</strong></td><td>10/16（四）</td><td>南竿戰地</td><td>北海坑道・大漢據點・鐵堡日落・介壽村</td></tr>
-        <tr><td><strong>Day 2</strong></td><td>10/17（五）</td><td>🎖️ 南竿尋根</td><td>鐵板（仁愛村）・梅石文康中心・媽祖巨神像馬港・馬祖酒廠・津沙聚落</td></tr>
+        <tr><td><strong>Day 1</strong></td><td>10/16（四）</td><td>南竿戰地</td><td>枕戈待旦・勝利堡・大漢據點・鐵堡日落（17:30）</td></tr>
+        <tr><td><strong>Day 2</strong></td><td>10/17（五）</td><td>🎖️ 南竿尋根</td><td>北海坑道・鐵板（仁愛村）・梅石文康中心・馬祖酒廠・津沙聚落</td></tr>
         <tr><td><strong>Day 3</strong></td><td>10/18（六）</td><td>🙏 升天祭・送爸媽</td><td>全員馬港升天祭・伴手禮・爸媽12:50飛台中・夫妻雲台山/藍眼淚</td></tr>
         <tr><td><strong>Day 4</strong></td><td>10/19（日）</td><td>💑 夫妻自由日</td><td>自由探索・13:40 華信飛高雄</td></tr>
       </tbody>
     </table>
 
-    <div class="alert yellow"><span class="alert-icon">⚠️</span><div><strong>北海坑道潮汐</strong>出發前需查 10/16 當日潮汐，實際入場時間可能調整。電話：0836-25630</div></div>
+    <div class="alert yellow"><span class="alert-icon">⚠️</span><div><strong>北海坑道潮汐（Day 2）</strong>出發前需查 10/17 當日潮汐，實際入場時間可能調整。電話：0836-25630</div></div>
     <div class="alert blue"><span class="alert-icon">🛡️</span><div><strong>投保旅遊不便險</strong>10月東北季風漸強，5人均需投保，含班機延誤/取消。</div></div>
     <div class="alert pink"><span class="alert-icon">💑</span><div><strong>10/18 晚住宿待定</strong>爸媽飛回後，夫妻二人世界。南竿或北竿？詳見「🏨 10/18 住宿選評」分頁。</div></div>
   </div>
@@ -675,18 +675,17 @@
         <div class="day-info"><h2>南竿戰地巡禮</h2><p>10月16日（週四）・ 兩組約同時抵達 ・ 下午跑三個戰地景點</p></div>
       </div>
     </div>
-    <div class="alert red"><span class="alert-icon">🌊</span><div><strong>出發前必做：查北海坑道當日潮汐</strong>受潮汐影響，實際入場時間不固定。可能需微調下午景點順序。電話 0836-25630</div></div>
+    <div class="alert yellow"><span class="alert-icon">⚠️</span><div><strong>北海坑道潮汐（Day 2）</strong>北海坑道已調至 Day 2，今天不需查潮汐。請在 10/16 晚確認明天（10/17）潮汐。電話 0836-25630</div></div>
     <div class="section-title">時 間 表</div>
     <div class="timeline">
       <div class="timeline-item"><div class="time-label">11:05 / 11:15</div><div class="tcard"><div class="act">✈️ 出發（兩地同時）</div><div class="note">台中組 B7-8731 11:05 起飛・高雄組 AE-7925 11:15 起飛</div></div></div>
-      <div class="timeline-item"><div class="time-label">12:10 / 12:55</div><div class="tcard"><div class="act">🛬 抵達南竿機場</div><div class="note">台中組 12:10 先到・高雄組 12:55 抵達・天后會館 check in・放行李</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:00</div><div class="tcard"><div class="act">🪖 枕戈待旦（路邊打卡・爸爸朝聖）</div><div class="note">福沃往山隴路上・當年每個阿兵哥退伍前必在此拍照的地標・停車3分鐘即可</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:30</div><div class="tcard"><div class="act">🍜 午餐</div><div class="note">介壽村（山隴）・馬祖米糕、魚丸湯、高粱蝦麵線<br><small style="color:#888">爸爸服役的民國60年代「西門町」其實是<strong>鐵板（仁愛村）</strong>，山隴是後期才崛起的商圈</small></div></div></div>
-      <div class="timeline-item"><div class="time-label">14:15–14:30</div><div class="tcard"><div class="act">🏛️ 勝利堡（午餐後順訪）</div><div class="note">介壽村旁步行即達・前戰地政務委員會指揮中心，現為戰地博物館</div></div></div>
-      <div class="timeline-item"><div class="time-label">14:45–16:15</div><div class="tcard"><div class="act">⚓ 北海坑道</div><div class="note">手鑿地下水道・爸爸最有共鳴</div><div class="warn">⚠️ 配合當日潮汐，出發前確認</div></div></div>
-      <div class="timeline-item"><div class="time-label">16:30–17:15</div><div class="tcard"><div class="act">🏔️ 大漢據點</div><div class="note">山頂砲陣地・俯瞰南竿全景</div><div class="warn">⚠️ 長輩只逛第一層觀海平台</div></div></div>
-      <div class="timeline-item"><div class="time-label">17:30–19:00</div><div class="tcard"><div class="act">🌅 鐵堡</div><div class="note">日落黃金時段（10月底約17:40日落）・穿防滑鞋</div></div></div>
-      <div class="timeline-item"><div class="time-label">19:00–21:00</div><div class="tcard"><div class="act">🌃 介壽村老街晚餐＋夜遊</div><div class="note">夜景更美・廟宇老建築・宵夜小攤</div></div></div>
+      <div class="timeline-item"><div class="time-label">12:10 / 12:55</div><div class="tcard"><div class="act">🛬 抵達南竿機場</div><div class="note">台中組 12:10 先到・高雄組 12:55 抵達・在機場等齊後一起出發</div></div></div>
+      <div class="timeline-item"><div class="time-label">13:15</div><div class="tcard"><div class="act">🪖 枕戈待旦（路邊打卡・爸爸朝聖）</div><div class="note">路邊停車拍照 10 分鐘・當年每個阿兵哥退伍前必在此留影・蔣公親題四字嵌入山壁</div></div></div>
+      <div class="timeline-item"><div class="time-label">13:35</div><div class="tcard"><div class="act">🏨 天后會館 check-in ＋ 午餐（80分）</div><div class="note">放行李・馬祖米糕、魚丸湯、高粱蝦麵線・兩組到齊後再出發</div></div></div>
+      <div class="timeline-item"><div class="time-label">15:00</div><div class="tcard"><div class="act">🏛️ 勝利堡（45分）</div><div class="note">前戰地政務委員會指揮中心，現為戰地博物館・免費・室內・長輩友善</div></div></div>
+      <div class="timeline-item"><div class="time-label">16:00</div><div class="tcard"><div class="act">🏔️ 大漢據點（45分）</div><div class="note">三層坑道免費・長輩只逛第一層觀海平台即可・俯瞰南竿全景</div></div></div>
+      <div class="timeline-item"><div class="time-label">17:10</div><div class="tcard"><div class="act">🌅 鐵堡（80分）</div><div class="note">10月日落 17:30–17:40・<strong>17:10前務必抵達</strong>・穿防滑鞋・海濱軍事碉堡地形壯觀</div></div></div>
+      <div class="timeline-item"><div class="time-label">19:00</div><div class="tcard"><div class="act">🌃 介壽村老街晚餐</div><div class="note">夜景更美・廟宇燈火老建築・宵夜小攤</div></div></div>
     </div>
     <div class="section-title">景 點 詳 情</div>
     <div class="spots-grid">
@@ -742,15 +741,17 @@
       </div>
     </div>
     <div class="alert red"><span class="alert-icon">🎖️</span><div><strong>今天是爸爸的馬祖</strong>鐵板（仁愛村）是民國60年代南竿真正的繁華中心，請爸爸帶路，用手機錄下他說的每一個故事。</div></div>
-    <div class="alert yellow"><span class="alert-icon">⏰</span><div><strong>酒廠午休注意</strong>馬祖酒廠 11:30–13:40 午休，下午 13:40 後再進入或上午 11:00 前離開。</div></div>
+    <div class="alert yellow"><span class="alert-icon">🌊</span><div><strong>出發前必查：北海坑道潮汐</strong>受潮汐影響，實際入場時間不固定。電話 0836-25630，確認 10/17 當天可入場時間。</div></div>
+    <div class="alert yellow"><span class="alert-icon">⏰</span><div><strong>酒廠午休注意</strong>馬祖酒廠 11:30–13:40 午休，下午 15:00 到剛好，勿提早前往。</div></div>
     <div class="section-title">時 間 表</div>
     <div class="timeline">
-      <div class="timeline-item"><div class="time-label">08:00–10:00</div><div class="tcard"><div class="act">🏘️ 鐵板（仁愛村）深度走訪——爸爸帶路</div><div class="note">這裡才是民國60年代南竿的「西門町」：中正堂電影院舊址、澡堂、照相館、撞球場、餐館、縣政府舊址一應俱全。請爸爸邊走邊說，用手機錄下來。</div></div></div>
-      <div class="timeline-item"><div class="time-label">10:00–11:30</div><div class="tcard"><div class="act">🎬 梅石文康中心——充分參觀</div><div class="note">民國50–60年代馬祖最大娛樂重地。看老照片、老展覽，找找爸爸那個年代的痕跡。可搭配閱讀 etravel《梅石營區軍官特約茶室》深度文章。</div></div></div>
-      <div class="timeline-item"><div class="time-label">11:30</div><div class="tcard"><div class="act">🍱 午餐（梅石或馬港附近）</div><div class="note">鐵板/梅石區有幾家在地餐廳，也可開車到馬港吃海鮮</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:00–14:15</div><div class="tcard"><div class="act">🍶 馬祖酒廠（介壽村東側）</div><div class="note">參觀釀酒、品嚐高粱酒。可買伴手禮（高粱酒、魚卵、花生），但明日機場也有賣，不必全搬今天買。</div></div></div>
-      <div class="timeline-item"><div class="time-label">14:30–15:15</div><div class="tcard"><div class="act">🙏 媽祖巨神像＋馬港舊街區</div><div class="note">爸爸當年採買逛街的地方。明日升天祭場地預覽，讓爸爸講他記憶中的馬港。</div></div></div>
-      <div class="timeline-item"><div class="time-label">15:30–17:30</div><div class="tcard"><div class="act">🏘️ 津沙聚落散步（全員）</div><div class="note">南竿保存最完整的閩東老漁村，石板路平緩，沙灘可達。傍晚日落前最美，遊人極少，老照片感十足。</div></div></div>
+      <div class="timeline-item"><div class="time-label">07:30</div><div class="tcard"><div class="act">🌅 提早出發</div><div class="note">今天行程最豐富，比平常早出發</div></div></div>
+      <div class="timeline-item"><div class="time-label">08:00</div><div class="tcard"><div class="act">⚓ 北海坑道（90分）</div><div class="note">手鑿地下水道，可容戰艦進入。爸爸服役時曾在此出公差——這不只是景點，是他真實勞動過的地方。</div><div class="warn">⚠️ 出發前確認潮汐，電話 0836-25630</div></div></div>
+      <div class="timeline-item"><div class="time-label">09:45</div><div class="tcard"><div class="act">🏘️ 鐵板（仁愛村）深度走訪——爸爸帶路（105分）</div><div class="note">民國60年代南竿的「西門町」：中正堂電影院舊址、澡堂、照相館、撞球場、餐館一應俱全。請爸爸邊走邊說，手機錄下來。</div></div></div>
+      <div class="timeline-item"><div class="time-label">11:30</div><div class="tcard"><div class="act">🍱 午餐（鐵板或馬港附近，110分）</div><div class="note">從容吃，等酒廠 13:40 開門後才去</div></div></div>
+      <div class="timeline-item"><div class="time-label">13:30</div><div class="tcard"><div class="act">🎬 梅石文康中心（75分）</div><div class="note">民國50–60年代馬祖最大娛樂重地。看老照片、老展覽，找找爸爸那個年代的痕跡。免費。</div></div></div>
+      <div class="timeline-item"><div class="time-label">15:00</div><div class="tcard"><div class="act">🍶 馬祖酒廠（60分）</div><div class="note">參觀釀酒、品嚐高粱酒。可買伴手禮（高粱酒、魚卵、花生）。</div><div class="warn">⚠️ 午休 11:30–13:40，15:00 到剛好</div></div></div>
+      <div class="timeline-item"><div class="time-label">16:15</div><div class="tcard"><div class="act">🏘️ 津沙聚落散步（90分，全員）</div><div class="note">南竿保存最完整的閩東老漁村，石板路平緩，沙灘可達。傍晚日落前最美，遊人極少。</div></div></div>
       <div class="timeline-item"><div class="time-label">19:00</div><div class="tcard"><div class="act">🍽️ 5人最後完整晚餐</div><div class="note">這是5人唯一完整的晚餐（明天爸媽中午就飛了）。挑一間好一點的餐廳，好好吃一頓。</div></div></div>
     </div>
     <div class="section-title">景 點 詳 情</div>
@@ -849,12 +850,12 @@
     <div class="alert blue"><span class="alert-icon">⛵</span><div><strong>北竿快閃備選（海象好才考慮）</strong>若當天海況佳、渡輪正常，可考慮 06:50 首班船衝芹壁村，約 10:00 前趕回南竿。條件：①渡輪準點 ②海象平穩 ③不焦慮趕時間。時間極度緊繃，任一條件不符就跳過——南竿本身已夠好玩。</div></div>
     <div class="section-title">建 議 時 間 表</div>
     <div class="timeline">
-      <div class="timeline-item"><div class="time-label">06:50 備選</div><div class="tcard"><div class="act">⛵ 北竿快閃：首班渡輪</div><div class="note">海象佳才出發・抵北竿約 07:30・芹壁村散步 2h・09:30 回程船・10:30 返南竿・須 12:30 前到機場</div></div></div>
-      <div class="timeline-item"><div class="time-label">08:00–09:30</div><div class="tcard"><div class="act">☕ 悠閒早餐・民宿慢起（一般方案）</div><div class="note">不用趕、不用顧長輩，享受兩人早晨</div></div></div>
-      <div class="timeline-item"><div class="time-label">09:30–11:30</div><div class="tcard"><div class="act">🗺️ 南竿自由探索</div><div class="note">雲台山・藍眼淚生態館・或在介壽村慢逛</div></div></div>
-      <div class="timeline-item"><div class="time-label">12:00</div><div class="tcard"><div class="act">🍱 最後午餐＋補買伴手禮</div><div class="note">回南竿・高粱酒・花生・魚卵補貨</div></div></div>
-      <div class="timeline-item"><div class="time-label">12:30</div><div class="tcard"><div class="act">🏛️ 南竿機場 check in</div></div></div>
-      <div class="timeline-item"><div class="time-label">13:40</div><div class="tcard"><div class="act">✈️ 華信 AE-7926 返高雄</div><div class="note">抵達高雄清泉崗 15:20・訂位代號 E7L8A5</div></div></div>
+      <div class="timeline-item"><div class="time-label">08:00</div><div class="tcard"><div class="act">⛰️ 雲台山（90分）</div><div class="note">南竿制高點 248m，早晨雲霧繚繞最美，晴天可遠眺北竿及中國大陸海岸。沐光民宿出發約20分鐘車程。</div></div></div>
+      <div class="timeline-item"><div class="time-label">09:45</div><div class="tcard"><div class="act">💙 藍眼淚生態館（45分）</div><div class="note">室內展館，全年可參觀。10月戶外觀測已近尾聲，室內版替代體驗（芙蓉澳）。</div></div></div>
+      <div class="timeline-item"><div class="time-label">10:45</div><div class="tcard"><div class="act">🍱 介壽村最後午餐＋補買伴手禮（90分）</div><div class="note">最後一餐馬祖味道・最後採購機會・高粱酒、魚卵、花生、繼光餅</div></div></div>
+      <div class="timeline-item"><div class="time-label">12:15</div><div class="tcard"><div class="act">🚗 前往南竿機場（車程15分鐘）</div></div></div>
+      <div class="timeline-item"><div class="time-label">12:30</div><div class="tcard"><div class="act">✈️ 南竿機場報到（13:40起飛前70分到達）</div></div></div>
+      <div class="timeline-item"><div class="time-label">13:40</div><div class="tcard"><div class="act">✈️ 華信 AE-7926 返高雄</div><div class="note">抵達高雄 15:20・訂位代號 E7L8A5</div></div></div>
     </div>
     <div class="section-title">Day 4 可 選 景 點</div>
     <div class="spots-grid">
@@ -1211,16 +1212,21 @@
 
   <!-- 景點地圖 -->
   <div id="map" class="tab-content">
-    <div class="section-title">📍 馬祖景點地圖</div>
-    <div class="alert blue"><span class="alert-icon">ℹ️</span><div>點擊地圖上的標記查看景點名稱與說明。<strong>青色</strong>＝南竿 ・ <strong>珊瑚紅</strong>＝北竿。點擊圖層可切換南竿／北竿顯示。</div></div>
-    <div id="mapContainer"></div>
+    <div class="section-title">📍 行程路線地圖</div>
+    <div class="alert blue"><span class="alert-icon">ℹ️</span><div>4天行程路線圖，含各日景點標記與折線路線。點擊標記查看時間與說明。</div></div>
+    <div id="mapContainer">
+      <iframe
+        src="https://maps.google.com/maps?q=https://yitzo-chen.github.io/matsu-trip/matsu_trip.kml&output=embed&t=m&z=13&ll=26.15,119.93"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
     <div class="map-legend">
-      <div class="map-legend-item"><span class="map-dot" style="background:#4A90A4"></span>南竿景點</div>
-      <div class="map-legend-item"><span class="map-dot" style="background:#C8614A"></span>北竿景點</div>
-      <div class="map-legend-item">🏛️ 軍事/戰地</div>
-      <div class="map-legend-item">🌿 自然景觀</div>
-      <div class="map-legend-item">🏛 文化/宗教</div>
-      <div class="map-legend-item">💑 浪漫首選</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#ff2222"></span>Day 1・戰地巡禮</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#ff9900"></span>Day 2・南竿尋根</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#00aa00"></span>Day 3・升天祭・送爸媽</div>
+      <div class="map-legend-item"><span class="map-dot" style="background:#aa00ff"></span>Day 4・夫妻自由日</div>
+      <div class="map-legend-item">🏨 住宿</div>
+      <div class="map-legend-item">✈️ 機場</div>
     </div>
   </div>
 </div>
@@ -1230,82 +1236,12 @@
   資訊截至2026年5月，出發前請再次確認班機及景點開放狀況
 </footer>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <script>
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
-  if (id === 'map') initMap();
-}
-
-let mapInited = false;
-function initMap() {
-  if (mapInited) return;
-  mapInited = true;
-
-  const map = L.map('mapContainer').setView([26.18, 119.955], 12);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    maxZoom: 18
-  }).addTo(map);
-
-  function icon(emoji, color) {
-    return L.divIcon({
-      html: `<div style="background:${color};width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid white;box-shadow:0 2px 8px rgba(0,0,0,0.3)">${emoji}</div>`,
-      iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -18], className: ''
-    });
-  }
-
-  const teal = '#4A90A4', coral = '#C8614A';
-
-  // 南竿景點
-  const nangan = [
-    { pos:[26.1425,119.9290], emoji:'⚓', color:teal, name:'北海坑道', desc:'手鑿地下水道，爸爸最有共鳴' },
-    { pos:[26.1559,119.9401], emoji:'🪖', color:teal, name:'枕戈待旦', desc:'老兵退伍必拍地標，爸爸朝聖首選' },
-    { pos:[26.1406,119.9265], emoji:'🏔️', color:teal, name:'大漢據點', desc:'三層坑道免費，長輩逛第一層' },
-    { pos:[26.1420,119.9209], emoji:'🌅', color:teal, name:'鐵堡', desc:'日落黃金景點，需穿防滑鞋' },
-    { pos:[26.1609,119.9169], emoji:'🙏', color:teal, name:'媽祖巨神像', desc:'馬港天后宮，免費長輩友善' },
-    { pos:[26.1610,119.9518], emoji:'🍶', color:teal, name:'馬祖酒廠', desc:'高粱酒發源地，免費參觀品嚐' },
-    { pos:[26.1570,119.9510], emoji:'🌃', color:teal, name:'介壽村老街', desc:'夜景更美，廟宇老建築' },
-    { pos:[26.1461,119.9132], emoji:'🏘️', color:teal, name:'津沙聚落', desc:'南竿最完整閩東老漁村，夫妻首選' },
-    { pos:[26.1451,119.9263], emoji:'🏘️', color:teal, name:'鐵板（仁愛村）', desc:'爸爸年代馬祖西門町，寧靜老村落' },
-    { pos:[26.1475,119.9349], emoji:'🎬', color:teal, name:'梅石文康中心', desc:'民國50–60年代最大娛樂重地，中正堂電影院舊址' },
-    { pos:[26.1525,119.9283], emoji:'⛰️', color:teal, name:'雲台山(248m)', desc:'南竿制高點，遠眺大陸海岸' },
-    { pos:[26.1677,119.9191], emoji:'💙', color:teal, name:'藍眼淚生態館', desc:'室內展館，全年可參觀（芙蓉澳）' },
-    { pos:[26.1590,119.9346], emoji:'🏛️', color:teal, name:'勝利堡', desc:'前戰地指揮中心，現為博物館' },
-    { pos:[26.1503,119.9356], emoji:'🎭', color:teal, name:'民俗文物館', desc:'室內，展示閩東文化戰地文物' },
-    { pos:[26.1589,119.9298], emoji:'🛕', color:teal, name:'白馬文武大王廟', desc:'海邊廟宇，科蹄澳，媽祖像附近合併參觀' },
-  ];
-
-  // 北竿景點
-  const beigan = [
-    { pos:[26.2248,119.9837], emoji:'🏘️', color:coral, name:'芹壁村', desc:'台灣最美閩東石厝，馬祖地中海' },
-    { pos:[26.2178,119.9776], emoji:'⛰️', color:coral, name:'壁山觀景台', desc:'北竿最高峰，俯瞰芹壁全景' },
-    { pos:[26.2173,119.9909], emoji:'🌊', color:coral, name:'塘后沙灘', desc:'北竿最長沙灘，藍眼淚秘境' },
-    { pos:[26.2217,119.9794], emoji:'📡', color:coral, name:'芹山播音站', desc:'全東南亞最大播音站，戰地氣氛濃' },
-    { pos:[26.2195,119.9727], emoji:'🌿', color:coral, name:'螺山自然步道', desc:'輕鬆健行，沿途戰地遺址與海景' },
-  ];
-
-  const nanganLayer = L.layerGroup();
-  const beiganLayer = L.layerGroup();
-
-  [...nangan].forEach(s => {
-    L.marker(s.pos, { icon: icon(s.emoji, s.color) })
-      .bindPopup(`<strong>${s.name}</strong>${s.desc}`)
-      .addTo(nanganLayer);
-  });
-  [...beigan].forEach(s => {
-    L.marker(s.pos, { icon: icon(s.emoji, s.color) })
-      .bindPopup(`<strong>${s.name}</strong>${s.desc}`)
-      .addTo(beiganLayer);
-  });
-
-  nanganLayer.addTo(map);
-  beiganLayer.addTo(map);
-
-  L.control.layers(null, { '🟢 南竿景點': nanganLayer, '🔴 北竿景點': beiganLayer }, { collapsed: false }).addTo(map);
 }
 </script>
 </body>
