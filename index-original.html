@@ -3,36 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>馬祖自由行 2026/10/16–19 | 南竿</title>
+<title>馬祖自由行 2026/10/16–19 | 南竿＋北竿</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
 <style>
   :root {
-    --sage:        #7A8C6E;
-    --sage-dark:   #5E7055;
-    --sage-light:  #E2E8DA;
-    --sage-bg:     #EDF0E8;
-    --coral:       #9A7B6A;
-    --coral-light: #B09080;
-    --golden:      #C4A882;
-    --golden-light:#D4BC96;
-    --teal:        #7A8C6E;
-    --teal-light:  #9BAD8A;
-    --accent:      #8B6F5E;
-    --green:       #7A8C6E;
-    --paper:       #F5F0E8;
-    --surface:     #FAF7F2;
-    --text:        #2C2C2C;
-    --text-light:  #6B6358;
-    --text-muted:  #9A9188;
-    --border:      #D5CCBA;
-    --shadow-sm:   0 1px 3px rgba(0,0,0,0.05);
-    --shadow:      0 3px 12px rgba(0,0,0,0.07);
-    --shadow-lg:   0 6px 24px rgba(0,0,0,0.10);
-    --radius:      6px;
-    --radius-sm:   4px;
+    --sage:        #9BAD8A;
+    --sage-dark:   #7A9468;
+    --sage-light:  #EBF0E5;
+    --sage-bg:     #F2F5EE;
+    --coral:       #C8614A;
+    --coral-light: #D97560;
+    --golden:      #E8A820;
+    --golden-light:#F5C84A;
+    --teal:        #4A90A4;
+    --teal-light:  #6BAEC2;
+    --accent:      #E8472A;
+    --green:       #5A9A6A;
+    --paper:       #EDE9E0;
+    --surface:     #F8F5EF;
+    --text:        #333333;
+    --text-light:  #666666;
+    --text-muted:  #999999;
+    --border:      #D0CBBF;
+    --shadow-sm:   0 1px 4px rgba(0,0,0,0.07);
+    --shadow:      0 4px 16px rgba(0,0,0,0.09);
+    --shadow-lg:   0 8px 32px rgba(0,0,0,0.13);
+    --radius:      12px;
+    --radius-sm:   8px;
     --radius-full: 9999px;
   }
 
@@ -48,69 +48,60 @@
 
   /* ── HERO ── */
   .hero {
-    background: linear-gradient(160deg, #8B9E7A 0%, #C4B99A 45%, #E8DCC8 80%, #F5F0E8 100%);
-    padding: 72px 24px 80px;
+    background: linear-gradient(rgba(130,155,118,0.87), rgba(130,155,118,0.90)),
+                url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/%E8%8A%B9%E5%A3%81%E8%81%9A%E8%90%BD.jpg/1280px-%E8%8A%B9%E5%A3%81%E8%81%9A%E8%90%BD.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 24px 72px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    overflow: hidden;
   }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Cellipse cx='300' cy='160' rx='240' ry='130' fill='%23ffffff18'/%3E%3Cellipse cx='80' cy='320' rx='100' ry='70' fill='%2300000010'/%3E%3C/svg%3E");
-    background-size: cover;
-    pointer-events: none;
+  .hero-circle {
+    width: 200px; height: 200px;
+    background: var(--coral);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    box-shadow: 0 8px 32px rgba(200,97,74,0.35);
   }
-  .hero-circle { display: none; }
   .hero-dest {
-    color: #2C2C2C;
-    font-size: 64px;
+    color: white;
+    font-size: 40px;
     font-weight: 300;
-    letter-spacing: 18px;
+    letter-spacing: 12px;
     line-height: 1;
-    padding-left: 18px;
-    position: relative;
-    margin-bottom: 10px;
+    padding-left: 12px;
   }
   .hero-dest-sub {
-    color: #5E7055;
-    font-size: 14px;
-    letter-spacing: 6px;
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    letter-spacing: 3px;
     margin-top: 8px;
-    font-weight: 300;
-    position: relative;
+    font-weight: 400;
   }
   .hero-season {
-    color: #4A5A42;
-    font-size: 14px;
+    color: white;
+    font-size: 20px;
     font-weight: 300;
     letter-spacing: 6px;
-    margin-bottom: 10px;
-    margin-top: 28px;
-    position: relative;
+    margin-bottom: 8px;
   }
   .hero-dates {
-    color: #2C2C2C;
-    font-size: 14px;
-    letter-spacing: 3px;
-    margin-bottom: 8px;
-    font-weight: 300;
-    position: relative;
+    color: rgba(255,255,255,0.92);
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    font-weight: 400;
   }
   .hero-info {
-    color: #6B6358;
-    font-size: 12px;
-    letter-spacing: 2px;
-    position: relative;
-  }
-  .hero-line {
-    width: 40px; height: 1px;
-    background: #7A8C6E;
-    margin: 18px auto 20px;
-    position: relative;
+    color: rgba(255,255,255,0.75);
+    font-size: 13px;
+    letter-spacing: 1px;
   }
 
   /* ── CONTAINER ── */
@@ -121,27 +112,27 @@
     display: flex; gap: 8px; margin-bottom: 32px; flex-wrap: wrap;
   }
   .tab-btn {
-    padding: 7px 16px;
-    border: 1px solid var(--border);
+    padding: 8px 16px;
+    border: 1.5px solid var(--border);
     border-radius: var(--radius-full);
     background: var(--surface);
-    color: var(--text-muted);
-    font-size: 12px;
-    font-weight: 400;
+    color: var(--text-light);
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.2s;
     font-family: inherit;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
   .tab-btn.active {
-    background: var(--sage);
-    color: var(--surface);
-    border-color: var(--sage);
-    box-shadow: none;
+    background: var(--coral);
+    color: white;
+    border-color: var(--coral);
+    box-shadow: 0 3px 12px rgba(200,97,74,0.32);
   }
   .tab-btn:hover:not(.active) {
-    border-color: var(--sage);
-    color: var(--sage-dark);
+    border-color: var(--coral-light);
+    color: var(--coral);
   }
   .tab-content { display: none; }
   .tab-content.active { display: block; }
@@ -152,17 +143,17 @@
     align-items: center;
     gap: 14px;
     margin: 32px 0 18px;
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 4px;
-    color: var(--text-light);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text);
   }
   .section-title::before,
   .section-title::after {
     content: '';
     flex: 1;
-    height: 1px;
-    background: var(--border);
+    height: 2px;
+    background: linear-gradient(90deg, var(--sage-dark), var(--coral));
     border-radius: 1px;
   }
 
@@ -201,13 +192,13 @@
     flex-shrink: 0;
     color: white;
   }
-  .day-badge.d1 { background: #7A8C6E; }
-  .day-badge.d2 { background: #9A8A72; }
-  .day-badge.d3 { background: #6E8472; }
-  .day-badge.d4 { background: #8A7E6E; }
-  .day-badge .dn { font-size: 11px; font-weight: 300; letter-spacing: 3px; opacity: 0.85; }
-  .day-badge .dnum { font-size: 30px; font-weight: 300; line-height: 1; }
-  .day-info h2 { font-size: 17px; font-weight: 400; color: var(--text); letter-spacing: 2px; }
+  .day-badge.d1 { background: var(--teal); }
+  .day-badge.d2 { background: var(--golden); }
+  .day-badge.d3 { background: var(--green); }
+  .day-badge.d4 { background: var(--coral); }
+  .day-badge .dn { font-size: 11px; font-weight: 700; letter-spacing: 2px; opacity: 0.9; }
+  .day-badge .dnum { font-size: 30px; font-weight: 700; line-height: 1; }
+  .day-info h2 { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: 1px; }
   .day-info p { font-size: 13px; color: var(--text-light); margin-top: 4px; }
 
   /* ── FLIGHT CARDS ── */
@@ -354,7 +345,7 @@
     font-size: 14px;
     border: 1px solid var(--border);
   }
-  .styled-table thead tr { background: var(--sage-dark); color: #F5F0E8; }
+  .styled-table thead tr { background: var(--sage); color: white; }
   .styled-table th { padding: 12px 16px; text-align: left; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; }
   .styled-table td { padding: 11px 16px; border-bottom: 1px solid var(--border); vertical-align: top; color: var(--text); }
   .styled-table tr:last-child td { border-bottom: none; }
@@ -378,19 +369,24 @@
 
   /* ── BUDGET ── */
   .budget-total {
-    background: var(--sage-dark);
-    color: #F5F0E8;
+    background: var(--sage);
+    color: white;
     border-radius: var(--radius);
     padding: 36px;
     text-align: center;
     margin-top: 20px;
-    box-shadow: none;
-    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
   }
   .budget-total::before {
-    display: none;
+    content: '';
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    pointer-events: none;
   }
   .budget-total .amount { font-size: 38px; font-weight: 700; display: block; margin: 8px 0; letter-spacing: -0.5px; }
 
@@ -569,9 +565,10 @@
 
 <!-- ── HERO ── -->
 <div class="hero">
-  <div class="hero-dest">馬 祖</div>
-  <div class="hero-dest-sub">南 竿</div>
-  <div class="hero-line"></div>
+  <div class="hero-circle">
+    <span class="hero-dest">馬 祖</span>
+    <span class="hero-dest-sub">南竿 ・ 北竿</span>
+  </div>
   <div class="hero-season">秋 ・ 2026</div>
   <div class="hero-dates">2026 / 10/16（四）— 10/19（日）</div>
   <div class="hero-info">家族旅遊 ・ 5人 ・ 高雄＋台中出發</div>
