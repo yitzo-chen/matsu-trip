@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
   <name>馬祖行程 2026/10/16–19</name>
-  <description>5人家族行程，南竿4天。座標校正版 2026-05-24</description>
+  <description>5人家族・全程南竿・爸爸尋根主題。班機以 8/27 第三次異動為準。座標校正版 2026-09-06（同步自 index.html 行程）</description>
 
   <!-- 顏色樣式（KML 顏色格式：AABBGGRR） -->
   <Style id="day1">
@@ -50,60 +50,54 @@
     <Placemark>
       <name>✈️ 南竿機場</name>
       <styleUrl>#airport</styleUrl>
-      <description>起降點｜去程12:10/12:55抵｜回程13:40飛高雄</description>
+      <description>去程：台中組 12:35 抵、高雄組 13:10 抵（8/27 第三次異動）｜回程：爸媽 10/18 B7-8732 13:10 飛台中、夫妻 10/19 AE-7926 13:55 飛高雄（8/27 異動，原 15:00）</description>
       <Point><coordinates>119.9558,26.1601,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>🏨 天后會館（夜1–2）</name>
+      <name>🏨 天后會館（夜1–3）</name>
       <styleUrl>#hotel</styleUrl>
-      <description>馬港天后宮旁｜Day1 check-in｜Day3早上退房</description>
+      <description>南竿馬祖村102-6號｜馬港天后宮旁｜10/16 入住、10/19 退房，共 3 晚。爸媽組 10/18 中午飛回台中後，夫妻續住同一間至 10/19</description>
       <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
-    </Placemark>
-    <Placemark>
-      <name>🏨 沐光民宿（夜3）</name>
-      <styleUrl>#hotel</styleUrl>
-      <description>連江縣南竿鄉津沙村137號｜Day3下午入住</description>
-      <Point><coordinates>119.9132,26.1461,0</coordinates></Point>
     </Placemark>
   </Folder>
 
   <!-- Day 1 -->
   <Folder>
-    <name>🔴 Day 1｜10/16 南竿戰地巡禮</name>
+    <name>🔴 Day 1｜10/16（五）南竿戰地巡禮</name>
     <Placemark>
-      <name>①  枕戈待旦</name>
+      <name>①  天后會館 check-in / 5人午餐</name>
       <styleUrl>#day1</styleUrl>
-      <description>13:15｜10分｜路邊停車拍照，爸爸朝聖必來，蔣公親題大字</description>
-      <Point><coordinates>119.9401,26.1559,0</coordinates></Point>
+      <description>13:15–14:35｜兩組 13:10 前後抵達，放行李＋馬祖米糕、魚丸湯、高粱蝦麵線，不趕</description>
+      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>②  天后會館 check-in / 午餐</name>
+      <name>②  枕戈待旦</name>
       <styleUrl>#day1</styleUrl>
-      <description>13:35｜80分｜Check-in + 馬祖米糕、魚丸湯</description>
-      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
+      <description>14:35｜10分｜路邊停車拍照，爸爸朝聖必來，蔣公親題四字嵌入山壁</description>
+      <Point><coordinates>119.9401,26.1559,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>③  勝利堡</name>
       <styleUrl>#day1</styleUrl>
-      <description>15:00｜45分｜免費戰地博物館，前戰地政務委員會指揮中心</description>
+      <description>14:55｜45分｜前戰地政務委員會指揮中心，現為戰地博物館，免費、室內、長輩友善</description>
       <Point><coordinates>119.9346,26.1590,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>④  大漢據點</name>
       <styleUrl>#day1</styleUrl>
-      <description>16:00｜45分｜免費，長輩逛第一層觀海平台即可，俯瞰南竿全景</description>
+      <description>15:50｜45分｜三層坑道免費，長輩只逛第一層觀海平台即可，俯瞰南竿全景</description>
       <Point><coordinates>119.9291,26.1406,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>⑤  鐵堡（日落）</name>
       <styleUrl>#day1</styleUrl>
-      <description>17:10｜80分｜🌅 10月日落17:30–17:40，穿防滑鞋，17:10前務必抵達</description>
+      <description>17:10｜80分｜🌅 10月日落 17:30–17:40，17:10 前務必抵達，穿防滑鞋</description>
       <Point><coordinates>119.9209,26.1420,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑥  介壽村晚餐</name>
+      <name>⑥  介壽村老街晚餐</name>
       <styleUrl>#day1</styleUrl>
-      <description>19:00｜介壽村老街，夜遊廟宇燈火，宵夜小攤</description>
+      <description>19:00｜夜景廟宇燈火、老建築，宵夜小攤</description>
       <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -113,8 +107,8 @@
         <tessellate>1</tessellate>
         <coordinates>
           119.9558,26.1601,0
-          119.9401,26.1559,0
           119.9183,26.1598,0
+          119.9401,26.1559,0
           119.9346,26.1590,0
           119.9291,26.1406,0
           119.9209,26.1420,0
@@ -126,48 +120,54 @@
 
   <!-- Day 2 -->
   <Folder>
-    <name>🟠 Day 2｜10/17 南竿尋根</name>
+    <name>🟠 Day 2｜10/17（六）南竿尋根</name>
     <Placemark>
       <name>①  北海坑道</name>
       <styleUrl>#day2</styleUrl>
-      <description>08:00｜90分｜⚠️查10/17潮汐 0836-25630｜手鑿地下水道，爸爸當年出公差的地方</description>
+      <description>08:00｜90分｜⚠️ 出發前查 10/17 潮汐 0836-25630｜手鑿地下水道，爸爸當年出公差搬運物資的地方</description>
       <Point><coordinates>119.9290,26.1425,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>②  鐵板（仁愛村）—爸爸帶路</name>
       <styleUrl>#day2</styleUrl>
-      <description>09:45｜105分｜民國60年代南竿「西門町」，請爸爸邊走邊說，手機錄下</description>
+      <description>09:45｜105分｜民國60年代南竿「西門町」：中正堂電影院、澡堂、照相館。請爸爸邊走邊說，手機錄下</description>
       <Point><coordinates>119.9263,26.1451,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>③  午餐（鐵板/馬港附近）</name>
       <styleUrl>#day2</styleUrl>
-      <description>11:30｜110分｜從容吃，等酒廠13:40開門</description>
+      <description>11:30｜110分｜從容吃，等酒廠 13:40 午休結束再去</description>
       <Point><coordinates>119.9300,26.1450,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>④  梅石文康中心</name>
       <styleUrl>#day2</styleUrl>
-      <description>13:30｜75分｜免費，民國50–60年代最大娛樂重地，老兵回憶核心</description>
+      <description>13:30｜75分｜免費，民國50–60年代馬祖最大娛樂重地，老兵回憶核心</description>
       <Point><coordinates>119.9349,26.1475,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>⑤  馬祖酒廠</name>
       <styleUrl>#day2</styleUrl>
-      <description>15:00｜60分｜⚠️午休11:30–13:40｜高粱酒品嚐，買伴手禮</description>
+      <description>15:00｜60分｜⚠️ 午休 11:30–13:40，15:00 到剛好｜高粱酒品嚐，買伴手禮</description>
       <Point><coordinates>119.9518,26.1610,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑥  津沙聚落</name>
+      <name>⑥  介壽村伴手禮</name>
       <styleUrl>#day2</styleUrl>
-      <description>16:15｜90分｜南竿保存最完整閩東漁村，傍晚最美，長輩友善</description>
+      <description>16:00｜45分｜緊鄰酒廠順路，採買繼光餅、魚丸，不用另外跑一趟</description>
+      <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>⑦  津沙聚落（全員）</name>
+      <styleUrl>#day2</styleUrl>
+      <description>17:00｜90分｜南竿保存最完整閩東漁村，傍晚最美、遊人少，一路往西正好返回天后會館方向</description>
       <Point><coordinates>119.9132,26.1461,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑦  五人最後晚餐</name>
+      <name>⑧  5人最後完整晚餐（天后會館周邊・馬港）</name>
       <styleUrl>#day2</styleUrl>
-      <description>19:00｜挑好餐廳，5人唯一完整晚餐</description>
-      <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
+      <description>19:00｜5人唯一完整的晚餐（明天爸媽中午就飛了），選馬港周邊餐廳，吃完直接回住宿</description>
+      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>Day 2 路線</name>
@@ -181,8 +181,9 @@
           119.9300,26.1450,0
           119.9349,26.1475,0
           119.9518,26.1610,0
-          119.9132,26.1461,0
           119.9510,26.1570,0
+          119.9132,26.1461,0
+          119.9183,26.1598,0
         </coordinates>
       </LineString>
     </Placemark>
@@ -190,45 +191,33 @@
 
   <!-- Day 3 -->
   <Folder>
-    <name>🟢 Day 3｜10/18 升天祭 · 送爸媽 · 夫妻日</name>
+    <name>🟢 Day 3｜10/18（日）升天祭 · 送爸媽 · 夫妻日</name>
     <Placemark>
       <name>①  馬港天后宮（媽祖升天祭）</name>
       <styleUrl>#day3</styleUrl>
-      <description>08:00–11:00｜全員｜農曆九月初九正日，三重緣分（爸爸服役地/媽祖信仰/全家同拜）</description>
+      <description>08:00–08:45｜全員｜農曆九月初九正日，優先參拜，就在天后會館旁。三重緣分：爸爸服役地／媽祖信仰／全家同拜</description>
       <Point><coordinates>119.9169,26.1609,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>②  介壽村伴手禮</name>
+      <name>②  介壽村伴手禮＋早餐</name>
       <styleUrl>#day3</styleUrl>
-      <description>11:00–11:45｜全員｜高粱酒、花生糖、魚麵、繼光餅</description>
+      <description>09:00–09:45｜全員｜高粱酒、花生糖、魚麵、繼光餅，順路往機場方向，儀式已結束不受延誤影響</description>
       <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>③  南竿機場（送爸媽）</name>
       <styleUrl>#day3</styleUrl>
-      <description>爸媽11:45出發｜立榮B7-8732 12:50起飛→台中13:55</description>
+      <description>爸媽 12:05 從介壽村出發｜立榮 B7-8732 13:10 起飛→台中 14:15（原 12:50，已異動）</description>
       <Point><coordinates>119.9558,26.1601,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>④  津沙聚落（夫妻）</name>
       <styleUrl>#day3</styleUrl>
-      <description>14:00–17:00｜夫妻｜石板路、沙灘漫步，日落最美</description>
+      <description>14:00–17:00｜夫妻｜石板路、沙灘漫步，日落最美｜19:00 夫妻晚餐・馬祖海鮮｜21:00 備選：自然藍眼淚（芙蓉澳或牛角灣，視天候月相）</description>
       <Point><coordinates>119.9132,26.1461,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑤  沐光民宿 check-in</name>
-      <styleUrl>#day3</styleUrl>
-      <description>17:00｜夫妻｜津沙村137號，兩人世界開始</description>
-      <Point><coordinates>119.9132,26.1461,0</coordinates></Point>
-    </Placemark>
-    <Placemark>
-      <name>⑥  藍眼淚（備選）</name>
-      <styleUrl>#day3</styleUrl>
-      <description>21:00備選｜依天況月相｜芙蓉澳或牛角灣，無月亮清晴夜最佳</description>
-      <Point><coordinates>119.9191,26.1677,0</coordinates></Point>
-    </Placemark>
-    <Placemark>
-      <name>Day 3 路線（全員）</name>
+      <name>Day 3 路線</name>
       <styleUrl>#day3</styleUrl>
       <LineString>
         <tessellate>1</tessellate>
@@ -245,29 +234,35 @@
 
   <!-- Day 4 -->
   <Folder>
-    <name>🟣 Day 4｜10/19 夫妻自由日 → 飛高雄</name>
+    <name>🟣 Day 4｜10/19（一）夫妻自由日 → 飛高雄</name>
     <Placemark>
-      <name>①  雲台山</name>
+      <name>①  津沙聚落順遊（夫妻）</name>
       <styleUrl>#day4</styleUrl>
-      <description>08:00｜90分｜南竿制高點，早晨雲霧最美，晴天遠眺北竿及對岸</description>
-      <Point><coordinates>119.9283,26.1525,0</coordinates></Point>
+      <description>07:20–07:50｜從天后會館開車約10分鐘（單趟），早起專程走一趟（夜3已改為續住天后會館，非當地過夜）</description>
+      <Point><coordinates>119.9132,26.1461,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>②  藍眼淚生態館</name>
       <styleUrl>#day4</styleUrl>
-      <description>09:45｜45分｜室內展館，10月戶外已近尾聲，室內版替代</description>
+      <description>08:10｜45分｜室內展館，全年可參觀，10月戶外觀測已近尾聲，室內版替代</description>
       <Point><coordinates>119.9191,26.1677,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>③  介壽村午餐 + 補伴手禮</name>
+      <name>③  雲台山</name>
       <styleUrl>#day4</styleUrl>
-      <description>10:45｜90分｜最後一餐 + 最後採購機會</description>
+      <description>09:05｜60分（已縮短）｜南竿制高點 248m，位在往東回市區路上順路經過，因班機提前改為快速登頂拍照</description>
+      <Point><coordinates>119.9283,26.1525,0</coordinates></Point>
+    </Placemark>
+    <Placemark>
+      <name>④  介壽村午餐 + 補買伴手禮</name>
+      <styleUrl>#day4</styleUrl>
+      <description>10:15｜135分｜最後一餐馬祖味道＋最後採購機會，緊鄰機場</description>
       <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>④  南竿機場（返高雄）</name>
+      <name>⑤  南竿機場（返高雄）</name>
       <styleUrl>#airport</styleUrl>
-      <description>12:30到機場｜華信AE-7926 13:40起飛→高雄15:20｜訂位E7L8A5</description>
+      <description>12:35 前往機場、12:50 報到｜華信 AE-7926 13:55 起飛→高雄 15:35（8/27 第三次異動，原 15:00）｜務必 13:20 前完成報到｜訂位 E7L8A5</description>
       <Point><coordinates>119.9558,26.1601,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -277,8 +272,8 @@
         <tessellate>1</tessellate>
         <coordinates>
           119.9132,26.1461,0
-          119.9283,26.1525,0
           119.9191,26.1677,0
+          119.9283,26.1525,0
           119.9510,26.1570,0
           119.9558,26.1601,0
         </coordinates>
