@@ -122,21 +122,21 @@
   <Folder>
     <name>🟠 Day 2｜10/17（六）南竿尋根</name>
     <Placemark>
-      <name>①  北海坑道</name>
+      <name>①  雲台山＋軍情館</name>
       <styleUrl>#day2</styleUrl>
-      <description>08:00｜90分｜⚠️ 出發前查 10/17 潮汐 0836-25630｜手鑿地下水道，爸爸當年出公差搬運物資的地方</description>
-      <Point><coordinates>119.9290,26.1425,0</coordinates></Point>
+      <description>08:00 山頂晨景（50分）｜09:00 軍情館（45分，僅限本國人・帶身分證，有電梯）｜北海坑道 2026/10/1–2027/3/31 整修暫停開放，改為雲台山</description>
+      <Point><coordinates>119.9283,26.1525,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>②  鐵板（仁愛村）—爸爸帶路</name>
       <styleUrl>#day2</styleUrl>
-      <description>09:45｜105分｜民國60年代南竿「西門町」：中正堂電影院、澡堂、照相館。請爸爸邊走邊說，手機錄下</description>
+      <description>10:00｜105分｜民國60年代南竿「西門町」：中正堂電影院、澡堂、照相館。請爸爸邊走邊說，手機錄下；北海坑道整修中不能入內，可在附近遠望</description>
       <Point><coordinates>119.9263,26.1451,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>③  午餐（鐵板/馬港附近）</name>
       <styleUrl>#day2</styleUrl>
-      <description>11:30｜110分｜從容吃，等酒廠 13:40 午休結束再去</description>
+      <description>11:45｜90分｜從容吃，下午 13:30 到梅石文康中心</description>
       <Point><coordinates>119.9300,26.1450,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -176,7 +176,7 @@
         <tessellate>1</tessellate>
         <coordinates>
           119.9183,26.1598,0
-          119.9290,26.1425,0
+          119.9283,26.1525,0
           119.9263,26.1451,0
           119.9300,26.1450,0
           119.9349,26.1475,0
@@ -236,31 +236,25 @@
   <Folder>
     <name>🟣 Day 4｜10/19（一）夫妻自由日 → 飛高雄</name>
     <Placemark>
-      <name>①  津沙聚落順遊（夫妻）</name>
+      <name>①  津沙聚落散步（夫妻）</name>
       <styleUrl>#day4</styleUrl>
-      <description>07:20–07:50｜從天后會館開車約10分鐘（單趟），早起專程走一趟（夜3已改為續住天后會館，非當地過夜）</description>
+      <description>08:20–09:30｜從天后會館開車約10分鐘（單趟）；行李隨機車，今天不回旅館（夜3續住天后會館）</description>
       <Point><coordinates>119.9132,26.1461,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>②  藍眼淚生態館</name>
       <styleUrl>#day4</styleUrl>
-      <description>08:10｜45分｜室內展館，全年可參觀，10月戶外觀測已近尾聲，室內版替代</description>
+      <description>10:00 梯｜45分｜採預約制 08-362-3338｜室內展館，10月戶外觀測已近尾聲，室內版替代（雲台山已移到 Day 2）</description>
       <Point><coordinates>119.9191,26.1677,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>③  雲台山</name>
+      <name>③  介壽村午餐 + 補買伴手禮</name>
       <styleUrl>#day4</styleUrl>
-      <description>09:05｜60分（已縮短）｜南竿制高點 248m，位在往東回市區路上順路經過，因班機提前改為快速登頂拍照</description>
-      <Point><coordinates>119.9283,26.1525,0</coordinates></Point>
-    </Placemark>
-    <Placemark>
-      <name>④  介壽村午餐 + 補買伴手禮</name>
-      <styleUrl>#day4</styleUrl>
-      <description>10:15｜135分｜最後一餐馬祖味道＋最後採購機會，緊鄰機場</description>
+      <description>11:00｜90分｜最後一餐馬祖味道＋最後採購機會，緊鄰機場</description>
       <Point><coordinates>119.9510,26.1570,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑤  南竿機場（返高雄）</name>
+      <name>④  南竿機場（返高雄）</name>
       <styleUrl>#airport</styleUrl>
       <description>12:35 前往機場、12:50 報到｜華信 AE-7926 13:55 起飛→高雄 15:35（8/27 第三次異動，原 15:00）｜務必 13:20 前完成報到｜訂位 E7L8A5</description>
       <Point><coordinates>119.9558,26.1601,0</coordinates></Point>
@@ -273,7 +267,6 @@
         <coordinates>
           119.9132,26.1461,0
           119.9191,26.1677,0
-          119.9283,26.1525,0
           119.9510,26.1570,0
           119.9558,26.1601,0
         </coordinates>
