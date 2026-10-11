@@ -2,7 +2,7 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
 <Document>
   <name>馬祖行程 2026/10/16–19</name>
-  <description>5人家族・全程南竿・爸爸尋根主題。班機以 8/27 第三次異動為準。座標校正版 2026-09-06；2026-10-01 行程優化版（Day1 方案A/B、Day2 彈性段、Day3 A/B 兩版），同步自 index.html</description>
+  <description>5人家族・全程南竿・爸爸尋根主題。班機以 8/27 第三次異動為準。座標校正版 2026-09-06；2026-10-11 更新版（升天祭大典 10:00 已公布、Day2 晚餐 17:30、Day4 生態館 09:30 出發、餐廳營業時間複核），同步自 index.html</description>
 
   <!-- 顏色樣式（KML 顏色格式：AABBGGRR） -->
   <Style id="day1">
@@ -67,7 +67,7 @@
     <Placemark>
       <name>①  介壽村午餐（方案A）</name>
       <styleUrl>#day1</styleUrl>
-      <description>13:30–14:25｜機場取汽車後直接午餐，5 人到齊（13:10）才出發｜方案B改搭旅館接送、先到天后會館寄放行李，馬港午餐（13:50–14:50）、14:50 租車行送車到旅館</description>
+      <description>13:30–14:25｜機場取汽車後直接午餐（福德小館 11:00–14:00、17:00–23:00，13:30 前入座），5 人到齊（13:10）才出發｜方案B改搭旅館接送、先到天后會館寄放行李，馬港午餐（13:50–14:50）、14:50 租車行送車到旅館</description>
       <Point><coordinates>119.951,26.157,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -85,19 +85,19 @@
     <Placemark>
       <name>④  大漢據點</name>
       <styleUrl>#day1</styleUrl>
-      <description>A 15:45／B 15:30｜30–35分｜官方 08:00–17:00｜三層坑道免費，長輩只逛第一層觀海平台即可，俯瞰南竿全景</description>
+      <description>A 15:45（20分）／B 15:30（35分）｜官方 08:00–17:00｜三層坑道免費，長輩只逛第一層觀海平台即可，俯瞰南竿全景</description>
       <Point><coordinates>119.9291,26.1406,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>⑤  鐵堡</name>
       <styleUrl>#day1</styleUrl>
-      <description>A 16:20／B 16:10｜40–50分｜官方開放到 17:00，17:00 前離開｜🌅 日落約 17:25（推估值）改在鐵堡外海岸看，帶手電筒、穿防滑鞋，風大就縮短</description>
+      <description>A 16:10／B 16:10｜50分｜官方開放到 17:00，17:00 前離開（停留結束剛好是閉館時間）｜🌅 日落約 17:30（公式推算 17:32）改在鐵堡外海岸看，帶手電筒、穿防滑鞋，風大就縮短</description>
       <Point><coordinates>119.9209,26.142,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑥  天后會館＋馬港晚餐</name>
+      <name>⑥  天后會館＋晚餐</name>
       <styleUrl>#day1</styleUrl>
-      <description>A 18:00 入住（行李留車上）／B 13:45 先寄放行李、18:00 正式入住｜19:00 馬港周邊晚餐，爸爸當年逛街的老街區</description>
+      <description>A 18:00 入住（行李留車上）／B 13:45 先寄放行李、18:00 正式入住｜晚餐：福德小館（介壽村）17:00–23:00；馬港香林小館週五沒有晚餐、超群繼光餅 19:00 打烊</description>
       <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -134,9 +134,9 @@
       <Point><coordinates>119.9263,26.1451,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>③  午餐（鐵板/馬港附近）</name>
+      <name>③  午餐（馬港香林小館或鐵板附近）</name>
       <styleUrl>#day2</styleUrl>
-      <description>12:00｜90分</description>
+      <description>12:00｜90分｜馬港香林小館（0836-25370）週六 11:00–13:30，13:30 前吃完</description>
       <Point><coordinates>119.93,26.145,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -158,15 +158,15 @@
       <Point><coordinates>119.951,26.157,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑦  回旅館休息</name>
+      <name>⑦  回旅館放東西</name>
       <styleUrl>#day2</styleUrl>
-      <description>17:15｜約 1.5 小時</description>
+      <description>17:15｜15 分</description>
       <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑧  5人在馬祖最後一次完整晚餐（天后會館周邊・馬港）</name>
+      <name>⑧  5人在馬祖最後一次完整晚餐（馬港香林小館）</name>
       <styleUrl>#day2</styleUrl>
-      <description>19:00｜明天爸媽中午就飛了</description>
+      <description>17:30｜香林小館週六晚餐只開 17:00–19:00，0836-25370 先預約｜明天爸媽中午就飛了</description>
       <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -190,17 +190,17 @@
 
   <!-- Day 3 -->
   <Folder>
-    <name>🟢 Day 3｜10/18（日）升天祭 · 送爸媽 · 夫妻日（A／B 兩版）</name>
+    <name>🟢 Day 3｜10/18（日）升天祭 · 送爸媽 · 夫妻日（10:00 大典）</name>
     <Placemark>
       <name>①  馬港天后宮（媽祖升天祭）</name>
       <styleUrl>#day3</styleUrl>
-      <description>A 版 08:00–09:00 早場（歷年少見）／B 版 約 09:30–10:00 大典（2022 年 09:00、2024 年 09:30、2025 年 10:00）｜農曆九月初九｜2026 時程未公布，10/13 查證</description>
+      <description>10:00 整祭祀隊伍從馬祖境天后宮出發前往祭典會場（馬祖日報、台灣郵報，2026-10-11 查到）｜農曆九月初九｜會場位置與交通管制未公布，10/13 查證</description>
       <Point><coordinates>119.9169,26.1609,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>②  介壽村早午餐（A版）</name>
+      <name>②  介壽村午餐（夫妻）</name>
       <styleUrl>#day3</styleUrl>
-      <description>A 版 09:45｜漏買的伴手禮順手補｜B 版略過，改馬港簡單午餐＋機場補買</description>
+      <description>13:00｜福德小館週日 11:00–14:00｜漏買的伴手禮順手補</description>
       <Point><coordinates>119.951,26.157,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -212,7 +212,7 @@
     <Placemark>
       <name>④  津沙聚落（夫妻）</name>
       <styleUrl>#day3</styleUrl>
-      <description>15:00–16:30｜日落約 17:25，津沙海邊或鐵堡二選一</description>
+      <description>15:00–16:30｜日落約 17:30，津沙海邊或鐵堡（堡外）二選一｜晚餐可在津沙小館（週日 17:00–21:00）</description>
       <Point><coordinates>119.9132,26.1461,0</coordinates></Point>
     </Placemark>
     <Placemark>
@@ -237,19 +237,19 @@
     <Placemark>
       <name>①  藍眼淚生態館</name>
       <styleUrl>#day4</styleUrl>
-      <description>10:00 梯｜45分｜需預約（查詢代碼 53833）｜電話 08-362-3338</description>
+      <description>10:00 梯｜45分｜已預約（查詢代碼 53833），09:45 前到，逾時不候｜電話 08-362-3338</description>
       <Point><coordinates>119.9191,26.1677,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>②  介壽村午餐 + 補買伴手禮</name>
       <styleUrl>#day4</styleUrl>
-      <description>11:00｜90分｜緊鄰機場</description>
+      <description>11:00｜90分｜緊鄰機場｜福德小館週一 11:00–14:00 有開（津沙小館週一休）</description>
       <Point><coordinates>119.951,26.157,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>③  南竿機場（還機車、返高雄）</name>
       <styleUrl>#day4</styleUrl>
-      <description>12:35 還機車、12:50 到機場｜13:55 起飛（8/27 異動，原 15:00），13:20 前完成報到</description>
+      <description>12:35 還機車（土哥評論寫「機場借、港口還」，先確認機場還車）、12:50 到機場｜13:55 起飛（8/27 異動，原 15:00），13:20 前完成報到</description>
       <Point><coordinates>119.9558,26.1601,0</coordinates></Point>
     </Placemark>
     <Placemark>
