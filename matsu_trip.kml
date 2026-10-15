@@ -154,20 +154,14 @@
     <Placemark>
       <name>⑥  彈性段：介壽村伴手禮／爸爸記憶導航／提早休息</name>
       <styleUrl>#day2</styleUrl>
-      <description>16:00–17:15｜三選一｜介壽村在酒廠旁（推薦買伴手禮）；或請爸爸指路去有感覺的地方</description>
+      <description>16:00–16:40｜三選一｜介壽村在酒廠旁（推薦買伴手禮）；或請爸爸指路去就近有感覺的地方</description>
       <Point><coordinates>119.951,26.157,0</coordinates></Point>
     </Placemark>
     <Placemark>
-      <name>⑦  回旅館放東西</name>
+      <name>⑦  5人在馬祖最後一次完整晚餐（蝦寮食堂，已訂位）</name>
       <styleUrl>#day2</styleUrl>
-      <description>17:15｜15 分</description>
-      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
-    </Placemark>
-    <Placemark>
-      <name>⑧  5人在馬祖最後一次完整晚餐（馬港香林小館）</name>
-      <styleUrl>#day2</styleUrl>
-      <description>17:30｜香林小館週六晚餐只開 17:00–19:00，0836-25370 先預約｜明天爸媽中午就飛了</description>
-      <Point><coordinates>119.9183,26.1598,0</coordinates></Point>
+      <description>17:00｜只保留位子 5 分鐘，最晚 17:05｜週二休、17:00–20:00｜0836-23452｜座標取自 Google 地圖搜尋結果</description>
+      <Point><coordinates>119.9524,26.1629,0</coordinates></Point>
     </Placemark>
     <Placemark>
       <name>Day 2 路線</name>
@@ -182,6 +176,7 @@
           119.9349,26.1475,0
           119.9518,26.161,0
           119.951,26.157,0
+          119.9524,26.1629,0
           119.9183,26.1598,0
         </coordinates>
       </LineString>
